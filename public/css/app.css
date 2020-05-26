@@ -10933,3 +10933,38 @@ a.text-dark:focus {
   }
 }
 
+body nav {
+  background-color: #095256;
+}
+
+body nav ul {
+  display: inline-block;
+}
+
+body nav ul li {
+  display: inline;
+  float: left;
+  padding: 5px;
+}
+
+body nav ul li a {
+  text-decoration: none;
+  color: #01090A;
+  height: 100%;
+  width: 100%;
+}
+
+body div.meter-border {
+  height: 20px;
+  width: 160px;
+  border: 1px solid #152122;
+  border-radius: 50px;
+}
+
+body div.meter-border div.meter-inside {
+  height: 100%;
+  width: 89%;
+  background-color: #B8C3CC;
+  border-radius: 50px;
+}
+

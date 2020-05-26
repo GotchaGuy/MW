@@ -1,0 +1,22 @@
+body {
+
+    nav {
+      background-color: $main;
+     ul {
+          display: inline-block;
+
+          li {
+            display: inline;
+            float: left;
+            padding: 5px;
+
+            a {
+              text-decoration: none;
+              color: $test1;
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+    }
+}
