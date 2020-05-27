@@ -31,6 +31,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('el-nav', require('./components/partials/NavigationComponent.vue').default);
 
 Vue.component('campaigns', require('./components/CampaignsComponent.vue').default);
+Vue.component('campaign', require('./components/CampaignComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
