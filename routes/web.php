@@ -23,3 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //sredi ovo doda /$id posle campaigns za url kad sredis axios i backend
 Route::middleware('auth')->get('/campaigns', 'CampaignsController@show')->name('campaign-show');
+
+
+Route::middleware('auth')->get('/feed', 'PostsController@index')->name('posts');
+
+Route::middleware('auth')->get('/me', 'AccountController@index')->name('account');

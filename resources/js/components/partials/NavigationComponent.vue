@@ -2,13 +2,13 @@
     <div>
     <ul>
         <li>
-            <a href="">Campaigns</a>
+            <a href="/home">Campaigns</a>
         </li>
          <li>
-            <a href="">Feed</a>
+            <a href="/feed">Feed</a>
         </li>
          <li>
-            <a href="">My account</a>
+            <a href="/me">My account</a>
         </li>
     </ul>
     </div>

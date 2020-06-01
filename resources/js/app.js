@@ -33,6 +33,11 @@ Vue.component('el-nav', require('./components/partials/NavigationComponent.vue')
 Vue.component('campaigns', require('./components/CampaignsComponent.vue').default);
 Vue.component('campaign', require('./components/CampaignComponent.vue').default);
 
+Vue.component('posts', require('./components/PostsComponent.vue').default);
+
+
+Vue.component('account', require('./components/AccountComponent.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
