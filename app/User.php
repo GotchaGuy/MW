@@ -44,6 +44,11 @@ class User extends Authenticatable
         return $this->hasOne(Role::class);
     }
 
+    public function organization()
+    {
+        return $this->hasOne(Organization::class);
+    }
+
     public function wallet()
     {
         return $this->hasOne(Wallet::class);

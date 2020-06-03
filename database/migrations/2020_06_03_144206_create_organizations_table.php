@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCampaignsTable extends Migration
+class CreateOrganizationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,16 @@ class CreateCampaignsTable extends Migration
      */
     public function up()
     {
-        Schema::create('campaigns', function (Blueprint $table) {
+        Schema::create('organizations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->bigInteger('euro_goal')->unsigned();
-//            $table->bigInteger('euro_raised')->unsigned();
-            $table->dateTime('start');
-            $table->dateTime('end');
-            $table->text('description');
+            $table->string('location');
+//            $table->string('field-of-work');
+            //org logo
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('category_id')->unsigned();
-            $table->boolean('following');
             $table->timestamps();
 
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -39,6 +33,6 @@ class CreateCampaignsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campaigns');
+        Schema::dropIfExists('organizations');
     }
 }

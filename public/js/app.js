@@ -3583,9 +3583,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      percentage: 89
+    };
   },
   mounted: function mounted() {},
   methods: {}
@@ -100215,33 +100252,77 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-4" },
+        [
+          _c("h2", { staticClass: "card-title" }, [
+            _vm._v("Campaign Title | Campaign Category")
+          ]),
+          _vm._v(" "),
+          _c("h3", { staticClass: "card-title" }, [_vm._v("27 more days")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("el-progress", {
+                attrs: {
+                  "text-inside": true,
+                  "stroke-width": 24,
+                  percentage: _vm.percentage,
+                  status: "success"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("el-button", { attrs: { type: "info m-2", round: "" } }, [
+            _vm._v("Doniraj")
+          ])
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(2)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("header", { staticClass: "big-image" }, [
-        _c("img", {
-          attrs: { src: "https://source.unsplash.com/random/1300x600", alt: "" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "within" }, [
-          _c("h1", [_vm._v("Category Title")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("main", [
-        _c("h2", { staticClass: "pt-3" }, [
-          _vm._v("Campaign Category | 27 more days | Raised: e74.000 | "),
-          _c("strong", [_vm._v("89%")])
-        ]),
-        _vm._v(" "),
-        _c("p", [
+    return _c("div", { staticClass: "col-8 camp-header" }, [
+      _c("img", {
+        attrs: { src: "https://source.unsplash.com/random/", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "text-muted" }, [
+      _vm._v("Raised: e74.000 "),
+      _c("strong")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-8 p-5" }, [
+        _c("p", { staticClass: "card-text " }, [
           _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis dolorem enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit tempora tenetur ut voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis dolorem enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit tempora tenetur ut voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis dolorem enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit tempora tenetur ut voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis dolorem enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit tempora tenetur ut voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis dolorem enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit tempora tenetur ut voluptate."
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis\n                dolorem enim explicabo\n                fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit tempora tenetur ut\n                voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis dolorem\n                enim\n                explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit tempora\n                tenetur\n                ut voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam corporis\n                dolorem\n                enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem reprehenderit\n                tempora\n                tenetur ut voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam\n                corporis\n                dolorem enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem\n                reprehenderit\n                tempora tenetur ut voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam\n                corporis dolorem enim explicabo fuga harum id illo inventore labore non omnis pariatur quae, rem\n                reprehenderit tempora tenetur ut voluptate."
           )
         ])
       ])
@@ -100305,7 +100386,7 @@ var staticRenderFns = [
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "meter-border" }, [
+                    _c("div", { staticClass: "meter-border " }, [
                       _c("div", { staticClass: "meter-inside" })
                     ])
                   ])

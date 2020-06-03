@@ -15,7 +15,7 @@
                                 <p class="card-text">
                                     <small class="text-muted">Raised: e74.000 | <strong>89%</strong></small>
                                 </p>
-                                <div class="meter-border">
+                                <div class="meter-border ">
                                     <div class="meter-inside"></div>
                                 </div>
                             </div>

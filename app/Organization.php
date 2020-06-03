@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Wallet extends Model
+class Organization extends Model
 {
-    protected $fillable = ['public_key', 'euro_balance', 'user_id'];
+     protected $fillable = ['title', 'location', 'user_id'];
 
-    public function user()
+     public function user()
     {
         return $this->belongsTo(User::class);
     }
