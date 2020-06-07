@@ -14,6 +14,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
 
+var moment = require('moment'); // require
+moment().format();
+// window.moment = require('moment');
+// // var moment = require('moment');
+// // moment().format();
 
 /**
  * The following block of code may be used to automatically register your
@@ -33,6 +38,7 @@ Vue.component('el-nav', require('./components/partials/NavigationComponent.vue')
 Vue.component('campaigns', require('./components/CampaignsComponent.vue').default);
 Vue.component('campaign', require('./components/CampaignComponent.vue').default);
 
+Vue.component('following', require('./components/FollowingComponent.vue').default);
 Vue.component('posts', require('./components/PostsComponent.vue').default);
 
 

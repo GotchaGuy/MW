@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body a {
+  text-decoration: none;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10954,18 +10963,30 @@ body nav ul li a {
   width: 100%;
 }
 
-body div.meter-border {
-  height: 20px;
-  width: 160px;
-  border: 1px solid #152122;
-  border-radius: 50px;
+body div.campaign div.card {
+  color: #01090A;
+  max-width: 540px;
+  height: 230px;
+  max-height: 230px;
 }
 
-body div.meter-border div.meter-inside {
+body div.campaign div.card a {
+  text-decoration: none;
+  color: #01090A;
+  display: inline-block;
   height: 100%;
-  width: 89%;
-  background-color: #B8C3CC;
-  border-radius: 50px;
+  width: 100%;
+}
+
+body div.campaign div.card a div.no-gutters {
+  height: 100%;
+  position: relative;
+}
+
+body div.campaign div.card a div.no-gutters div.graph {
+  min-width: 170px;
+  position: absolute;
+  bottom: 15px;
 }
 
 body div.camp-header {

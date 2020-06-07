@@ -8,12 +8,12 @@ use Faker\Generator as Faker;
 
 $factory->define(Campaign::class, function (Faker $faker) {
     return [
-        'title' => $faker->catchPhrase(),
+        'title' => $faker->words($nb = 2, $asText = true),
         'euro_goal' => $faker->numberBetween($min = 30000, $max = 120000),
         'start' => $faker->dateTimeBetween($startDate = '-3 months', $endDate = '-1 month', $timezone = null),
         'end' => $faker->dateTimeBetween($startDate = '+1 week', $endDate = '+1 month', $timezone = null),
         'description' => $faker->paragraph(7, true),
-        'user_id' => $faker->numberBetween($min = 2, $max = 21),
+        'user_id' => $faker->numberBetween($min = 12, $max = 21),
         //sredi ovo za role i kampanju juzere
         'category_id' => $faker->numberBetween($min = 1, $max = 3),
         'following' => $faker->boolean($chanceOfGettingTrue = 10),

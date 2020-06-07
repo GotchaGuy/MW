@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <following></following>
     <posts></posts>
 
 @endsection

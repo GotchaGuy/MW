@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Campaign;
+use App\Category;
+use App\Donation;
 use Illuminate\Http\Request;
 
 class CampaignsController extends Controller
 {
-    public function show()
+    public function show($id)
     {
-//dodaj $id u show f-ju
-
-//        $campaign = Campaign::find($id);
-//        $post->timestamp = \Carbon\Carbon::parse($post->updated_at)->format('M d Y');
-//        $categories = Category::all();
-//        return view("campaign", compact("campaign", '/'));
-
-        return view("campaign");
+        $campaign = Campaign::find($id);
+        $categories = Category::all();
+        $donations = Donation::where('campaign_id', "==", $id);
+        return view("campaign", compact("campaign", 'categories', 'donations'));
     }
 
 }

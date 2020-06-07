@@ -23,7 +23,19 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'role_id' => $faker->numberBetween($min = 1, $max = 2),
         'remember_token' => Str::random(10),
     ];
+});
+
+$factory->state(User::class, 'donator', function (\Faker\Generator $faker) {
+  return [
+    'role_id' => 1,
+  ];
+});
+
+
+$factory->state(User::class, 'organization', function (\Faker\Generator $faker) {
+  return [
+    'role_id' => 2,
+  ];
 });
