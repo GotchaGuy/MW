@@ -549,6 +549,7 @@ class ComposerStaticInitc641cbfdc65e271cf6bd787cc8f94744
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/AccountController.php',
         'App\\Http\\Controllers\\ApiCampaignsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiCampaignsController.php',
+        'App\\Http\\Controllers\\ApiFeedController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiFeedController.php',
         'App\\Http\\Controllers\\ApiPostsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiPostsController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

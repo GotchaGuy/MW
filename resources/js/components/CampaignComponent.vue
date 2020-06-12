@@ -12,7 +12,8 @@
                     <el-progress :text-inside="true" :stroke-width="24" :percentage="percentage"
                                  status="success"></el-progress>
                 </div>
-               <el-button type="info m-2" round>Doniraj</el-button>
+<!--               <el-button type="info m-2" round>Doniraj</el-button>-->
+                <donate></donate>
             </div>
         </div>
         <!--        <header class="big-image">-->
@@ -51,7 +52,12 @@
 
 
 <script>
+    import Donate from './components/partials/DrawerDonateFormComponent.vue';
+
     export default {
+        components: {
+            Donate
+        },
         data() {
             return {
                 percentage: 89,

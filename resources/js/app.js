@@ -20,6 +20,10 @@ moment().format();
 // // var moment = require('moment');
 // // moment().format();
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -34,6 +38,7 @@ moment().format();
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component('el-nav', require('./components/partials/NavigationComponent.vue').default);
+Vue.component('donate', require('./components/partials/DrawerDonateFormComponent.vue').default);
 
 Vue.component('campaigns', require('./components/CampaignsComponent.vue').default);
 Vue.component('campaign', require('./components/CampaignComponent.vue').default);

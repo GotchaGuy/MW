@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
-    protected $fillable = ['title', 'euro_goal', 'start', 'end', 'description', 'user_id', 'category_id', 'following'];
+    protected $fillable = ['title', 'euro_goal', 'start', 'end', 'image', 'description', 'user_id', 'category_id', 'following'];
 
     public function user()
     {

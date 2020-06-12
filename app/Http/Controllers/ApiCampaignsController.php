@@ -15,9 +15,7 @@ class ApiCampaignsController extends Controller
 ////\Carbon\Carbon::parse($post->updated_at)->format('M d Y');
 //            $campaigns[$key]->timeLeft = $diff;
 
-//        $campaigns[$key]->raised = DB::table('donations')
-//    ->where('campaign_id', '==', $campaign->id)
-//    ->sum();
+//        $campaigns[$key]->raised = App\Donation::where('campaign_id', $campaign->id)->count();
 
 //        $campaigns[$key]->percent = $campaign->raised / $campaign->goal * 100;
 //        }

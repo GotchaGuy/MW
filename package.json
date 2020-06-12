@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "element-ui": "^2.13.2",
-        "moment": "^2.26.0"
+        "moment": "^2.26.0",
+        "swiper": "^5.4.2",
+        "vue-awesome-swiper": "^4.1.1"
     }
 }

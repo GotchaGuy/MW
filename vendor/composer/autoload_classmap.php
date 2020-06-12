@@ -13,6 +13,7 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AccountController' => $baseDir . '/app/Http/Controllers/AccountController.php',
     'App\\Http\\Controllers\\ApiCampaignsController' => $baseDir . '/app/Http/Controllers/ApiCampaignsController.php',
+    'App\\Http\\Controllers\\ApiFeedController' => $baseDir . '/app/Http/Controllers/ApiFeedController.php',
     'App\\Http\\Controllers\\ApiPostsController' => $baseDir . '/app/Http/Controllers/ApiPostsController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
