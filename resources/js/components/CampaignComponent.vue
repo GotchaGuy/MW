@@ -12,7 +12,7 @@
                     <el-progress :text-inside="true" :stroke-width="24" :percentage="percentage"
                                  status="success"></el-progress>
                 </div>
-<!--               <el-button type="info m-2" round>Doniraj</el-button>-->
+                <!--               <el-button type="info m-2" round>Doniraj</el-button>-->
                 <donate></donate>
             </div>
         </div>
@@ -52,19 +52,21 @@
 
 
 <script>
-    import Donate from './components/partials/DrawerDonateFormComponent.vue';
 
     export default {
-        components: {
-            Donate
-        },
+        props: ["dataCampaign", "dataCategories", "dataDonations"],
         data() {
             return {
                 percentage: 89,
+                campaign: {},
+                categories: {},
+                donations: {},
             }
         },
         mounted() {
-
+            this.campaign = JSON.parse(this.dataCampaign);
+            this.categories = JSON.parse(this.dataCategories);
+            this.donations = JSON.parse(this.dataDonations);
         },
         methods: {}
 

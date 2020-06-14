@@ -2,19 +2,33 @@ body {
 
   div.campaign {
     div.card {
+      max-width: 540px;
+      height: 230px;
+      max-height: 230px;
+
+      button {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    div.card {
       color: $test1;
       max-width: 540px;
       height: 230px;
       max-height: 230px;
+
       a {
         text-decoration: none;
         color: $test1;
         display: inline-block;
         height: 100%;
         width: 100%;
+
         div.no-gutters {
           height: 100%;
           position: relative;
+
           div.graph {
             min-width: 170px;
             position: absolute;
@@ -25,7 +39,6 @@ body {
     }
 
   }
-
 
 
 }

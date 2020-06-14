@@ -10968,6 +10968,17 @@ body nav ul li a {
 }
 
 body div.campaign div.card {
+  max-width: 540px;
+  height: 230px;
+  max-height: 230px;
+}
+
+body div.campaign div.card button {
+  height: 100%;
+  width: 100%;
+}
+
+body div.campaign div.card {
   color: #01090A;
   max-width: 540px;
   height: 230px;
@@ -11008,7 +11019,7 @@ body div.camp-header img {
 body div.following {
   width: 100%;
   height: 150px;
-  background-color: #152122;
+  background-color: #F2F4F3;
   border-bottom: 2px solid #F2F4F3;
   margin: 0;
 }

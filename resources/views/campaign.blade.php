@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <campaign data-post="{{json_encode($campaign)}}"
+    <campaign data-campaign="{{json_encode($campaign)}}"
               data-categories="{{json_encode($categories)}}"
-              data-categories="{{json_encode($donations)}}"
+              data-donations="{{json_encode($donations)}}"
     ></campaign>
 
 @endsection

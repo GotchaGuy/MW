@@ -57,6 +57,7 @@
                 <a-button :style="{ marginRight: '8px' }" @click="onClose">
                     Otkaži
                 </a-button>
+
                 <a-button type="primary" @click="onClose">
                     Doniraj
                 </a-button>
@@ -66,7 +67,6 @@
 </template>
 <script>
     export default {
-        name: 'Donate',
         data() {
             return {
                 form: this.$form.createForm(this),

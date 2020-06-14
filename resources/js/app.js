@@ -42,6 +42,7 @@ Vue.component('donate', require('./components/partials/DrawerDonateFormComponent
 
 Vue.component('campaigns', require('./components/CampaignsComponent.vue').default);
 Vue.component('campaign', require('./components/CampaignComponent.vue').default);
+Vue.component('campaign-form', require('./components/CampaignFormComponent.vue').default);
 
 Vue.component('following', require('./components/FollowingComponent.vue').default);
 Vue.component('posts', require('./components/PostsComponent.vue').default);

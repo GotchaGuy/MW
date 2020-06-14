@@ -1,6 +1,11 @@
 <template>
     <div class="container">
         <div class="row">
+            <div class="col-4 campaign">
+                <div class="card mb-3">
+                <a href="/new-campaign" class="btn btn-outline btn-lg" tabindex="-1" role="button" aria-disabled="true">+</a>
+                </div>
+            </div>
             <div class="col-4 campaign" v-for="campaign in campaigns">
                 <div class="card mb-3">
                     <!--                    style="max-width: 540px;"-->
@@ -18,7 +23,7 @@
                                         <el-progress
                                                 :text-inside="true"
                                                 :stroke-width="20"
-                                                percentage="89"
+                                                :percentage="89"
                                                 status="success"></el-progress>
                                     </div>
                                 </div>

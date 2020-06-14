@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:api')->get('campaigns', 'ApiCampaignsController@index');
+Route::middleware('auth:api')->get('/campaign/{id}', 'ApiCampaignsController@show');
+Route::middleware('auth:api')->get('new-campaign', 'ApiCampaignsController@store');

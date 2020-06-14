@@ -21,8 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::middleware('auth')->get('/campaign/$id', 'CampaignsController@show')->name('campaign');
+Route::middleware('auth')->get('/campaign/{id}', 'CampaignsController@show')->name('campaign');
 
+Route::middleware('auth')->get('/new-campaign', 'CampaignFormController@index')->name('campaign-form');
 
 Route::middleware('auth')->get('/feed', 'PostsController@index')->name('posts');
 

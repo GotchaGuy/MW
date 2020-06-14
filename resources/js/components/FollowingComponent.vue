@@ -10,21 +10,21 @@
         <!--            <h2>Title</h2>-->
         <!--        </div>-->
         <swiper class="swiper" :options="swiperOption">
-            <swiper-slide v-for="campaign in campaigns" v-if="campaign.following === true">
-                <img :src="campaign.image" alt="">
-                <div class="meter-border">
-                    <div class="meter-inside"></div>
-                </div>
-            </swiper-slide>
-<!--            <swiper-slide>Slide 2</swiper-slide>-->
-<!--            <swiper-slide>Slide 3</swiper-slide>-->
-<!--            <swiper-slide>Slide 4</swiper-slide>-->
-<!--            <swiper-slide>Slide 5</swiper-slide>-->
-<!--            <swiper-slide>Slide 6</swiper-slide>-->
-<!--            <swiper-slide>Slide 7</swiper-slide>-->
-<!--            <swiper-slide>Slide 8</swiper-slide>-->
-<!--            <swiper-slide>Slide 9</swiper-slide>-->
-<!--            <swiper-slide>Slide 10</swiper-slide>-->
+<!--            <swiper-slide v-for="(campaign, index) in campaigns" v-if="campaign.following === true" :key="index">-->
+<!--                <img :src="campaign.image" alt="">-->
+<!--                <div class="meter-border">-->
+<!--                    <div class="meter-inside"></div>-->
+<!--                </div>-->
+<!--            </swiper-slide>-->
+            <swiper-slide>Slide 2</swiper-slide>
+            <swiper-slide>Slide 3</swiper-slide>
+            <swiper-slide>Slide 4</swiper-slide>
+            <swiper-slide>Slide 5</swiper-slide>
+            <swiper-slide>Slide 6</swiper-slide>
+            <swiper-slide>Slide 7</swiper-slide>
+            <swiper-slide>Slide 8</swiper-slide>
+            <swiper-slide>Slide 9</swiper-slide>
+            <swiper-slide>Slide 10</swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
     </div>
@@ -75,6 +75,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    /*@import './base.scss';*/
-</style>
+<!--<style lang="scss" scoped>-->
+
+<!--</style>-->
