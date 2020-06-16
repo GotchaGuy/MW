@@ -7,30 +7,40 @@ body {
     border-bottom: 2px solid $test5;
     margin: 0;
 
-    div.col-2 {
+    div.swiper-pagination-bullets {
+      display: none;
+    }
+      div.swiper-slide {
+        width: 150px;
+        margin: 0 10px 0 10px;
 
-      div.item {
-        border-radius: 25px;
-        border: 2px solid $test1;
+        div.item {
+          border-radius: 25px;
+          border: 2px solid $test1;
 
-        div.meter-border {
-          height: 20px;
-          width: 160px;
-          border: 1px solid $test2;
-          border-radius: 50px;
-
-          div.meter-inside {
-            height: 100%;
-            width: 89%;
-            background-color: $test4;
-            //put a graident here
-            border-radius: 50px;
+          img {
 
           }
-        }
-      }
 
-    }
+          div.meter-border {
+            height: 20px;
+            width: 160px;
+            border: 1px solid $test2;
+            border-radius: 50px;
+
+            div.meter-inside {
+              height: 100%;
+              width: 89%;
+              background-color: $test4;
+              //put a graident here
+              border-radius: 50px;
+
+            }
+          }
+
+        }
+
+      }
   }
 
 

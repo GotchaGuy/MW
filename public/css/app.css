@@ -10,7 +10,7 @@ body a {
 }
 
 body main {
-  padding: 0;
+  padding-top: 0;
 }
 
 /*!
@@ -11004,16 +11004,26 @@ body div.campaign div.card a div.no-gutters div.graph {
   bottom: 15px;
 }
 
-body div.camp-header {
+body div.uno {
+  position: relative;
+}
+
+body div.uno div.camp-header {
   max-height: 600px;
   overflow: hidden;
 }
 
-body div.camp-header img {
+body div.uno div.camp-header img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+body div.uno div.camp-right div.camp-button {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
 }
 
 body div.following {
@@ -11024,22 +11034,40 @@ body div.following {
   margin: 0;
 }
 
-body div.following div.col-2 div.item {
+body div.following div.swiper-pagination-bullets {
+  display: none;
+}
+
+body div.following div.swiper-slide {
+  width: 150px;
+  margin: 0 10px 0 10px;
+}
+
+body div.following div.swiper-slide div.item {
   border-radius: 25px;
   border: 2px solid #01090A;
 }
 
-body div.following div.col-2 div.item div.meter-border {
+body div.following div.swiper-slide div.item div.meter-border {
   height: 20px;
   width: 160px;
   border: 1px solid #152122;
   border-radius: 50px;
 }
 
-body div.following div.col-2 div.item div.meter-border div.meter-inside {
+body div.following div.swiper-slide div.item div.meter-border div.meter-inside {
   height: 100%;
   width: 89%;
   background-color: #B8C3CC;
   border-radius: 50px;
+}
+
+body button.ant-btn {
+  height: 50px;
+  width: 160px;
+}
+
+body input.ant-input-number-input-wrap {
+  margin: 5px;
 }
 

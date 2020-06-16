@@ -1,29 +1,31 @@
 <template>
     <div class="container">
         <div class="row">
+<!--            the + button-->
             <div class="col-4 campaign">
                 <div class="card mb-3">
-                <a href="/new-campaign" class="btn btn-outline btn-lg" tabindex="-1" role="button" aria-disabled="true">+</a>
+                    <a href="/new-campaign" class="btn btn-outline btn-lg" tabindex="-1" role="button"
+                       aria-disabled="true">+</a>
                 </div>
             </div>
+
             <div class="col-4 campaign" v-for="campaign in campaigns">
                 <div class="card mb-3">
-                    <!--                    style="max-width: 540px;"-->
                     <a :href="'/campaign/' + campaign.id">
                         <div class="row no-gutters">
                             <div class="col-md-7">
                                 <div class="card-body">
-                                    <h6 class="çard-text" :value="timeLeft(campaign.end)">x hours left</h6>
+                                    <h6 class="çard-text" >{{campaign.time_left}} hours left</h6>
                                     <h6 class="card-title">{{campaign.category.title}}</h6>
                                     <h2 class="card-title">{{campaign.title}}</h2>
                                     <div class="graph">
                                         <p class="card-text">
-                                            <small class="text-muted">Raised: e74.000</small>
+                                            <small class="text-muted">Raised: {{campaign.raised}}</small>
                                         </p>
                                         <el-progress
                                                 :text-inside="true"
                                                 :stroke-width="20"
-                                                :percentage="89"
+                                                :percentage="campaign.percent"
                                                 status="success"></el-progress>
                                     </div>
                                 </div>
@@ -56,18 +58,11 @@
                 .then((response) => {
                     this.campaigns = response.data;
                     console.log(this.campaigns);
-
-
                 });
 
         },
         methods: {
-            timeLeft(end) {
-                return moment().endOf(end).fromNow();
-            },
-            calcPercent(donations, raised, goal) {
-                return (raised * 100) / goal + "%";
-            }
+
         }
 
     }

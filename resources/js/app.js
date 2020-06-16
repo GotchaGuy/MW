@@ -24,6 +24,14 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */);
 
+import Antd from 'ant-design-vue';
+// import App from './App';
+import 'ant-design-vue/dist/antd.css';
+Vue.config.productionTip = false;
+
+Vue.use(Antd);
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

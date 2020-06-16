@@ -1,19 +1,13 @@
 <template>
     <div class="row following">
-        <!--        <div class="col-2">-->
-        <!--            <div class="item">-->
         <!--                <img src="'https://source.unsplash.com/random/300x300'" alt="">-->
-        <!--                <div class="meter-border">-->
-        <!--                    <div class="meter-inside"></div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <h2>Title</h2>-->
-        <!--        </div>-->
         <swiper class="swiper" :options="swiperOption">
-<!--            <swiper-slide v-for="(campaign, index) in campaigns" v-if="campaign.following === true" :key="index">-->
+<!--            <swiper-slide v-for="(campaign, index) in campaigns" v-if="campaign.id === follows." :key="index">-->
+<!--            <div class="item">-->
 <!--                <img :src="campaign.image" alt="">-->
 <!--                <div class="meter-border">-->
 <!--                    <div class="meter-inside"></div>-->
+<!--                </div>-->
 <!--                </div>-->
 <!--            </swiper-slide>-->
             <swiper-slide>Slide 2</swiper-slide>
@@ -44,7 +38,8 @@
         },
         data() {
             return {
-                campaigns: [],
+                campaigns: {},
+                follows: {},
                 swiperOption: {
                     slidesPerView: 3,
                     spaceBetween: 30,
@@ -59,15 +54,13 @@
         mounted() {
             axios.get('/api/campaigns')
                 .then((response) => {
-                    // for (let i = 0; i <= response.data.length; i++) {
-                    //     if (response.data[i].following == true) {
-                    //         this.campaigns.unshift(response.data[i]);
-                    //     }
-                    // }
                     this.campaigns = response.data;
                     console.log(this.campaigns);
-
-
+                });
+            axios.get('/api/follows')
+                .then((response) => {
+                    this.follows = response.data;
+                    console.log(this.follows);
                 });
         },
         methods: {}

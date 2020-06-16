@@ -27,4 +27,9 @@ class Campaign extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function follows()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

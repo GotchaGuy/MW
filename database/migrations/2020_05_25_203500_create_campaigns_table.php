@@ -17,14 +17,12 @@ class CreateCampaignsTable extends Migration
             $table->id();
             $table->string('title');
             $table->bigInteger('euro_goal')->unsigned();
-//            $table->bigInteger('euro_raised')->unsigned();
             $table->dateTime('start');
             $table->dateTime('end');
             $table->string('image')->nullable();
             $table->text('description');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
-            $table->boolean('following');
             $table->timestamps();
 
 

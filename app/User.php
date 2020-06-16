@@ -64,6 +64,10 @@ class User extends Authenticatable
         return $this->hasMany(Campaign::class);
     }
 
+    public function follows()
+    {
+        return $this->belongsToMany(Campaign::class);
+    }
 
 
 
