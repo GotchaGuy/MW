@@ -3,51 +3,64 @@
         <div class="row">
             <!--            <div class="col-9">-->
 
-            <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit">
-                <a-form-item label="Naziv kampanje">
-                    <a-input
-                            v-decorator="['note', { rules: [{ required: true, message: 'Please input your note!' }] }]"
-                    />
-                </a-form-item>
-                <a-form-item label="Kategorija kampanje">
-                    <a-select
-                            v-decorator="['gender',
+            <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit"
+                    class="campaign-form">
+                <!--                <a-form-item label="Naziv kampanje">-->
+                <div class="row">
+                    <div class="col-4">
+                        <a-input
+                                v-decorator="['note', { rules: [{ required: true, message: 'Please input your note!' }] }]"
+                        />
+                        <!--                </a-form-item>-->
+                        <!--                <a-form-item label="Kategorija kampanje">-->
+                    </div>
+                    <div class="col-3">
+                        <a-select
+                                v-decorator="['gender',
           { rules: [{ required: true, message: 'Please select your gender!' }] },]"
-                            placeholder="Select a option and change input text above"
-                            @change="handleSelectChange">
-                        <a-select-option value="male">
-                            male
-                        </a-select-option>
-                        <a-select-option value="female">
-                            female
-                        </a-select-option>
-                    </a-select>
+                                placeholder="Select a option and change input text above"
+                                @change="handleSelectChange">
+                            <a-select-option value="male">
+                                male
+                            </a-select-option>
+                            <a-select-option value="female">
+                                female
+                            </a-select-option>
+                        </a-select>
+                        <!--                </a-form-item>-->
+                    </div>
+                </div>
+                <a-form-item label="Trajanje kampanje">
+                    <a-range-picker @change="onChange"/>
                 </a-form-item>
 
-                <a-form-item>
-                    <a-range-picker @change="onChange" />
-                </a-form-item>
-
-                <a-form-item>
+                <a-form-item label="Cilj">
                     <a-input-number
                             :min="1000" :max="1000001"
                             :default-value="1000"
-                            :formatter="value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
-                            :parser="value => value.replace(/\€\s?|(,*)/g, '')"
                             @change="onChange"
                     />
                 </a-form-item>
 
-
-                <a-form-item>
-                    <a-textarea placeholder="Basic usage" :rows="4" />
+                <a-form-item label="Overhead kampanje">
+                    <a-input-number
+                            :default-value="0"
+                            :min="0"
+                            :max="100"
+                            :formatter="value => `${value}%`"
+                            :parser="value => value.replace('%', '')"
+                            @change="onChange"
+                    />
                 </a-form-item>
 
+                <a-form-item label="Opis kampanje">
+                    <a-textarea placeholder="Opis kampanje" :rows="4"/>
+                </a-form-item>
 
 
                 <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
                     <a-button type="primary" html-type="submit">
-                        Submit
+                        Pošalji
                     </a-button>
                 </a-form-item>
             </a-form>
