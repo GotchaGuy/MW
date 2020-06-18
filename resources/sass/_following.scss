@@ -10,37 +10,43 @@ body {
     div.swiper-pagination-bullets {
       display: none;
     }
-      div.swiper-slide {
-        width: 150px;
-        margin: 0 10px 0 10px;
 
-        div.item {
-          border-radius: 25px;
-          border: 2px solid $test1;
+    div.swiper-slide {
+      width: 150px;
+      margin: 0 10px 0 10px;
 
-          img {
+      div.item {
+        margin-top: 10px;
+        height: 120px;
+        border-radius: 10px;
+        border: 2px solid $test4;
+        overflow: hidden;
 
-          }
+        img {
+          max-width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
 
-          div.meter-border {
-            height: 20px;
-            width: 160px;
-            border: 1px solid $test2;
+        div.meter-border {
+          height: 20px;
+          width: 160px;
+          border: 1px solid $test2;
+          border-radius: 50px;
+
+          div.meter-inside {
+            height: 100%;
+            width: 89%;
+            background-color: $test4;
+            //put a graident here
             border-radius: 50px;
 
-            div.meter-inside {
-              height: 100%;
-              width: 89%;
-              background-color: $test4;
-              //put a graident here
-              border-radius: 50px;
-
-            }
           }
-
         }
 
       }
+
+    }
   }
 
 

@@ -9,7 +9,9 @@ class ApiFollowsController extends Controller
 {
     public function index()
     {
-        return Follow::where('user_id', \Auth::user()->id);
-
+        $follows = Follow::all();
+//        $follows = Follow::where('user_id', \Auth::user()->id);
+        dd($follows);
+//return
     }
 }

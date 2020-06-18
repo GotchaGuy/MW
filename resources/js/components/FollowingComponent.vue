@@ -10,7 +10,11 @@
 <!--                </div>-->
 <!--                </div>-->
 <!--            </swiper-slide>-->
-            <swiper-slide>Slide 2</swiper-slide>
+            <swiper-slide>
+                <div class="item">
+                    <img src="https://source.unsplash.com/random/300x300" alt="">
+                </div>
+            </swiper-slide>
             <swiper-slide>Slide 3</swiper-slide>
             <swiper-slide>Slide 4</swiper-slide>
             <swiper-slide>Slide 5</swiper-slide>
@@ -41,8 +45,8 @@
                 campaigns: {},
                 follows: {},
                 swiperOption: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
+                    slidesPerView: 7,
+                    spaceBetween: 20,
                     freeMode: true,
                     pagination: {
                         el: '.swiper-pagination',

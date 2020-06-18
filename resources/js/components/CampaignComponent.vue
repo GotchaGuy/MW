@@ -6,17 +6,17 @@
             </div>
             <div class="col-4 camp-right">
                 <h1 class="card-title">{{campaign.title}}</h1>
-                <h6 class="card-title">{{category_title}}</h6>
-                <h3 class="card-title">27 more days</h3>
+<!--                <h6 class="card-title">{{category_title}}</h6>-->
+                <h3 class="card-title">{{campaign.time_left}} more days</h3>
                 <div>
-                    <h1 class="text-muted">Raised: e74.000 <strong></strong></h1>
-                    <el-progress :text-inside="true" :stroke-width="24" :percentage="percentage"
+                    <h1 class="text-muted">Raised: €{{campaign.raised}}<strong></strong></h1>
+                    <el-progress :text-inside="true" :stroke-width="24" :percentage="campaign.percent"
                                  status="success"></el-progress>
                 </div>
                 <!--               <el-button type="info m-2" round>Doniraj</el-button>-->
                 <div class="camp-button">
 
-                <donate></donate>
+                <donate :campaign-id="campaign.id"></donate>
                 </div>
             </div>
         </div>
@@ -51,14 +51,14 @@
         mounted() {
             this.campaign = JSON.parse(this.dataCampaign);
             console.log(this.campaign);
-            this.categories = JSON.parse(this.dataCategories);
-            this.donations = JSON.parse(this.dataDonations);
+            // this.categories = JSON.parse(this.dataCategories);
+            // this.donations = JSON.parse(this.dataDonations);
 
-            for (let i; i <= this.categories.length; i++) {
-                if (this.campaign.category_id === this.categories[i].id) {
-                    this.category_title = this.categories[i].title;
-                }
-            }
+            // for (let i; i <= this.categories.length; i++) {
+            //     if (this.campaign.category_id === this.categories[i].id) {
+            //         this.category_title = this.categories[i].title;
+            //     }
+            // }
 
         },
         methods: {}

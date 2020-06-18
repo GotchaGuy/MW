@@ -11,25 +11,25 @@
                 :body-style="{ paddingBottom: '80px' }"
                 @close="onClose"
         >
-            <a-form :form="form" layout="horizontal" hide-required-mark>
+            <a-form :form="form" layout="horizontal" hide-required-mark id="donation-form">
                 <div class="row">
                     <div class="col-12">
                         <h6>Donacija</h6>
-<!--                        <label for="donacija">Donacija</label>-->
+                        <!--                        <label for="donacija">Donacija</label>-->
                         <el-button type="success" id="donacija" plain @click="toPickAmount(10)">€10</el-button>
                         <el-button type="success" plain @click="toPickAmount(20)">€20</el-button>
                         <el-button type="success" plain @click="toPickAmount(30)">€30</el-button>
                         <el-button type="success" plain @click="toPickAmount(50)">€50</el-button>
                         <el-button type="success" plain @click="toPickAmount(100)">€100</el-button>
                         <el-button type="success" plain @click="toPickAmount(500)">€500</el-button>
-                        <a-input-number size="large" :min="1" :max="100000" default-value="" @change="toPickAmount"/>
+                        <a-input-number size="large" :min="1" :max="100000" @change="toPickAmount"/>
 
                     </div>
                     <div class="col-12 donate-radio">
                         <h6>U slučaju nepostignutog cilja kampanje u dogovorenom roku,</h6>
                         <a-radio-group v-model="donation.plan_b" name="radio" id="radio" @change="onChange">
-                            <a-radio :style="radioStyle" :value="1">
-                               <p>želim da organizacija zadrži moju donaciju.</p>
+                            <a-radio :style="radioStyle" :value="1" selected>
+                                <p>želim da organizacija zadrži moju donaciju.</p>
                             </a-radio>
                             <a-radio :style="radioStyle" :value="2">
                                 <p>želim da moja donacija bude prosleđena drugoj kampanji po mom biranju.</p>
@@ -41,7 +41,7 @@
                     </div>
 
                     <div v-if="donation.plan_b == 2">
-                        <h6>Izaberite kampanju kojoj biste donirali:</h6>
+                        <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>
                         <div></div>
                     </div>
 
@@ -76,18 +76,21 @@
 
 <script>
     export default {
+        props: {
+          campaignId: String,
+        },
         data() {
             return {
                 form: this.$form.createForm(this),
                 visible: false,
                 donation: {
-                  euro_amount: "",
-                    plan_b: "",
+                    euro_amount: "",
+                    plan_b: 1,
                     user_id: "",
-                    campaign_id: "",
+                    campaign_id: this.campaignId,
                 },
                 button: "",
-                value: 1,
+                // value: 1,
                 radioStyle: {
                     display: 'block',
                     height: '30px',
@@ -116,11 +119,12 @@
                 ,
                 toDonate() {
                     this.visible = false;
-                    // axios.post
-                }
-                ,
-            }
-        ,
-    }
-    ;
+                    axios.post('/api/donations', this.donation)
+                        .then((response) => {
+                            document.getElementById("donation-form").reset();
+                            window.location.reload();
+                        })
+                },
+            },
+    };
 </script>

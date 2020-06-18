@@ -20,6 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('auth:api')->get('campaigns', 'ApiCampaignsController@index');
 Route::middleware('auth:api')->get('/campaign/{id}', 'ApiCampaignsController@show');
-Route::middleware('auth:api')->get('new-campaign', 'ApiCampaignsController@store');
+Route::middleware('auth:api')->post('new-campaign', 'ApiCampaignsController@store');
 
 Route::middleware('auth:api')->get('follows', 'ApiFollowsController@index');
+
+Route::middleware('auth:api')->get('categories', 'ApiCategoriesController@index');

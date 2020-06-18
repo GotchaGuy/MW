@@ -10971,6 +10971,8 @@ body div.campaign div.card {
   max-width: 540px;
   height: 230px;
   max-height: 230px;
+  -webkit-animation: 3s;
+          animation: 3s;
 }
 
 body div.campaign div.card button {
@@ -11002,6 +11004,10 @@ body div.campaign div.card a div.no-gutters div.graph {
   min-width: 170px;
   position: absolute;
   bottom: 15px;
+}
+
+body div.campaign div.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 body div.uno {
@@ -11044,8 +11050,18 @@ body div.following div.swiper-slide {
 }
 
 body div.following div.swiper-slide div.item {
-  border-radius: 25px;
-  border: 2px solid #01090A;
+  margin-top: 10px;
+  height: 120px;
+  border-radius: 10px;
+  border: 2px solid #B8C3CC;
+  overflow: hidden;
+}
+
+body div.following div.swiper-slide div.item img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body div.following div.swiper-slide div.item div.meter-border {
@@ -11060,6 +11076,23 @@ body div.following div.swiper-slide div.item div.meter-border div.meter-inside {
   width: 89%;
   background-color: #B8C3CC;
   border-radius: 50px;
+}
+
+body div.post a {
+  text-decoration: none;
+  color: #01090A;
+}
+
+body div.post a div.card {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body div.post a div.card img {
+  width: 100%;
+  height: auto;
 }
 
 body button.ant-btn {
@@ -11082,7 +11115,7 @@ body div.donate-radio p {
   display: inline-block;
 }
 
-body div.row form.campaign-form.ant-form.ant-form-horizontal {
+body div.row form#campaign-form.ant-form.ant-form-horizontal {
   width: 100%;
 }
 

@@ -25,6 +25,6 @@ Route::middleware('auth')->get('/campaign/{id}', 'CampaignsController@show')->na
 
 Route::middleware('auth')->get('/new-campaign', 'CampaignFormController@index')->name('campaign-form');
 
-Route::middleware('auth')->get('/feed', 'PostsController@index')->name('posts');
+Route::middleware('auth')->get('/feed', 'FeedController@index')->name('posts');
 
 Route::middleware('auth')->get('/me', 'AccountController@index')->name('account');

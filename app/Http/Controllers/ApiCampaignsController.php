@@ -28,18 +28,14 @@ class ApiCampaignsController extends Controller
         return $campaigns;
     }
 
-    public
-    function show($id, Request $request)
+    public function store(Request $request)
     {
-        $campaign = Campaign::find($id);
-//        $end = Carbon::parse($request->input($campaign->end));
-//            $now = Carbon::now();
-//            $diff = $end->diffInDays($now);
-//            $campaign->time_left = $diff;
-            $campaign->raised = Donation::where('campaign_id', $campaign->id)->sum('euro_amount');
-            dd($campaign->raised);
-            $campaign->percent = floor($campaign->raised / $campaign->euro_goal * 100);
-        return $campaign;
+return $campaign = Campaign::create([
+            'title' => $request->input('content'),
+            'status_id' => $request->input('status_id'),
+            'user_id' => \Auth::user()->id,
+            'date' => $request->input('date'),
+      ]);
 
 
     }
