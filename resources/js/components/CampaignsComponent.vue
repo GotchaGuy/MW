@@ -15,7 +15,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-7">
                                 <div class="card-body">
-                                    <h6 class="çard-text" >{{campaign.time_left}} hours left</h6>
+                                    <h6 class="çard-text" >{{campaign.time_left}}</h6>
                                     <h6 class="card-title">{{campaign.category.title}}</h6>
                                     <h2 class="card-title">{{campaign.title}}</h2>
                                     <div class="graph">

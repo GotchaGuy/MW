@@ -8,6 +8,8 @@ class Campaign extends Model
 {
     protected $fillable = ['title', 'euro_goal', 'start', 'end', 'image', 'description', 'user_id', 'category_id', 'following'];
 
+    protected $casts = ['end' => 'date', 'start' => 'date'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -30,6 +32,6 @@ class Campaign extends Model
 
     public function follows()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'follows');
     }
 }

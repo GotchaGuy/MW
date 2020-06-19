@@ -84,7 +84,7 @@
                     start: "",
                     end: "",
                     overhead: "",
-                    image: "",
+                    image: "https://source.unsplash.com/random/400x400",
                     description: "",
                     user_id: "",
                     category_id: ""
@@ -117,7 +117,7 @@
             },
             submitCampaign() {
                 console.log(this.campaign);
-                axios.post('/api/campaigns', this.campaign)
+                axios.post('/api/new-campaign', this.campaign)
                     .then((response) => {
                         document.getElementById("campaign-form").reset();
                         window.location.href = '/campaigns';

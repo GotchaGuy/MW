@@ -25,3 +25,5 @@ Route::middleware('auth:api')->post('new-campaign', 'ApiCampaignsController@stor
 Route::middleware('auth:api')->get('follows', 'ApiFollowsController@index');
 
 Route::middleware('auth:api')->get('categories', 'ApiCategoriesController@index');
+
+Route::middleware('auth:api')->post('donations', 'ApiDonationsController@store');

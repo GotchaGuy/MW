@@ -13,10 +13,10 @@ class ApiCampaignsController extends Controller
     {
         $campaigns = Campaign::with('user', 'category', 'donations')->orderBy('updated_at', 'desc')->get();
         foreach ($campaigns as $key => $campaign) {
-            $end = Carbon::parse($request->input($campaign->end));
-            $now = Carbon::now();
-            $diff = $end->diffInDays($now);
-//            dd($diff);
+            $diff = $campaign->end->diffForHumans();
+//            dd($end);
+//            $now = Carbon::now();
+//            $diff = $end->diffInDays($now);
             $campaigns[$key]->time_left = $diff;
 
 //            \Carbon\Carbon::parse($post->updated_at)->format('M d Y');
@@ -30,12 +30,17 @@ class ApiCampaignsController extends Controller
 
     public function store(Request $request)
     {
-return $campaign = Campaign::create([
-            'title' => $request->input('content'),
-            'status_id' => $request->input('status_id'),
+        return $campaign = Campaign::create([
+            'title' => $request->input('title'),
+            'euro_goal' => $request->input('euro_goal'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'overhead' => $request->input('overhead'),
+            'description' => $request->input('description'),
+            'image' => $request->input('image'),
             'user_id' => \Auth::user()->id,
-            'date' => $request->input('date'),
-      ]);
+            'category_id' => $request->input('category_id'),
+        ]);
 
 
     }

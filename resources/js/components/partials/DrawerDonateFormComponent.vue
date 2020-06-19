@@ -76,9 +76,7 @@
 
 <script>
     export default {
-        props: {
-          campaignId: String,
-        },
+        props: ['campaignId'],
         data() {
             return {
                 form: this.$form.createForm(this),

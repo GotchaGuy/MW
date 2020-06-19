@@ -12,14 +12,12 @@ class CampaignsController extends Controller
 {
     public function show($id, Request $request)
     {
-        $campaign = Campaign::find($id)->with('user', 'category', 'donations')->orderBy('updated_at', 'desc')->get();
+        $campaign = Campaign::where('id', $id)->with('user', 'category', 'donations')->orderBy('updated_at', 'desc')->first();
 //        dd($campaign);
-         $end = Carbon::parse($request->input($campaign->end));
-            $now = Carbon::now();
-            $diff = $end->diffInDays($now);
+          $diff = $campaign->end->diffForHumans();
             $campaign->time_left = $diff;
             $campaign->raised = Donation::where('campaign_id', $id)->sum('euro_amount');
-            dd($campaign->raised);
+//            dd($campaign->raised);
             $campaign->percent = floor($campaign->raised / $campaign->euro_goal * 100);
 //        $categories = Category::all();
 //        $donations = Donation::where('campaign_id', "==", $id);
