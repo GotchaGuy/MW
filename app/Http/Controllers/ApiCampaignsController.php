@@ -13,18 +13,10 @@ class ApiCampaignsController extends Controller
     {
         $campaigns = Campaign::with('user', 'category', 'donations')->orderBy('updated_at', 'desc')->get();
         foreach ($campaigns as $key => $campaign) {
-            $diff = $campaign->end->diffForHumans();
-//            dd($end);
-//            $now = Carbon::now();
-//            $diff = $end->diffInDays($now);
-            $campaigns[$key]->time_left = $diff;
-
-//            \Carbon\Carbon::parse($post->updated_at)->format('M d Y');
+            $campaigns[$key]->time_left = $campaign->end->diffForHumans();
             $campaigns[$key]->raised = Donation::where('campaign_id', $campaign->id)->sum('euro_amount');
             $campaigns[$key]->percent = floor($campaign->raised / $campaign->euro_goal * 100);
-//dd($campaign->euro_goal);
         }
-
         return $campaigns;
     }
 

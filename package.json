@@ -27,6 +27,7 @@
         "ant-design-vue": "^1.6.2",
         "element-ui": "^2.13.2",
         "moment": "^2.26.0",
+        "source-map": "^0.7.3",
         "swiper": "^5.4.2",
         "vue-awesome-swiper": "^4.1.1"
     }

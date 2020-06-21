@@ -39,8 +39,9 @@
                     <a-input-number
                             :min="1000" :max="1000001"
                             :default-value="1000"
+                            :formatter="value => `${value}€`"
+                            :parser="value => value.replace('€', '')"
                             v-model="campaign.euro_goal"
-                            @change="onChange"
                     />
                 </a-form-item>
 
@@ -61,7 +62,8 @@
 
 
                 <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
-                    <a-button type="primary" html-type="submit" @click="submitCampaign">
+                    <a-button type="primary" html-type="submit">
+                        <!--                         @click="submitCampaign"-->
                         Pošalji
                     </a-button>
                 </a-form-item>
@@ -112,23 +114,18 @@
                 this.form.validateFields((err, values) => {
                     if (!err) {
                         console.log('Received values of form: ', values);
+                        console.log(this.campaign);
+                        axios.post('/api/new-campaign', this.campaign)
+                            .then((response) => {
+                                document.getElementById("campaign-form").reset();
+                                window.location.href = '/home';
+                            })
                     }
                 });
             },
             submitCampaign() {
-                console.log(this.campaign);
-                axios.post('/api/new-campaign', this.campaign)
-                    .then((response) => {
-                        document.getElementById("campaign-form").reset();
-                        window.location.href = '/campaigns';
-                    })
+
             }
-            // handleSelectChange(value) {
-            //     console.log(value);
-            //     this.form.setFieldsValue({
-            //         note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`,
-            //     });
-            // },
         }
 
     }

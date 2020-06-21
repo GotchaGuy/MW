@@ -31,6 +31,7 @@ Vue.config.productionTip = false;
 
 Vue.use(Antd);
 
+// var sourceMap = require("source-map");
 
 /**
  * The following block of code may be used to automatically register your

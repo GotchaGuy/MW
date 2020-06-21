@@ -18,6 +18,7 @@ class CreateDonationsTable extends Migration
             $table->bigInteger('euro_amount');
 //            ->nullable();
             $table->integer('plan_b');
+            $table->integer('backup_campaign_id')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('campaign_id')->unsigned();
             $table->timestamps();

@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <img src="https://source.unsplash.com/random/600x950" class="card-img" alt="...">
+                                <img :src="campaign.image" class="card-img" alt="...">
                             </div>
                         </div>
                     </a>

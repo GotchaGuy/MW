@@ -12,7 +12,7 @@ $factory->define(Campaign::class, function (Faker $faker) {
         'euro_goal' => $faker->numberBetween($min = 30000, $max = 120000),
         'start' => $faker->dateTimeBetween($startDate = '-3 months', $endDate = '-1 month', $timezone = null),
         'end' => $faker->dateTimeBetween($startDate = '+1 week', $endDate = '+1 month', $timezone = null),
-        'image' => 'https://source.unsplash.com/random/400x400',
+        'image' => 'https://source.unsplash.com/random/600x950',
         'description' => $faker->paragraph(7, true),
         'overhead' => $faker->numberBetween($min = 0, $max = 20),
         'user_id' => $faker->numberBetween($min = 12, $max = 21),

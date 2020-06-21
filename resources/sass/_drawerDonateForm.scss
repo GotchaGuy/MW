@@ -1,14 +1,15 @@
 body {
 
- button.ant-btn {
-   height: 50px;
-   width: 160px;
- }
+  button.ant-btn {
+    height: 50px;
+    width: 160px;
+  }
 
   div.ant-input-number.ant-input-number-lg {
     margin-left: 10px;
-      margin-top: 5px;
+    margin-top: 5px;
     height: 40px;
+
     input {
 
     }
@@ -17,10 +18,43 @@ body {
   div.donate-radio {
     margin-top: 40px;
     padding: 15px;
+
     p {
       display: inline-block;
     }
 
+  }
+
+  div.backup {
+    div.card {
+      color: $test1;
+      max-width: 540px;
+      //height: 230px;
+      min-height: 330px;
+
+      a {
+        text-decoration: none;
+        color: $test1;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+
+        div.no-gutters {
+          height: 100%;
+          position: relative;
+
+          div.graph {
+            min-width: 170px;
+            position: absolute;
+            bottom: 15px;
+          }
+        }
+      }
+    }
+
+    div.card:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
   }
 
 }

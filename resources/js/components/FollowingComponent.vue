@@ -1,28 +1,21 @@
 <template>
     <div class="row following">
-        <!--                <img src="'https://source.unsplash.com/random/300x300'" alt="">-->
         <swiper class="swiper" :options="swiperOption">
-<!--            <swiper-slide v-for="(campaign, index) in campaigns" v-if="campaign.id === follows." :key="index">-->
-<!--            <div class="item">-->
-<!--                <img :src="campaign.image" alt="">-->
-<!--                <div class="meter-border">-->
-<!--                    <div class="meter-inside"></div>-->
-<!--                </div>-->
-<!--                </div>-->
-<!--            </swiper-slide>-->
-            <swiper-slide>
+            <swiper-slide v-for="(follow, index) in follows" :key="index">
                 <div class="item">
-                    <img src="https://source.unsplash.com/random/300x300" alt="">
+                    <img :src="follow.image" alt="">
+                    <!--                <div class="meter-border">-->
+                    <!--                    <div class="meter-inside"></div>-->
+                    <!--                </div>-->
                 </div>
+                <h6 class="title">{{follow.title}}</h6>
+                <h6 class="percent">{{follow.percent}}%</h6>
             </swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
-            <swiper-slide>Slide 4</swiper-slide>
-            <swiper-slide>Slide 5</swiper-slide>
-            <swiper-slide>Slide 6</swiper-slide>
-            <swiper-slide>Slide 7</swiper-slide>
-            <swiper-slide>Slide 8</swiper-slide>
-            <swiper-slide>Slide 9</swiper-slide>
-            <swiper-slide>Slide 10</swiper-slide>
+            <!--            <swiper-slide>-->
+            <!--                <div class="item">-->
+            <!--                    <img src="https://source.unsplash.com/random/300x300" alt="">-->
+            <!--                </div>-->
+            <!--            </swiper-slide>-->
             <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
     </div>
@@ -56,15 +49,10 @@
             }
         },
         mounted() {
-            axios.get('/api/campaigns')
-                .then((response) => {
-                    this.campaigns = response.data;
-                    console.log(this.campaigns);
-                });
             axios.get('/api/follows')
                 .then((response) => {
                     this.follows = response.data;
-                    console.log(this.follows);
+                    console.log('follows: ' + this.follows);
                 });
         },
         methods: {}

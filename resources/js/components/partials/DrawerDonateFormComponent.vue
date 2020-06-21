@@ -42,7 +42,65 @@
 
                     <div v-if="donation.plan_b == 2">
                         <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>
-                        <div></div>
+                        <swiper class="swiper" :options="swiperOption">
+                            <swiper-slide class="col backup campaign" v-for="campaign in campaigns" :key="index">
+                                <!--                                -->
+
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" :src="campaign.image" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <div class="card-body">
+                                            <h6 class="çard-text">{{campaign.time_left}}</h6>
+                                            <h6 class="card-title">{{campaign.category.title}}</h6>
+                                            <h2 class="card-title">{{campaign.title}}</h2>
+                                            <div class="graph">
+                                                <p class="card-text">
+                                                    <small class="text-muted">Raised: {{campaign.raised}}
+                                                    </small>
+                                                </p>
+                                                <el-progress
+                                                        :text-inside="true"
+                                                        :stroke-width="20"
+                                                        :percentage="campaign.percent"
+                                                        status="success"></el-progress>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+
+                                <!--                                aaaaaaaaaaaaaa-->
+                                <!--                                <div class="card mb-3">-->
+                                <!--                                    <a :href="'/campaign/' + campaign.id">-->
+                                <!--                                        <div class="row no-gutters">-->
+                                <!--                                            <div class="col-md-7">-->
+                                <!--                                                <div class="card-body">-->
+                                <!--                                                    <h6 class="çard-text">{{campaign.time_left}}</h6>-->
+                                <!--                                                    <h6 class="card-title">{{campaign.category.title}}</h6>-->
+                                <!--                                                    <h2 class="card-title">{{campaign.title}}</h2>-->
+                                <!--                                                    <div class="graph">-->
+                                <!--                                                        <p class="card-text">-->
+                                <!--                                                            <small class="text-muted">Raised: {{campaign.raised}}-->
+                                <!--                                                            </small>-->
+                                <!--                                                        </p>-->
+                                <!--                                                        <el-progress-->
+                                <!--                                                                :text-inside="true"-->
+                                <!--                                                                :stroke-width="20"-->
+                                <!--                                                                :percentage="campaign.percent"-->
+                                <!--                                                                status="success"></el-progress>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                            </div>-->
+                                <!--                                            <div class="col-md-5">-->
+                                <!--                                                <img :src="campaign.image" class="card-img" alt="...">-->
+                                <!--                                            </div>-->
+                                <!--                                        </div>-->
+                                <!--                                    </a>-->
+                                <!--                                </div>-->
+                            </swiper-slide>
+                            <div class="swiper-pagination" slot="pagination"></div>
+                        </swiper>
                     </div>
 
                 </div>
@@ -75,8 +133,11 @@
 
 
 <script>
+    import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
+
     export default {
-        props: ['campaignId'],
+        props: ['id'],
         data() {
             return {
                 form: this.$form.createForm(this),
@@ -85,16 +146,36 @@
                     euro_amount: "",
                     plan_b: 1,
                     user_id: "",
-                    campaign_id: this.campaignId,
+                    campaign_id: "",
+                    backup_campaign_id: "",
                 },
                 button: "",
-                // value: 1,
                 radioStyle: {
                     display: 'block',
                     height: '30px',
                     lineHeight: '30px',
                 },
+                swiperOption: {
+                    slidesPerView: 7,
+                    spaceBetween: 20,
+                    freeMode: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    }
+                },
             };
+        },
+        mounted() {
+            console.log(this.id);
+            this.donation.campaign_id = this.id;
+            axios.get('/api/campaigns')
+                .then((response) => {
+                    this.campaigns = response.data;
+                    console.log('backup_campaigns: ' + this.campaigns);
+                });
+
+
         },
         methods:
             {

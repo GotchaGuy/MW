@@ -16,7 +16,7 @@
                 <!--               <el-button type="info m-2" round>Doniraj</el-button>-->
                 <div class="camp-button">
 
-                <donate :campaign-id="campaign.id"></donate>
+                <donate :id="campaign.id"></donate>
                 </div>
             </div>
         </div>

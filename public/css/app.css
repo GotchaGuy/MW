@@ -10971,8 +10971,7 @@ body div.campaign div.card {
   max-width: 540px;
   height: 230px;
   max-height: 230px;
-  -webkit-animation: 3s;
-          animation: 3s;
+  transition: 0.4s;
 }
 
 body div.campaign div.card button {
@@ -11047,6 +11046,7 @@ body div.following div.swiper-pagination-bullets {
 body div.following div.swiper-slide {
   width: 150px;
   margin: 0 10px 0 10px;
+  position: relative;
 }
 
 body div.following div.swiper-slide div.item {
@@ -11076,6 +11076,12 @@ body div.following div.swiper-slide div.item div.meter-border div.meter-inside {
   width: 89%;
   background-color: #B8C3CC;
   border-radius: 50px;
+}
+
+body div.following div.swiper-slide h6.percent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 body div.post a {
@@ -11115,7 +11121,38 @@ body div.donate-radio p {
   display: inline-block;
 }
 
+body div.backup div.card {
+  color: #01090A;
+  max-width: 540px;
+  min-height: 330px;
+}
+
+body div.backup div.card a {
+  text-decoration: none;
+  color: #01090A;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+body div.backup div.card a div.no-gutters {
+  height: 100%;
+  position: relative;
+}
+
+body div.backup div.card a div.no-gutters div.graph {
+  min-width: 170px;
+  position: absolute;
+  bottom: 15px;
+}
+
+body div.backup div.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 body div.row form#campaign-form.ant-form.ant-form-horizontal {
   width: 100%;
 }
 
+
+/*# sourceMappingURL=app.css.map*/
