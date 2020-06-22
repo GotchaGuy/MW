@@ -43,32 +43,52 @@
                     <div v-if="donation.plan_b == 2">
                         <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>
                         <swiper class="swiper" :options="swiperOption">
-                            <swiper-slide class="col backup campaign" v-for="campaign in campaigns" :key="index">
+                            <swiper-slide class="col backup campaign" v-for="(campaign, index) in campaigns"
+                                          :key="index">
                                 <!--                                -->
 
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" :src="campaign.image" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <div class="card-body">
-                                            <h6 class="çard-text">{{campaign.time_left}}</h6>
+                                <a-card hoverable style="width: 300px">
+                                    <img
+                                            slot="cover"
+                                            alt="Card image cap"
+                                            :src="campaign.image"
+                                    />
+                                    <template slot="actions" class="ant-card-actions">
+                                        <a-icon key="setting" type="setting"/>
+                                        <a-icon key="edit" type="edit"/>
+                                    </template>
+                                    <a-card-meta title="Card title" description="This is the description">
+                                        <h6 class="çard-text">{{campaign.time_left}}</h6>
                                             <h6 class="card-title">{{campaign.category.title}}</h6>
                                             <h2 class="card-title">{{campaign.title}}</h2>
-                                            <div class="graph">
-                                                <p class="card-text">
-                                                    <small class="text-muted">Raised: {{campaign.raised}}
-                                                    </small>
-                                                </p>
-                                                <el-progress
-                                                        :text-inside="true"
-                                                        :stroke-width="20"
-                                                        :percentage="campaign.percent"
-                                                        status="success"></el-progress>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
+                                        <small class="text-muted">Raised: {{campaign.raised}}</small>
+                                    </a-card-meta>
+                                </a-card>
+
+
+<!--                                <div class="card" style="width: 18rem;">-->
+<!--                                    <img class="card-img-top" :src="campaign.image" alt="Card image cap">-->
+<!--                                    <div class="card-body">-->
+<!--                                        <h5 class="card-title">Card title</h5>-->
+<!--                                        <div class="card-body">-->
+<!--                                            <h6 class="çard-text">{{campaign.time_left}}</h6>-->
+<!--                                            <h6 class="card-title">{{campaign.category.title}}</h6>-->
+<!--                                            <h2 class="card-title">{{campaign.title}}</h2>-->
+<!--                                            <div class="graph">-->
+<!--                                                <p class="card-text">-->
+<!--                                                    <small class="text-muted">Raised: {{campaign.raised}}-->
+<!--                                                    </small>-->
+<!--                                                </p>-->
+<!--                                                <el-progress-->
+<!--                                                        :text-inside="true"-->
+<!--                                                        :stroke-width="20"-->
+<!--                                                        :percentage="campaign.percent"-->
+<!--                                                        status="success"></el-progress>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
                                 <!--                                aaaaaaaaaaaaaa-->
                                 <!--                                <div class="card mb-3">-->
@@ -156,14 +176,15 @@
                     lineHeight: '30px',
                 },
                 swiperOption: {
-                    slidesPerView: 7,
-                    spaceBetween: 20,
+                    slidesPerView: 15,
+                    spaceBetween: 2,
                     freeMode: true,
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
                     }
                 },
+                campaigns: {},
             };
         },
         mounted() {
@@ -172,7 +193,7 @@
             axios.get('/api/campaigns')
                 .then((response) => {
                     this.campaigns = response.data;
-                    console.log('backup_campaigns: ' + this.campaigns);
+                    console.log(this.campaigns);
                 });
 
 

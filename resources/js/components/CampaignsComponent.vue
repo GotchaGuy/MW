@@ -20,7 +20,7 @@
                                     <h2 class="card-title">{{campaign.title}}</h2>
                                     <div class="graph">
                                         <p class="card-text">
-                                            <small class="text-muted">Raised: {{campaign.raised}}</small>
+                                            <small class="text-muted">Raised: €{{campaign.raised}}</small>
                                         </p>
                                         <el-progress
                                                 :text-inside="true"

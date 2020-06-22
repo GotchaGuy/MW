@@ -11121,32 +11121,17 @@ body div.donate-radio p {
   display: inline-block;
 }
 
-body div.backup div.card {
-  color: #01090A;
-  max-width: 540px;
-  min-height: 330px;
+body div.backup div.ant-card {
+  width: 280px;
 }
 
-body div.backup div.card a {
-  text-decoration: none;
-  color: #01090A;
-  display: inline-block;
-  height: 100%;
-  width: 100%;
+body div.backup div.ant-card div.ant-card-cover img {
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-body div.backup div.card a div.no-gutters {
-  height: 100%;
-  position: relative;
-}
-
-body div.backup div.card a div.no-gutters div.graph {
-  min-width: 170px;
-  position: absolute;
-  bottom: 15px;
-}
-
-body div.backup div.card:hover {
+body div.backup div.ant-card:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

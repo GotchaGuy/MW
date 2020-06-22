@@ -1,63 +1,79 @@
 <template>
     <div class="container">
         <div class="row">
-            <!--            <div class="col-9">-->
-
             <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit"
                     id="campaign-form">
-                <!--                <a-form-item label="Naziv kampanje">-->
-                <div class="row">
-                    <div class="col-4">
-                        <a-input
-                                v-decorator="['title',
+                <a-row :gutter="20">
+                    <a-col :span="10">
+                        <a-form-item label="Naziv kampanje">
+                            <a-input
+                                    v-decorator="['title',
                                  { rules: [{ required: true, message: 'Molimo Vas upišite naziv kampanje.' }] }]"
-                                placeholder="Naslov kampanje"
-                                v-model="campaign.title"
-                        />
-                        <!--                </a-form-item>-->
-                        <!--                <a-form-item label="Kategorija kampanje">-->
-                    </div>
-                    <div class="col-4">
-                        <a-select
-                                v-decorator="['category',
+                                    placeholder="Naziv kampanje"
+                                    v-model="campaign.title"
+                            />
+                        </a-form-item>
+                    </a-col>
+
+                    <a-col :span="14">
+                        <a-form-item label="Kategorija kampanje">
+                            <a-select
+                                    v-decorator="['category',
           { rules: [{ required: true, message: 'Molimo Vas izaberite kategoriju kojoj kampanja pripada.' }] },]"
-                                placeholder="Select a option and change input text above"
-                                v-model="campaign.category_id">
-                            <a-select-option v-for="(category, index) in categories" :value="category.id"
-                                             v-bind:key="index">
-                                {{category.title}}
-                            </a-select-option>
-                        </a-select>
-                        <!--                </a-form-item>-->
-                    </div>
-                </div>
-                <a-form-item label="Trajanje kampanje">
-                    <a-range-picker @change="onChange"/>
-                </a-form-item>
+                                    placeholder="Kategorija kampanje"
+                                    v-model="campaign.category_id">
+                                <a-select-option v-for="(category, index) in categories" :value="category.id"
+                                                 v-bind:key="index">
+                                    {{category.title}}
+                                </a-select-option>
+                            </a-select>
+                        </a-form-item>
+                    </a-col>
+                </a-row>
+                <a-row :gutter="24">
+                    <a-col :span="16">
+                        <a-form-item label="Trajanje kampanje">
+                            <a-range-picker @change="onChange"
+                                            v-decorator="['time',
+                                 { rules: [{ required: true, message: 'Molimo Vas upišite trajanje kampanje.' }] }]"
+                                            format="YYYY MMM Do"
+                            />
+                        </a-form-item>
+                    </a-col>
 
-                <a-form-item label="Cilj">
-                    <a-input-number
-                            :min="1000" :max="1000001"
-                            :default-value="1000"
-                            :formatter="value => `${value}€`"
-                            :parser="value => value.replace('€', '')"
-                            v-model="campaign.euro_goal"
-                    />
-                </a-form-item>
-
+                    <a-col :span="8">
+                        <a-form-item label="Cilj">
+                            <a-input-number
+                                    :min="1000" :max="1000001"
+                                    :default-value="1000"
+                                    v-model="campaign.euro_goal"
+                                    v-decorator="['goal',
+                                 { rules: [{ required: true, message: 'Molimo Vas upišite cilj kampanje.' }] }]"
+                            />
+                            €
+                            <!--                        :formatter="value => `${value}€`"-->
+                            <!--                        :parser="value => value.replace('€', '')"-->
+                        </a-form-item>
+                    </a-col>
+                </a-row>
                 <a-form-item label="Overhead troškovi kampanje">
                     <a-input-number
                             :default-value="0"
                             :min="0"
                             :max="100"
-                            :formatter="value => `${value}%`"
-                            :parser="value => value.replace('%', '')"
                             v-model="campaign.overhead"
+                            v-decorator="['overhead',
+                                 { rules: [{ required: true, message: 'Molimo Vas upišite Vaše procenjene troškove.' }] }]"
                     />
+                    %
+                    <!--                        :formatter="value => `${value}%`"-->
+                    <!--                        :parser="value => value.replace('%', '')"-->
                 </a-form-item>
 
                 <a-form-item label="Opis kampanje">
-                    <a-textarea placeholder="Opis kampanje" :rows="4" v-model="campaign.description"/>
+                    <a-textarea placeholder="Opis kampanje" :rows="4" v-model="campaign.description"
+                                v-decorator="['time',
+                                 { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
                 </a-form-item>
 
 

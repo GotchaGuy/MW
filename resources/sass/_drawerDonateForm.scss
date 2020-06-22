@@ -26,33 +26,18 @@ body {
   }
 
   div.backup {
-    div.card {
-      color: $test1;
-      max-width: 540px;
-      //height: 230px;
-      min-height: 330px;
-
-      a {
-        text-decoration: none;
-        color: $test1;
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-
-        div.no-gutters {
-          height: 100%;
-          position: relative;
-
-          div.graph {
-            min-width: 170px;
-            position: absolute;
-            bottom: 15px;
-          }
+    div.ant-card {
+      width: 280px;
+      div.ant-card-cover {
+        img {
+          height: 100px;
+          object-fit: cover;
         }
       }
     }
 
-    div.card:hover {
+
+    div.ant-card:hover {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
   }
