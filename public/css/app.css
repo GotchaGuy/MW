@@ -11049,33 +11049,42 @@ body div.following div.swiper-slide {
   position: relative;
 }
 
-body div.following div.swiper-slide div.item {
+body div.following div.swiper-slide a {
+  text-decoration: none;
+}
+
+body div.following div.swiper-slide a div.item {
   margin-top: 10px;
   height: 120px;
   border-radius: 10px;
   border: 2px solid #B8C3CC;
   overflow: hidden;
+  transition: 0.6s;
 }
 
-body div.following div.swiper-slide div.item img {
+body div.following div.swiper-slide a div.item img {
   max-width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-body div.following div.swiper-slide div.item div.meter-border {
+body div.following div.swiper-slide a div.item div.meter-border {
   height: 20px;
   width: 160px;
   border: 1px solid #152122;
   border-radius: 50px;
 }
 
-body div.following div.swiper-slide div.item div.meter-border div.meter-inside {
+body div.following div.swiper-slide a div.item div.meter-border div.meter-inside {
   height: 100%;
   width: 89%;
   background-color: #B8C3CC;
   border-radius: 50px;
+}
+
+body div.following div.swiper-slide a div.item:hover {
+  border: 3px solid #152122;
 }
 
 body div.following div.swiper-slide h6.percent {
@@ -11106,32 +11115,47 @@ body button.ant-btn {
   width: 160px;
 }
 
-body div.ant-input-number.ant-input-number-lg {
+body form#donation-form {
+  max-width: 700px;
+  width: 700px;
+}
+
+body form#donation-form h6.error {
+  color: #e2081c;
+  padding-top: 5px;
+}
+
+body form#donation-form div.ant-input-number.ant-input-number-lg {
   margin-left: 10px;
   margin-top: 5px;
   height: 40px;
 }
 
-body div.donate-radio {
+body form#donation-form div.donate-radio {
   margin-top: 40px;
   padding: 15px;
 }
 
-body div.donate-radio p {
+body form#donation-form div.donate-radio p {
   display: inline-block;
 }
 
-body div.backup div.ant-card {
-  width: 280px;
+body form#donation-form div.if {
+  width: 680px;
 }
 
-body div.backup div.ant-card div.ant-card-cover img {
-  height: 100px;
+body form#donation-form div.if div.swiper-wrapper div.col.campaign.swiper-slide div.ant-card {
+  width: 250px;
+  margin-right: 15px;
+}
+
+body form#donation-form div.if div.swiper-wrapper div.col.campaign.swiper-slide div.ant-card div.ant-card-cover img {
+  height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-body div.backup div.ant-card:hover {
+body form#donation-form div.if div.swiper-wrapper div.campaign:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

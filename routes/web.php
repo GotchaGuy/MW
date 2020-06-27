@@ -28,3 +28,5 @@ Route::middleware('auth')->get('/new-campaign', 'CampaignFormController@index')-
 Route::middleware('auth')->get('/feed', 'FeedController@index')->name('posts');
 
 Route::middleware('auth')->get('/me', 'AccountController@index')->name('account');
+
+Route::middleware('auth')->get('/org/{id}', 'OrganizationsController@show')->name('organization');

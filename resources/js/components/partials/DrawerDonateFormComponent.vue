@@ -23,7 +23,7 @@
                         <el-button type="success" plain @click="toPickAmount(100)">€100</el-button>
                         <el-button type="success" plain @click="toPickAmount(500)">€500</el-button>
                         <a-input-number size="large" :min="1" :max="100000" @change="toPickAmount"/>
-
+                        <h6 class="error">{{this.error.euro_amount}}</h6>
                     </div>
                     <div class="col-12 donate-radio">
                         <h6>U slučaju nepostignutog cilja kampanje u dogovorenom roku,</h6>
@@ -38,86 +38,32 @@
                                 <p>želim povraćaj novca.</p>
                             </a-radio>
                         </a-radio-group>
+                        <h6 class="error">{{this.error.plan_b}}</h6>
                     </div>
 
-                    <div v-if="donation.plan_b == 2">
+                    <div v-if="donation.plan_b == 2" class="if">
                         <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>
-                        <swiper class="swiper" :options="swiperOption">
-                            <swiper-slide class="col backup campaign" v-for="(campaign, index) in campaigns"
+                        <swiper class="swiper backup" :options="swiperOption">
+                            <swiper-slide class="col campaign" v-for="(campaign, index) in campaigns"
                                           :key="index">
-                                <!--                                -->
-
                                 <a-card hoverable style="width: 300px">
                                     <img
                                             slot="cover"
                                             alt="Card image cap"
                                             :src="campaign.image"
                                     />
+                                    <small class="text-muted">{{campaign.time_left}}</small>
+                                    <h3 class="card-title">{{campaign.title}}</h3>
+                                    <small class="text-muted">{{campaign.category.title}}</small>
+                                    <h6 class="card-title">Raised: €{{campaign.raised}} | {{campaign.percent}}%</h6>
                                     <template slot="actions" class="ant-card-actions">
-                                        <a-icon key="setting" type="setting"/>
-                                        <a-icon key="edit" type="edit"/>
+                                        <button type="button" icon="plus" class="btn btn-outline-success"
+                                                @click="toPickBackup(campaign.id)">Izaberi
+                                        </button>
                                     </template>
-                                    <a-card-meta title="Card title" description="This is the description">
-                                        <h6 class="çard-text">{{campaign.time_left}}</h6>
-                                            <h6 class="card-title">{{campaign.category.title}}</h6>
-                                            <h2 class="card-title">{{campaign.title}}</h2>
-                                        <small class="text-muted">Raised: {{campaign.raised}}</small>
+                                    <a-card-meta>
                                     </a-card-meta>
                                 </a-card>
-
-
-<!--                                <div class="card" style="width: 18rem;">-->
-<!--                                    <img class="card-img-top" :src="campaign.image" alt="Card image cap">-->
-<!--                                    <div class="card-body">-->
-<!--                                        <h5 class="card-title">Card title</h5>-->
-<!--                                        <div class="card-body">-->
-<!--                                            <h6 class="çard-text">{{campaign.time_left}}</h6>-->
-<!--                                            <h6 class="card-title">{{campaign.category.title}}</h6>-->
-<!--                                            <h2 class="card-title">{{campaign.title}}</h2>-->
-<!--                                            <div class="graph">-->
-<!--                                                <p class="card-text">-->
-<!--                                                    <small class="text-muted">Raised: {{campaign.raised}}-->
-<!--                                                    </small>-->
-<!--                                                </p>-->
-<!--                                                <el-progress-->
-<!--                                                        :text-inside="true"-->
-<!--                                                        :stroke-width="20"-->
-<!--                                                        :percentage="campaign.percent"-->
-<!--                                                        status="success"></el-progress>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <a href="#" class="btn btn-primary">Go somewhere</a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-                                <!--                                aaaaaaaaaaaaaa-->
-                                <!--                                <div class="card mb-3">-->
-                                <!--                                    <a :href="'/campaign/' + campaign.id">-->
-                                <!--                                        <div class="row no-gutters">-->
-                                <!--                                            <div class="col-md-7">-->
-                                <!--                                                <div class="card-body">-->
-                                <!--                                                    <h6 class="çard-text">{{campaign.time_left}}</h6>-->
-                                <!--                                                    <h6 class="card-title">{{campaign.category.title}}</h6>-->
-                                <!--                                                    <h2 class="card-title">{{campaign.title}}</h2>-->
-                                <!--                                                    <div class="graph">-->
-                                <!--                                                        <p class="card-text">-->
-                                <!--                                                            <small class="text-muted">Raised: {{campaign.raised}}-->
-                                <!--                                                            </small>-->
-                                <!--                                                        </p>-->
-                                <!--                                                        <el-progress-->
-                                <!--                                                                :text-inside="true"-->
-                                <!--                                                                :stroke-width="20"-->
-                                <!--                                                                :percentage="campaign.percent"-->
-                                <!--                                                                status="success"></el-progress>-->
-                                <!--                                                    </div>-->
-                                <!--                                                </div>-->
-                                <!--                                            </div>-->
-                                <!--                                            <div class="col-md-5">-->
-                                <!--                                                <img :src="campaign.image" class="card-img" alt="...">-->
-                                <!--                                            </div>-->
-                                <!--                                        </div>-->
-                                <!--                                    </a>-->
-                                <!--                                </div>-->
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
                         </swiper>
@@ -157,7 +103,7 @@
     import 'swiper/css/swiper.css'
 
     export default {
-        props: ['id'],
+        props: ['campaignid'],
         data() {
             return {
                 form: this.$form.createForm(this),
@@ -169,6 +115,10 @@
                     campaign_id: "",
                     backup_campaign_id: "",
                 },
+                error: {
+                    euro_amount: "",
+                    plan_b: "",
+                },
                 button: "",
                 radioStyle: {
                     display: 'block',
@@ -176,8 +126,8 @@
                     lineHeight: '30px',
                 },
                 swiperOption: {
-                    slidesPerView: 15,
-                    spaceBetween: 2,
+                    slidesPerView: 3,
+                    spaceBetween: 1,
                     freeMode: true,
                     pagination: {
                         el: '.swiper-pagination',
@@ -188,8 +138,7 @@
             };
         },
         mounted() {
-            console.log(this.id);
-            this.donation.campaign_id = this.id;
+            this.donation.campaign_id = this.campaignid;
             axios.get('/api/campaigns')
                 .then((response) => {
                     this.campaigns = response.data;
@@ -211,6 +160,13 @@
                 toPickAmount(num) {
                     this.button = "€" + num;
                     this.donation.euro_amount = num;
+                    this.error.euro_amount = "";
+                }
+                ,
+                toPickBackup(id) {
+                    // this.button = "€" + num;
+                    this.donation.backup_campaign_id = id;
+                    this.error.plan_b = "";
                 }
                 ,
                 onChange(e) {
@@ -218,12 +174,34 @@
                 }
                 ,
                 toDonate() {
-                    this.visible = false;
-                    axios.post('/api/donations', this.donation)
-                        .then((response) => {
-                            document.getElementById("donation-form").reset();
-                            window.location.reload();
-                        })
+
+                    if (this.donation.euro_amount === "") {
+                        this.error.euro_amount = "Neophodno je izabrati veličinu donacije."
+                    } else {
+                        this.error.euro_amount = "";
+                    }
+
+                    if (this.donation.plan_b === 2) {
+                        if (this.donation.backup_campaign_id === "") {
+                            this.error.plan_b = "Neophodno je izabrati rezervnu kampanju, ako ste izabrali opciju 2."
+                        } else {
+                            this.error.plan_b = "";
+                        }
+                    } else {
+                        this.error.plan_b = "";
+                    }
+
+                    if (this.error.euro_amount === "" && this.error.plan_b === "") {
+
+                        this.visible = false;
+                        axios.post('/api/donations', this.donation)
+                            .then((response) => {
+                                document.getElementById("donation-form").reset();
+                                window.location.reload();
+                            })
+                    }
+
+
                 },
             },
     };

@@ -5,41 +5,57 @@ body {
     width: 160px;
   }
 
-  div.ant-input-number.ant-input-number-lg {
-    margin-left: 10px;
-    margin-top: 5px;
-    height: 40px;
+  form#donation-form {
+    max-width: 700px;
+    width: 700px;
 
-    input {
-
-    }
-  }
-
-  div.donate-radio {
-    margin-top: 40px;
-    padding: 15px;
-
-    p {
-      display: inline-block;
+    h6.error {
+      color: #e2081c;
+      padding-top: 5px;
     }
 
-  }
+    div.ant-input-number.ant-input-number-lg {
+      margin-left: 10px;
+      margin-top: 5px;
+      height: 40px;
 
-  div.backup {
-    div.ant-card {
-      width: 280px;
-      div.ant-card-cover {
-        img {
-          height: 100px;
-          object-fit: cover;
-        }
+      input {
+
       }
     }
 
+    div.donate-radio {
+      margin-top: 40px;
+      padding: 15px;
 
-    div.ant-card:hover {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      p {
+        display: inline-block;
+      }
+
+    }
+
+    div.if {
+      width: 680px;
+
+      div.swiper-wrapper {
+
+        div.col.campaign.swiper-slide {
+          div.ant-card {
+            width: 250px;
+            margin-right: 15px;
+            div.ant-card-cover {
+              img {
+                height: 150px;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+
+        div.campaign:hover {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+      }
     }
   }
-
 }

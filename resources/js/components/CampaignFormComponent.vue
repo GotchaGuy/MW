@@ -8,7 +8,7 @@
                         <a-form-item label="Naziv kampanje">
                             <a-input
                                     v-decorator="['title',
-                                 { rules: [{ required: true, message: 'Molimo Vas upišite naziv kampanje.' }] }]"
+                                 { rules: [{ required: true, message: 'Naziv kampanje je obavezan.' }] }]"
                                     placeholder="Naziv kampanje"
                                     v-model="campaign.title"
                             />
@@ -19,7 +19,7 @@
                         <a-form-item label="Kategorija kampanje">
                             <a-select
                                     v-decorator="['category',
-          { rules: [{ required: true, message: 'Molimo Vas izaberite kategoriju kojoj kampanja pripada.' }] },]"
+          { rules: [{ required: true, message: 'Biranje kategorije kojoj kampanja pripada je obavezno.' }] },]"
                                     placeholder="Kategorija kampanje"
                                     v-model="campaign.category_id">
                                 <a-select-option v-for="(category, index) in categories" :value="category.id"
@@ -35,7 +35,7 @@
                         <a-form-item label="Trajanje kampanje">
                             <a-range-picker @change="onChange"
                                             v-decorator="['time',
-                                 { rules: [{ required: true, message: 'Molimo Vas upišite trajanje kampanje.' }] }]"
+                                 { rules: [{ required: true, message: 'Određivanje trajanja kampanje je obavezno.' }] }]"
                                             format="YYYY MMM Do"
                             />
                         </a-form-item>
@@ -48,7 +48,7 @@
                                     :default-value="1000"
                                     v-model="campaign.euro_goal"
                                     v-decorator="['goal',
-                                 { rules: [{ required: true, message: 'Molimo Vas upišite cilj kampanje.' }] }]"
+                                 { rules: [{ required: true, message: 'Cilj kampanje je obavezan.' }] }]"
                             />
                             €
                             <!--                        :formatter="value => `${value}€`"-->
@@ -63,11 +63,9 @@
                             :max="100"
                             v-model="campaign.overhead"
                             v-decorator="['overhead',
-                                 { rules: [{ required: true, message: 'Molimo Vas upišite Vaše procenjene troškove.' }] }]"
+                                 { rules: [{ required: true, message: 'Vaši procenjeni troškovi su obavezni.' }] }]"
                     />
                     %
-                    <!--                        :formatter="value => `${value}%`"-->
-                    <!--                        :parser="value => value.replace('%', '')"-->
                 </a-form-item>
 
                 <a-form-item label="Opis kampanje">
@@ -79,7 +77,6 @@
 
                 <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
                     <a-button type="primary" html-type="submit">
-                        <!--                         @click="submitCampaign"-->
                         Pošalji
                     </a-button>
                 </a-form-item>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
-    protected $fillable = ['title', 'euro_goal', 'start', 'end', 'image', 'description', 'user_id', 'category_id', 'following'];
+    protected $fillable = ['title', 'euro_goal', 'start', 'end', 'image', 'description', 'user_id', 'category_id', 'organization_id', 'following'];
 
     protected $casts = ['end' => 'date', 'start' => 'date'];
 
@@ -18,6 +18,11 @@ class Campaign extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class);
     }
 
     public function donations()

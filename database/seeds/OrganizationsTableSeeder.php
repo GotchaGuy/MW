@@ -1,5 +1,6 @@
 <?php
 
+use App\Organization;
 use Illuminate\Database\Seeder;
 
 class OrganizationsTableSeeder extends Seeder
@@ -11,6 +12,7 @@ class OrganizationsTableSeeder extends Seeder
      */
     public function run()
     {
-        //model state thing Vlada showed me for specific users to have organizations
+        //model state Vlada showed me for specific users to have organizations
+            factory(Organization::class, 7)->create();
     }
 }

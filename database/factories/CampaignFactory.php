@@ -18,6 +18,7 @@ $factory->define(Campaign::class, function (Faker $faker) {
         'user_id' => $faker->numberBetween($min = 12, $max = 21),
         //sredi ovo za role i kampanju juzere
         'category_id' => $faker->numberBetween($min = 1, $max = 3),
+        'organization_id' => $faker->numberBetween($min = 1, $max = 7),
 //        'following' => $faker->boolean($chanceOfGettingTrue = 10),
     ];
 });

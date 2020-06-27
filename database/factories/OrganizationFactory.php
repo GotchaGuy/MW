@@ -10,6 +10,7 @@ $factory->define(Organization::class, function (Faker $faker) {
     return [
         'title' => $faker->company(),
         'location' => $faker->city(),
+        'user_id' => $faker->numberBetween(12, 21),
 //        'field-of-work' => $faker->catchPhrase(),
     ];
 });

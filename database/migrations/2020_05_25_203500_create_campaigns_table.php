@@ -24,11 +24,13 @@ class CreateCampaignsTable extends Migration
             $table->integer('overhead')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('organization_id')->unsigned();
             $table->timestamps();
 
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('organization_id')->references('id')->on('organizations')->onDelete('cascade');
         });
     }
 

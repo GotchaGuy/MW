@@ -28,4 +28,4 @@ Route::middleware('auth:api')->get('categories', 'ApiCategoriesController@index'
 
 Route::middleware('auth:api')->post('donations', 'ApiDonationsController@store');
 
-Route::middleware('auth:api')->get('feed', 'ApiFeedController@index');
+Route::middleware('auth:api')->get('posts', 'ApiPostsController@index');

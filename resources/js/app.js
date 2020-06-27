@@ -31,6 +31,8 @@ Vue.config.productionTip = false;
 
 Vue.use(Antd);
 
+window.EventBus = new Vue();
+
 // var sourceMap = require("source-map");
 
 /**
@@ -56,6 +58,7 @@ Vue.component('campaign-form', require('./components/CampaignFormComponent.vue')
 Vue.component('following', require('./components/FollowingComponent.vue').default);
 Vue.component('posts', require('./components/PostsComponent.vue').default);
 
+Vue.component('organization', require('./components/OrganizationComponent.vue').default);
 
 Vue.component('account', require('./components/AccountComponent.vue').default);
 

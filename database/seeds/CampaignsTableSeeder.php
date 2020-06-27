@@ -13,7 +13,6 @@ class CampaignsTableSeeder extends Seeder
     public function run()
     {
         factory(Campaign::class, 15)->create()->each(function($campaign) {
-//           izgenerisi array od 5 random brojeva izmedju 2 i 12 i ubaci u attach, bez ponavljanja
             $randArray = [];
             $numbers = range(1,11);
             shuffle($numbers);

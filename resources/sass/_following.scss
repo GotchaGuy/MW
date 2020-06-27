@@ -16,37 +16,44 @@ body {
       margin: 0 10px 0 10px;
       position: relative;
 
-      div.item {
-        margin-top: 10px;
-        height: 120px;
-        border-radius: 10px;
-        border: 2px solid $test4;
-        overflow: hidden;
+      a {
+        text-decoration: none;
 
-        img {
-          max-width: 100%;
-          height: auto;
-          object-fit: cover;
-        }
+        div.item {
+          margin-top: 10px;
+          height: 120px;
+          border-radius: 10px;
+          border: 2px solid $test4;
+          overflow: hidden;
+          transition: 0.6s;
 
-        div.meter-border {
-          height: 20px;
-          width: 160px;
-          border: 1px solid $test2;
-          border-radius: 50px;
+          img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
 
-          div.meter-inside {
-            height: 100%;
-            width: 89%;
-            background-color: $test4;
-            //put a graident here
+          div.meter-border {
+            height: 20px;
+            width: 160px;
+            border: 1px solid $test2;
             border-radius: 50px;
 
+            div.meter-inside {
+              height: 100%;
+              width: 89%;
+              background-color: $test4;
+              //put a graident here
+              border-radius: 50px;
+
+            }
           }
+
         }
-
+      div.item:hover {
+        border: 3px solid $test2;
       }
-
+      }
       h6.title {
         //max-width: 140px;
       }
@@ -58,6 +65,9 @@ body {
       }
     }
 
+    div.swiper-slide:hover {
+
+    }
   }
 
 

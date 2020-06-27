@@ -2,14 +2,13 @@
     <div class="row following">
         <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="(follow, index) in follows" :key="index">
+                 <a :href="'/campaign/' + follow.id">
                 <div class="item">
                     <img :src="follow.image" alt="">
-                    <!--                <div class="meter-border">-->
-                    <!--                    <div class="meter-inside"></div>-->
-                    <!--                </div>-->
                 </div>
                 <h6 class="title">{{follow.title}}</h6>
                 <h6 class="percent">{{follow.percent}}%</h6>
+                     </a>
             </swiper-slide>
             <!--            <swiper-slide>-->
             <!--                <div class="item">-->

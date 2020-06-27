@@ -4,8 +4,9 @@
 <!--            the + button-->
             <div class="col-4 campaign">
                 <div class="card mb-3">
-                    <a href="/new-campaign" class="btn btn-outline btn-lg" tabindex="-1" role="button"
-                       aria-disabled="true">+</a>
+                    <a href="/new-campaign">
+                        <el-button type="success" icon="el-icon-plus"></el-button>
+                    </a>
                 </div>
             </div>
 
