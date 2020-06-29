@@ -11,6 +11,8 @@ $factory->define(Organization::class, function (Faker $faker) {
         'title' => $faker->company(),
         'location' => $faker->city(),
         'user_id' => $faker->numberBetween(12, 21),
-//        'field-of-work' => $faker->catchPhrase(),
+        'field_of_work' => 'We work to better understand and leverage domestic philantropy for the social transformation of the countries of the Western Balkans',
+//        $faker->sentence(15, true),
+        'description' => $faker->paragraph(7, true),
     ];
 });

@@ -12,6 +12,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // import App from './App.vue';
 
+window.EventBus = new Vue();
+
 Vue.use(ElementUI);
 
 var moment = require('moment'); // require
@@ -57,6 +59,8 @@ Vue.component('campaign-form', require('./components/CampaignFormComponent.vue')
 
 Vue.component('following', require('./components/FollowingComponent.vue').default);
 Vue.component('posts', require('./components/PostsComponent.vue').default);
+Vue.component('post-form', require('./components/PostFormComponent.vue').default);
+
 
 Vue.component('organization', require('./components/OrganizationComponent.vue').default);
 

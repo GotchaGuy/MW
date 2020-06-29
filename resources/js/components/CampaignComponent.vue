@@ -48,18 +48,28 @@
             }
         },
         mounted() {
-            // this.campaign = JSON.parse(this.dataCampaign);
             console.log(this.campaign);
+            console.log(moment.now());
+            EventBus.$on('donation-submitted', (donation) => {
+                if (moment.now() === moment(this.campaign.end)) {
+                    if (this.campaign.raised !== this.campaign.euro_goal) {
+                        if (donation.plan_b === 3) {
+                            // axios.delete('/api/donations/' + $id)
+                            //         .then((response) => {
+                            //     probably a notif
+                            // })
+                        }
+                        if (donation.plan_b === 2) {
+                            // axios.delete('/api/donations/' + $id)
+                            axios.post('/api/donation_b', donation)
+                                .then((response) => {
+                                    //probably a notif
+                                });
+                        }
+                    }
 
-            // this.categories = JSON.parse(this.dataCategories);
-            // this.donations = JSON.parse(this.dataDonations);
-
-            // for (let i; i <= this.categories.length; i++) {
-            //     if (this.campaign.category_id === this.categories[i].id) {
-            //         this.category_title = this.categories[i].title;
-            //     }
-            // }
-
+                }
+            });
         },
         methods: {}
 

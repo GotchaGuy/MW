@@ -197,6 +197,9 @@
                         axios.post('/api/donations', this.donation)
                             .then((response) => {
                                 document.getElementById("donation-form").reset();
+                                if (response.data.plan_b !== 1) {
+                                EventBus.$emit('donation-submitted', response.data);
+                                }
                                 window.location.reload();
                             })
                     }

@@ -1,8 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit"
-                    id="campaign-form">
+            <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit" id="campaign-form">
                 <a-row :gutter="20">
                     <a-col :span="10">
                         <a-form-item label="Naziv kampanje">

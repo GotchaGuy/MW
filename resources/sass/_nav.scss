@@ -1,7 +1,8 @@
 body {
 
-    nav {
-      background-color: $main;
+    nav.navbar.navbar-expand-md.navbar-light {
+      //background-color: $main;
+      text-align: center;
      ul {
           display: inline-block;
 

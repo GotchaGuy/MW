@@ -10946,21 +10946,21 @@ a.text-dark:focus {
   }
 }
 
-body nav {
-  background-color: #095256;
+body nav.navbar.navbar-expand-md.navbar-light {
+  text-align: center;
 }
 
-body nav ul {
+body nav.navbar.navbar-expand-md.navbar-light ul {
   display: inline-block;
 }
 
-body nav ul li {
+body nav.navbar.navbar-expand-md.navbar-light ul li {
   display: inline;
   float: left;
   padding: 5px;
 }
 
-body nav ul li a {
+body nav.navbar.navbar-expand-md.navbar-light ul li a {
   text-decoration: none;
   color: #01090A;
   height: 100%;
@@ -11161,6 +11161,18 @@ body form#donation-form div.if div.swiper-wrapper div.campaign:hover {
 
 body div.row form#campaign-form.ant-form.ant-form-horizontal {
   width: 100%;
+}
+
+body div.container.org div.img {
+  height: 300px;
+  margin: 0 auto;
+}
+
+body div.container.org div.img img {
+  height: 80%;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 

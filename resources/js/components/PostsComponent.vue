@@ -10,7 +10,6 @@
                                 <h5><strong>{{post.campaign.title}}</strong></h5>
                                 <h6><strong>{{post.campaign.time_left}}</strong></h6>
                             </div>
-
                             <div class="col text-right">
                                 <a-progress type="circle" :percent="post.campaign.percent" :width="80"/>
                             </div>

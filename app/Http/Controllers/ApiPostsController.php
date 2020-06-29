@@ -29,4 +29,17 @@ class ApiPostsController extends Controller
         }
         return $posts;
     }
+
+     public function store(Request $request)
+    {
+        return $campaign = Post::create([
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'image' => $request->input('image'),
+//            'user_id' => \Auth::user()->id,
+            'campaign_id' => $request->input('campaign_id'),
+        ]);
+
+
+    }
 }

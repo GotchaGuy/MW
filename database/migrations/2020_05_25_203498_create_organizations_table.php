@@ -17,7 +17,8 @@ class CreateOrganizationsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('location');
-//            $table->string('field-of-work');
+            $table->string('field_of_work');
+            $table->text('description');
             //org logo
             $table->bigInteger('user_id')->unsigned();
 
