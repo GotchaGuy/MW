@@ -10950,25 +10950,56 @@ body nav.navbar.navbar-expand-md.navbar-light {
   text-align: center;
 }
 
-body nav.navbar.navbar-expand-md.navbar-light ul {
-  display: inline-block;
+body nav.navbar.navbar-expand-md.navbar-light a.navbar-brand {
+  position: absolute;
+  left: 0;
 }
 
-body nav.navbar.navbar-expand-md.navbar-light ul li {
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse {
+  position: relative;
+}
+
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+}
+
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li {
   display: inline;
   float: left;
   padding: 5px;
 }
 
-body nav.navbar.navbar-expand-md.navbar-light ul li a {
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li a {
   text-decoration: none;
   color: #01090A;
   height: 100%;
   width: 100%;
 }
 
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li a i {
+  font-size: 20px;
+}
+
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul.right {
+  position: absolute;
+  right: 0;
+  text-align: right;
+  width: 100px;
+}
+
+body div.container.register div.row div.col-6 {
+  min-height: 280px;
+}
+
+body div.container.register div.row div.col-6 textarea {
+  max-height: 50px;
+  height: 50px;
+}
+
 body div.campaign div.card {
-  max-width: 540px;
+  max-width: 340px;
   height: 230px;
   max-height: 230px;
   transition: 0.4s;
@@ -10977,11 +11008,12 @@ body div.campaign div.card {
 body div.campaign div.card button {
   height: 100%;
   width: 100%;
+  transition: 0.4s;
 }
 
 body div.campaign div.card {
   color: #01090A;
-  max-width: 540px;
+  max-width: 340px;
   height: 230px;
   max-height: 230px;
 }
@@ -11016,13 +11048,45 @@ body div.uno {
 body div.uno div.camp-header {
   max-height: 600px;
   overflow: hidden;
+  position: relative;
 }
 
-body div.uno div.camp-header img {
+body div.uno div.camp-header img.big {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 10px;
+}
+
+body div.uno div.camp-header div.org-image {
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+body div.uno div.camp-header div.org-image a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+body div.uno div.camp-header div.org-image a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+body div.uno div.camp-right {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+body div.uno div.camp-right div.row h2.blue {
+  color: #40A9FF;
 }
 
 body div.uno div.camp-right div.camp-button {
@@ -11165,7 +11229,7 @@ body div.row form#campaign-form.ant-form.ant-form-horizontal {
 
 body div.container.org div.img {
   height: 300px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 body div.container.org div.img img {
@@ -11173,6 +11237,10 @@ body div.container.org div.img img {
   width: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+body div.container.org div.description {
+  margin-bottom: 30px;
 }
 
 

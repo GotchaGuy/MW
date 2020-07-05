@@ -27,4 +27,9 @@ class ApiDonationsController extends Controller
             'campaign_id' => $request->input('backup_campaign_id'),
       ]);
     }
+
+    public function delete($id)
+    {
+       return Donation::destroy($id);
+    }
 }

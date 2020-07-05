@@ -13,7 +13,7 @@ $factory->define(Campaign::class, function (Faker $faker) {
         'start' => $faker->dateTimeBetween($startDate = '-3 months', $endDate = '-1 month', $timezone = null),
         'end' => $faker->dateTimeBetween($startDate = '+1 week', $endDate = '+1 month', $timezone = null),
         'image' => 'https://source.unsplash.com/random/600x950',
-        'description' => $faker->paragraphs(4, true),
+        'description' => $faker->paragraphs(5, true),
         'overhead' => $faker->numberBetween($min = 0, $max = 20),
         'user_id' => $faker->numberBetween($min = 12, $max = 21),
         //sredi ovo za role i kampanju juzere

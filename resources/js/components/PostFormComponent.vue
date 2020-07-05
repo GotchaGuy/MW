@@ -13,8 +13,7 @@
                     <a-col :span="14">
                         <a-form-item label="Odabir kampanje">
                             <a-select
-                                    v-decorator="['campaign',
-          { rules: [{ required: true, message: 'Biranje kampanje kojoj post pripada je obavezno.' }] },]"
+                                    v-decorator="['campaign', { rules: [{ required: true, message: 'Biranje kampanje kojoj post pripada je obavezno.' }] },]"
                                     placeholder="Vaše kampanje"
                                     v-model="post.campaign_id">
                                 <a-select-option v-for="(campaign, index) in organization.campaigns" :value="campaign.id"
@@ -30,8 +29,7 @@
                     <a-col :span="10">
                         <a-form-item label="Opis kampanje">
                             <a-textarea placeholder="O čemu želite da obavestite donatore?" :rows="4" v-model="post.body"
-                                        v-decorator="['time',
-                                 { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
+                                        v-decorator="['time', { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
                         </a-form-item>
                     </a-col>
                 </a-row>
@@ -68,7 +66,7 @@
             }
         },
         mounted() {
-
+            console.log(this.organization);
         },
         methods: {
             handleSubmit(e) {

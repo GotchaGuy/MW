@@ -2,27 +2,37 @@
     <div class="container org">
         <div class="row">
             <div class="col-4">
-                <div class="img">
+                <div class="img mx-auto">
                     <img src="/images/logo.png" alt="">
 
                 </div>
             </div>
             <div class="col-8">
-                <h2>Charity organization: {{organization.title}}</h2>
-                <h5>Platform representative: <strong>{{organization.user.name}}</strong></h5>
-                <h5>What we do: <strong>{{organization.field_of_work}}</strong></h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="description">
-                    <!--                insert drawer here-->
-                    <h5>About Us</h5>
-                    <p>{{organization.description}}</p>
-
+                <div class="row">
+                    <div class="col-6">
+                        <h6 class="text-muted">Charity organization:</h6>
+                        <h2>{{organization.title}}</h2>
+                        <h6 class="text-muted">Location:</h6>
+                        <h4>{{organization.location}}</h4>
+                        <h6 class="text-muted">Platform representative:</h6>
+                        <h4>{{organization.user.name}}</h4>
+                    </div>
+                    <div class="col-5">
+                        <h6 class="text-muted">What we do:</h6>
+                        <h4>{{organization.field_of_work}}</h4>
+                    </div>
                 </div>
             </div>
         </div>
+    <!--        <div class="row description">-->
+    <!--            <div class="col-12">-->
+    <!--                <a-collapse accordion>-->
+    <!--                    <a-collapse-panel key="1" header="About Us">-->
+    <!--                        <p>{{organization.description}}</p>-->
+    <!--                    </a-collapse-panel>-->
+    <!--                </a-collapse>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
         <h5>Our Campaigns</h5>
         <div class="row">
@@ -34,7 +44,7 @@
                                 <div class="card-body">
                                     <h6 class="çard-text">{{campaign.time_left}}</h6>
                                     <h6 class="card-title">{{campaign.category.title}}</h6>
-                                    <h2 class="card-title">{{campaign.title}}</h2>
+                                    <h3 class="card-title">{{campaign.title}}</h3>
                                     <div class="graph">
                                         <p class="card-text">
                                             <small class="text-muted">Raised: €{{campaign.raised}}</small>

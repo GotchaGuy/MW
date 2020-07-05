@@ -1,9 +1,9 @@
 <template>
     <div>
-        <a-button type="primary" icon="share-alt" size="large"/>
-        <a-button type="success outline" @click="showDrawer">
+        <el-button type="success" icon="el-icon-share" size="large" plain/>
+        <el-button type="success" @click="showDrawer">
             Doniraj
-        </a-button>
+        </el-button>
         <a-drawer
                 title="Koliko želite da donirate?"
                 :width="720"

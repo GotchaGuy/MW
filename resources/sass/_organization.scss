@@ -3,12 +3,16 @@ body {
     div.img {
       //background-color: $test4;
       height: 300px;
-      margin: 0 auto;
+      text-align: center;
       img {
         height: 80%;
         width: auto;
         object-fit: cover;
       }
+    }
+
+    div.description {
+      margin-bottom: 30px;
     }
 
 

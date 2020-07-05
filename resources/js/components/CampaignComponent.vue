@@ -2,17 +2,33 @@
     <div class="uno">
         <div class="row">
             <div class="col-8 camp-header">
-                <img src="https://source.unsplash.com/random/" alt="">
-            </div>
-            <div class="col-4 camp-right">
-                <h1 class="card-title">{{campaign.title}}</h1>
-                <h6 class="card-title">{{campaign.category.title}}</h6>
-                <h3 class="card-title">{{campaign.time_left}}</h3>
-                <div>
-                    <h1 class="text-muted">Raised: €{{campaign.raised}}<strong></strong></h1>
-                    <el-progress :text-inside="true" :stroke-width="24" :percentage="campaign.percent"
-                                 status="success"></el-progress>
+                <div class="org-image">
+                    <a :href="'/org/' + campaign.organization.id">
+                        <img :src="campaign.organization.org_logo" alt="">
+                    </a>
                 </div>
+                <img class="big" src="https://source.unsplash.com/random/" alt="">
+            </div>
+
+            <div class="col-4 camp-right">
+                <h6 class="card-title">{{campaign.category.title}}</h6>
+                <h1 class="card-title">{{campaign.title}}</h1>
+                <h6 class="text-muted">Up until:</h6>
+                <h3 class="card-title">{{campaign.time_left}}</h3>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="text-muted">Raised:</h6>
+                        <h2>€{{campaign.raised}}</h2>
+                    </div>
+                    <div class="col">
+                        <h6 class="text-muted">Goal:</h6>
+                        <h2 class="blue">€{{campaign.euro_goal}}</h2>
+                    </div>
+                </div>
+                <el-progress :text-inside="true" :stroke-width="35"
+                             :percentage="campaign.percent"
+                             status="success">
+                </el-progress>
                 <div class="camp-button">
                     <donate :campaignid="campaign.id"/>
                 </div>
@@ -28,8 +44,6 @@
 
             </div>
         </div>
-
-
     </div>
 </template>
 
@@ -52,7 +66,7 @@
             console.log(moment.now());
             EventBus.$on('donation-submitted', (donation) => {
                 if (moment.now() === moment(this.campaign.end)) {
-                    if (this.campaign.raised !== this.campaign.euro_goal) {
+                    if (this.campaign.raised < this.campaign.euro_goal) {
                         if (donation.plan_b === 3) {
                             // axios.delete('/api/donations/' + $id)
                             //         .then((response) => {

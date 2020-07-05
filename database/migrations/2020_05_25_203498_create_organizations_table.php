@@ -18,8 +18,8 @@ class CreateOrganizationsTable extends Migration
             $table->string('title');
             $table->string('location');
             $table->string('field_of_work');
-            $table->text('description');
-            //org logo
+//            $table->text('description');
+            $table->string('org_logo');
             $table->bigInteger('user_id')->unsigned();
 
             $table->timestamps();

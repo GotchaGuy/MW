@@ -1,23 +1,54 @@
 body {
 
-    nav.navbar.navbar-expand-md.navbar-light {
-      //background-color: $main;
-      text-align: center;
-     ul {
-          display: inline-block;
+  nav.navbar.navbar-expand-md.navbar-light {
+    //background-color: $main;
+    text-align: center;
 
-          li {
-            display: inline;
-            float: left;
-            padding: 5px;
 
-            a {
-              text-decoration: none;
-              color: $test1;
-              height: 100%;
-              width: 100%;
+    a.navbar-brand {
+      position: absolute;
+      left: 0;
+    }
+
+    div.collapse.navbar-collapse {
+      position: relative;
+
+      ul {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        //margin-left: 20%;
+        //margin-right: 0;
+
+        li {
+          display: inline;
+          float: left;
+          padding: 5px;
+
+          a {
+            text-decoration: none;
+            color: $test1;
+            height: 100%;
+            width: 100%;
+
+            i {
+              font-size: 20px;
+
             }
           }
         }
+      }
+
+      ul.right {
+        position: absolute;
+        right: 0;
+        text-align: right;
+        width: 100px;
+
+        li {
+
+        }
+      }
     }
+  }
 }
