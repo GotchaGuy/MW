@@ -1,7 +1,7 @@
 <template>
     <div>
     <ul class="d-flex justify-content-center">
-        <li>
+        <li class="green">
             <a href="/home" class="nav-item nav-link text-center">Akcije</a>
         </li>
 <!--                <a-icon type="home" />-->

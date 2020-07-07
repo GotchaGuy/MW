@@ -10,7 +10,7 @@
                 <img class="big" src="https://source.unsplash.com/random/" alt="">
             </div>
 
-            <div class="col-4 camp-right">
+            <div class="col camp-right">
                 <h6 class="card-title">{{campaign.category.title}}</h6>
                 <h1 class="card-title">{{campaign.title}}</h1>
                 <h6 class="text-muted">Up until:</h6>
@@ -64,26 +64,26 @@
         mounted() {
             console.log(this.campaign);
             console.log(moment.now());
-            EventBus.$on('donation-submitted', (donation) => {
-                if (moment.now() === moment(this.campaign.end)) {
-                    if (this.campaign.raised < this.campaign.euro_goal) {
-                        if (donation.plan_b === 3) {
-                            // axios.delete('/api/donations/' + $id)
-                            //         .then((response) => {
-                            //     probably a notif
-                            // })
-                        }
-                        if (donation.plan_b === 2) {
-                            // axios.delete('/api/donations/' + $id)
-                            axios.post('/api/donation_b', donation)
-                                .then((response) => {
-                                    //probably a notif
-                                });
-                        }
-                    }
-
-                }
-            });
+            // EventBus.$on('donation-submitted', (donation) => {
+            //     if (moment.now() === moment(this.campaign.end)) {
+            //         if (this.campaign.raised < this.campaign.euro_goal) {
+            //             if (donation.plan_b === 3) {
+            //                 // axios.delete('/api/donations/' + $id)
+            //                 //         .then((response) => {
+            //                 //     probably a notif
+            //                 // })
+            //             }
+            //             if (donation.plan_b === 2) {
+            //                 // axios.delete('/api/donations/' + $id)
+            //                 axios.post('/api/donation_b', donation)
+            //                     .then((response) => {
+            //                         //probably a notif
+            //                     });
+            //             }
+            //         }
+            //
+            //     }
+            // });
         },
         methods: {}
 

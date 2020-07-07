@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-button type="success" icon="el-icon-share" size="large" plain/>
-        <el-button type="success" @click="showDrawer">
+        <el-button type="success" @click="showDrawer" class="sharp-left">
             Doniraj
         </el-button>
         <a-drawer
@@ -197,9 +197,6 @@
                         axios.post('/api/donations', this.donation)
                             .then((response) => {
                                 document.getElementById("donation-form").reset();
-                                if (response.data.plan_b !== 1) {
-                                EventBus.$emit('donation-submitted', response.data);
-                                }
                                 window.location.reload();
                             })
                     }

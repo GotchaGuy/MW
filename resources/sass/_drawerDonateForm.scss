@@ -1,9 +1,12 @@
 body {
 
-  button.ant-btn {
-    height: 50px;
-    width: 160px;
-  }
+  //button.ant-btn {
+  //  height: 50px;
+  //  width: 160px;
+  //}
+button.el-button.sharp-left {
+  border-radius: 0 10px 10px 10px;
+}
 
   form#donation-form {
     max-width: 700px;

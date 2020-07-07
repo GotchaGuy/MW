@@ -37,6 +37,23 @@ body {
             }
           }
         }
+
+        li.green {
+          margin-top: 10px;
+          display: inline;
+          float: left;
+          padding: 5px;
+          background-color: #00a676;
+          border-radius: 4px 4px 15px 4px;
+          height: 30px;
+
+          a {
+            color: #ffffff;
+            position: relative;
+            bottom: 10px;
+
+          }
+        }
       }
 
       ul.right {

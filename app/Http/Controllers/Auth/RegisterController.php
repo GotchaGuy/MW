@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Organization;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -44,7 +45,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -59,7 +60,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
@@ -71,7 +72,18 @@ class RegisterController extends Controller
             'role_id' => $data['role_id'],
         ]);
 
-//        Organisation:create(....);
+        if ($data['role_id'] === 1) {
+            return $user;
+        } elseif ($data['role_id'] === 2) {
+            Organization::create([
+            'title' => $data['title'],
+            'location' => $data['location'],
+            'user_id' => $user->id,
+            'field_of_work' => $data['field_of_work'],
+            'org_logo' => '/images/logo.png'
+        ]);
         return $user;
+        }
+
     }
 }

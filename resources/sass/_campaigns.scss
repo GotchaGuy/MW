@@ -27,10 +27,12 @@ body {
 
     div.card {
       color: $test1;
-      //max-width: 540px;
       max-width: 340px;
       height: 230px;
       max-height: 230px;
+      //border-radius: 0 10px 10px 10px;
+      border-radius: 4px 4px 25px 4px;
+      overflow: hidden;
 
       a {
         text-decoration: none;
@@ -47,6 +49,15 @@ body {
             min-width: 170px;
             position: absolute;
             bottom: 15px;
+
+            div.el-progress-bar__inner {
+              position: relative;
+              div.el-progress-bar__innerText {
+                position: absolute;
+                right: 3px;
+                top: 3px;
+              }
+            }
           }
         }
       }

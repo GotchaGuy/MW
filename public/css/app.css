@@ -10982,6 +10982,22 @@ body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li
   font-size: 20px;
 }
 
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li.green {
+  margin-top: 10px;
+  display: inline;
+  float: left;
+  padding: 5px;
+  background-color: #00a676;
+  border-radius: 4px 4px 15px 4px;
+  height: 30px;
+}
+
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li.green a {
+  color: #ffffff;
+  position: relative;
+  bottom: 10px;
+}
+
 body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul.right {
   position: absolute;
   right: 0;
@@ -10989,11 +11005,48 @@ body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul.ri
   width: 100px;
 }
 
-body div.container.register div.row div.col-6 {
+body div.back {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-45deg, #ee7752, #f24224, rgba(78, 185, 69, 0.93), #59d532);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 20s ease infinite;
+          animation: gradient 20s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body div.back div.container.register div.row div.col-6 {
   min-height: 280px;
 }
 
-body div.container.register div.row div.col-6 textarea {
+body div.back div.container.register div.row div.col-6 textarea {
   max-height: 50px;
   height: 50px;
 }
@@ -11016,6 +11069,8 @@ body div.campaign div.card {
   max-width: 340px;
   height: 230px;
   max-height: 230px;
+  border-radius: 4px 4px 25px 4px;
+  overflow: hidden;
 }
 
 body div.campaign div.card a {
@@ -11037,6 +11092,16 @@ body div.campaign div.card a div.no-gutters div.graph {
   bottom: 15px;
 }
 
+body div.campaign div.card a div.no-gutters div.graph div.el-progress-bar__inner {
+  position: relative;
+}
+
+body div.campaign div.card a div.no-gutters div.graph div.el-progress-bar__inner div.el-progress-bar__innerText {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
 body div.campaign div.card:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -11056,7 +11121,7 @@ body div.uno div.camp-header img.big {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 10px;
 }
 
 body div.uno div.camp-header div.org-image {
@@ -11107,51 +11172,55 @@ body div.following div.swiper-pagination-bullets {
   display: none;
 }
 
-body div.following div.swiper-slide {
+body div.following div.swiper-container {
+  width: 100%;
+}
+
+body div.following div.swiper-container div.swiper-slide {
   width: 150px;
   margin: 0 10px 0 10px;
   position: relative;
 }
 
-body div.following div.swiper-slide a {
+body div.following div.swiper-container div.swiper-slide a {
   text-decoration: none;
 }
 
-body div.following div.swiper-slide a div.item {
+body div.following div.swiper-container div.swiper-slide a div.item {
   margin-top: 10px;
   height: 120px;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 10px;
   border: 2px solid #B8C3CC;
   overflow: hidden;
   transition: 0.6s;
 }
 
-body div.following div.swiper-slide a div.item img {
+body div.following div.swiper-container div.swiper-slide a div.item img {
   max-width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-body div.following div.swiper-slide a div.item div.meter-border {
+body div.following div.swiper-container div.swiper-slide a div.item div.meter-border {
   height: 20px;
   width: 160px;
   border: 1px solid #152122;
   border-radius: 50px;
 }
 
-body div.following div.swiper-slide a div.item div.meter-border div.meter-inside {
+body div.following div.swiper-container div.swiper-slide a div.item div.meter-border div.meter-inside {
   height: 100%;
   width: 89%;
   background-color: #B8C3CC;
   border-radius: 50px;
 }
 
-body div.following div.swiper-slide a div.item:hover {
+body div.following div.swiper-container div.swiper-slide a div.item:hover {
   border: 3px solid #152122;
 }
 
-body div.following div.swiper-slide h6.percent {
+body div.following div.swiper-container div.swiper-slide h6.percent {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -11174,9 +11243,8 @@ body div.post a div.card img {
   height: auto;
 }
 
-body button.ant-btn {
-  height: 50px;
-  width: 160px;
+body button.el-button.sharp-left {
+  border-radius: 0 10px 10px 10px;
 }
 
 body form#donation-form {

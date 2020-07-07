@@ -10,61 +10,66 @@ body {
     div.swiper-pagination-bullets {
       display: none;
     }
+div.swiper-container {
+  width: 100%;
 
-    div.swiper-slide {
-      width: 150px;
-      margin: 0 10px 0 10px;
-      position: relative;
+  div.swiper-slide {
+    width: 150px;
+    margin: 0 10px 0 10px;
+    position: relative;
 
-      a {
-        text-decoration: none;
+    a {
+      text-decoration: none;
 
-        div.item {
-          margin-top: 10px;
-          height: 120px;
-          border-radius: 10px;
-          border: 2px solid $test4;
-          overflow: hidden;
-          transition: 0.6s;
+      div.item {
+        margin-top: 10px;
+        height: 120px;
+        border-radius: 0 10px 10px 10px;
+        //border-top-left-radius: 0px;
+        border: 2px solid $test4;
+        overflow: hidden;
+        transition: 0.6s;
 
-          img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-          }
+        img {
+          max-width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
 
-          div.meter-border {
-            height: 20px;
-            width: 160px;
-            border: 1px solid $test2;
+        div.meter-border {
+          height: 20px;
+          width: 160px;
+          border: 1px solid $test2;
+          border-radius: 50px;
+
+          div.meter-inside {
+            height: 100%;
+            width: 89%;
+            background-color: $test4;
+            //put a graident here
             border-radius: 50px;
 
-            div.meter-inside {
-              height: 100%;
-              width: 89%;
-              background-color: $test4;
-              //put a graident here
-              border-radius: 50px;
-
-            }
           }
-
         }
+
+      }
+
       div.item:hover {
         border: 3px solid $test2;
       }
-      }
-      h6.title {
-        //max-width: 140px;
-      }
-
-      h6.percent {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
     }
 
+    h6.title {
+      //max-width: 140px;
+    }
+
+    h6.percent {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
     div.swiper-slide:hover {
 
     }
