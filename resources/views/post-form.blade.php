@@ -3,6 +3,6 @@
 
 @section('content')
 
-    <post-form data-org="{{json_encode($organization)}}"></post-form>
-
+    <post-form ></post-form>
+{{--data-org="{{json_encode($organization)}}"--}}
 @endsection

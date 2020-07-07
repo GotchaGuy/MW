@@ -44,9 +44,10 @@
                     <div v-if="donation.plan_b == 2" class="if">
                         <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>
                         <swiper class="swiper backup" :options="swiperOption">
-                            <swiper-slide class="col campaign" v-for="(campaign, index) in campaigns"
+                            <swiper-slide class="campaign" v-for="(campaign, index) in campaigns"
                                           :key="index">
-                                <a-card hoverable style="width: 300px">
+                                <a-card hoverable>
+<!--                                    style="width: 300px"-->
                                     <img
                                             slot="cover"
                                             alt="Card image cap"
@@ -127,7 +128,7 @@
                 },
                 swiperOption: {
                     slidesPerView: 3,
-                    spaceBetween: 1,
+                    spaceBetween: 10,
                     freeMode: true,
                     pagination: {
                         el: '.swiper-pagination',

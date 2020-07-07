@@ -27,7 +27,9 @@ Route::middleware('auth:api')->get('follows', 'ApiFollowsController@index');
 Route::middleware('auth:api')->get('categories', 'ApiCategoriesController@index');
 
 Route::middleware('auth:api')->post('donations', 'ApiDonationsController@store');
-Route::middleware('auth:api')->post('donation_b', 'ApiDonationsController@store_b');
+//Route::middleware('auth:api')->post('donation_b', 'ApiDonationsController@store_b');
 
 Route::middleware('auth:api')->get('posts', 'ApiPostsController@index');
 //Route::middleware('auth:api')->post('new-post', 'ApiPostsController@store');
+
+Route::middleware('auth:api')->get('organization', 'ApiPostFormController@orgCampaigns');
