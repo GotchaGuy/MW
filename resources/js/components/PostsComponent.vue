@@ -2,7 +2,6 @@
     <div class="container">
         <div class="row justify-content-center" v-for="post in posts">
             <div class="col-md-6 mb-3 post">
-                <a href="'/posts/' + post.id">
                     <div class="card hvr-underline-from-left md-4">
                         <div class="card-header row">
                             <div class="fave"></div>
@@ -11,7 +10,8 @@
                                 <h6><strong>{{post.campaign.time_left}}</strong></h6>
                             </div>
                             <div class="col text-right">
-                                <a-progress type="circle" :percent="post.campaign.percent" :width="80"/>
+<!--                                <a-progress type="circle" :percent="post.campaign.percent" :width="80"/>-->
+<!--                                {{post.campaign.organization.title}}-->
                             </div>
                         </div>
                         <div class="box" v-if="post.image !== ''">
@@ -27,7 +27,6 @@
                             </div>
                         </div>
                     </div>
-                </a>
             </div>
         </div>
 

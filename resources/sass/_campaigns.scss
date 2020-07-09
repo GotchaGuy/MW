@@ -2,10 +2,10 @@ body {
 
   div.campaign {
     div.card {
-      //max-width: 540px;
       max-width: 340px;
       height: 230px;
       max-height: 230px;
+      //border-radius: 4px 4px 25px 4px;
       transition: 0.4s;
 
       button {
@@ -31,7 +31,7 @@ body {
       height: 230px;
       max-height: 230px;
       //border-radius: 0 10px 10px 10px;
-      border-radius: 4px 4px 25px 4px;
+      border-radius: 4px 4px 35px 4px;
       overflow: hidden;
 
       a {

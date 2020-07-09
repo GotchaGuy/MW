@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Campaign;
 use App\Donation;
 use Illuminate\Http\Request;
 
@@ -9,6 +10,10 @@ class ApiDonationsController extends Controller
 {
      public function store(Request $request)
     {
+        //user automatically follows campaign upon donating
+        $campaign = Campaign::where('id', $request->input('campaign_id'))->first();
+        $campaign->follows()->attach(\Auth::user()->id);
+
         return $donation = Donation::create([
             'euro_amount' => $request->input('euro_amount'),
             'plan_b' => $request->input('plan_b'),

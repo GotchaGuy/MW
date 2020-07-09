@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <a-form :form="form" @submit="handleSubmit" id="campaign-form">
+            <a-form :form="form" @submit="handleSubmit" id="campaign-form" enctype="multipart/form-data">
                 <!--                :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }"-->
                 <a-row :gutter="10">
                     <a-col :span="4">
@@ -42,8 +42,7 @@
                             <a-range-picker @change="onChange"
                                             v-decorator="['time',
                                  { rules: [{ required: true, message: 'Određivanje trajanja kampanje je obavezno.' }] }]"
-                                            format="YYYY MMM Do"
-                            />
+                                            format="YYYY MMM Do"/>
                         </a-form-item>
                     </a-col>
                     <a-col :span="4">
@@ -69,8 +68,9 @@
                     <a-col :span="5">
                         <a-form-item>
                             <!--                    label="Overhead troškovi kampanje"-->
-                            <h5>Overhead troškovi kampanje</h5>
+                            <h5>Troškovi organizacije</h5>
                             <a-input-number
+                                    aria-describedby="overhead"
                                     :default-value="0"
                                     :min="0"
                                     :max="100"
@@ -80,7 +80,27 @@
                                     v-decorator="['overhead',
                                  { rules: [{ required: true, message: 'Vaši procenjeni troškovi su obavezni.' }] }]"
                             />
+                             <small id="overhead" class="form-text text-muted">Overhead</small>
                         </a-form-item>
+                    </a-col>
+                    <a-col :span="5">
+                        <h5>Slika</h5>
+                        <a-upload-dragger
+                                name="file"
+                                :multiple="false"
+                                action="/api/image/upload/camp"
+                                @change="handleChange"
+                        >
+                            <img v-if="campaign.image" :src="campaign.image" class="">
+                            <div v-else>
+                            <p class="ant-upload-drag-icon">
+                                <a-icon type="inbox"/>
+                            </p>
+                            <p class="ant-upload-text">
+                                Click or drag file to this area to upload
+                            </p>
+                            </div>
+                        </a-upload-dragger>
                     </a-col>
                 </a-row>
                 <a-row :gutter="10">
@@ -89,7 +109,7 @@
                             <!--                    label="Opis kampanje"-->
                             <h5>Opis kampanje</h5>
                             <a-textarea placeholder="Opis kampanje" :rows="8" v-model="campaign.description"
-                                        v-decorator="['time',
+                                        v-decorator="['desc',
                                  { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
                         </a-form-item>
                     </a-col>
@@ -106,7 +126,10 @@
 
 
 <script>
+    import ACol from "ant-design-vue/es/grid/Col";
+
     export default {
+        components: {ACol},
         data() {
             return {
                 formLayout: 'horizontal',
@@ -118,7 +141,8 @@
                     start: "",
                     end: "",
                     overhead: "",
-                    image: "https://source.unsplash.com/random/400x400",
+                    image: "",
+                    // image: "https://source.unsplash.com/random/400x400",
                     description: "",
                     user_id: "",
                     category_id: ""
@@ -154,6 +178,18 @@
                             })
                     }
                 });
+            },
+            handleChange(info) {
+                const status = info.file.status;
+                if (status !== 'uploading') {
+                    console.log(info.file, info.fileList);
+                }
+                if (status === 'done') {
+                    this.campaign.image = "/storage/" + info.file.name;
+                    this.$message.success(`${info.file.name} file uploaded successfully.`);
+                } else if (status === 'error') {
+                    this.$message.error(`${info.file.name} file upload failed.`);
+                }
             },
             submitCampaign() {
 

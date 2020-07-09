@@ -1,26 +1,26 @@
 body {
-  div.back {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(-45deg, #ee7752, #f24224, rgba(78, 185, 69, 0.93), #59d532);
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
+  //div.back {
+  //  height: 100%;
+  //  width: 100%;
+  //  background: linear-gradient(-45deg, #ee7752, #f24224, rgba(78, 185, 69, 0.93), #59d532);
+  //  background-size: 400% 400%;
+  //  animation: gradient 20s ease infinite;
+  //
+  //  @keyframes gradient {
+  //    0% {
+  //      background-position: 0% 50%;
+  //    }
+  //    50% {
+  //      background-position: 100% 50%;
+  //    }
+  //    100% {
+  //      background-position: 0% 50%;
+  //    }
+  //  }
 
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
 
-
-    div.container.register {
-
+  div.container.register {
+    form {
 
       div.row {
         div.col-6 {
@@ -28,11 +28,18 @@ body {
 
           textarea {
             max-height: 50px;
-            height: 50px;
+            height: 80px;
           }
         }
       }
+
+
+      button.btn {
+
+      }
     }
   }
+
+  //}
 
 }

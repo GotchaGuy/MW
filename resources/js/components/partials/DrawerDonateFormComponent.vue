@@ -44,8 +44,8 @@
                     <div v-if="donation.plan_b == 2" class="if">
                         <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>
                         <swiper class="swiper backup" :options="swiperOption">
-                            <swiper-slide class="campaign" v-for="(campaign, index) in campaigns"
-                                          :key="index">
+                            <swiper-slide class="campaign" v-for="(campaign, index) in campaigns" :key="index"
+                                          v-if="campaign.id != donation.campaign_id">
                                 <a-card hoverable>
 <!--                                    style="width: 300px"-->
                                     <img
