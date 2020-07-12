@@ -65,7 +65,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        dd($data);
+//        dd($data);
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -77,13 +77,13 @@ class RegisterController extends Controller
             return $user;
         } elseif ($data['role_id'] === 2) {
             Organization::create([
-            'title' => $data['title'],
-            'location' => $data['location'],
-            'user_id' => $user->id,
-            'field_of_work' => $data['field_of_work'],
-            'org_logo' => '/images/logo.png'
-        ]);
-        return $user;
+                'title' => $data['title'],
+                'location' => $data['location'],
+                'user_id' => $user->id,
+                'field_of_work' => $data['field_of_work'],
+                'org_logo' => $data['org_logo'],
+            ]);
+            return $user;
         }
 
     }

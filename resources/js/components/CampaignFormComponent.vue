@@ -21,11 +21,10 @@
                         <a-form-item>
                             <!--                            label="Kategorija kampanje"-->
                             <h5>Kategorija kampanje</h5>
-                            <a-select
-                                    v-decorator="['category',
+                            <a-select v-decorator="['category',
           { rules: [{ required: true, message: 'Biranje kategorije kojoj kampanja pripada je obavezno.' }] },]"
-                                    placeholder="Kategorija kampanje"
-                                    v-model="campaign.category_id">
+                                      placeholder="Kategorija kampanje"
+                                      v-model="campaign.category_id">
                                 <a-select-option v-for="(category, index) in categories" :value="category.id"
                                                  v-bind:key="index">
                                     {{category.title}}
@@ -80,7 +79,7 @@
                                     v-decorator="['overhead',
                                  { rules: [{ required: true, message: 'Vaši procenjeni troškovi su obavezni.' }] }]"
                             />
-                             <small id="overhead" class="form-text text-muted">Overhead</small>
+                            <small id="overhead" class="form-text text-muted">Overhead</small>
                         </a-form-item>
                     </a-col>
                     <a-col :span="5">
@@ -89,16 +88,15 @@
                                 name="file"
                                 :multiple="false"
                                 action="/api/image/upload/camp"
-                                @change="handleChange"
-                        >
+                                @change="handleChange">
                             <img v-if="campaign.image" :src="campaign.image" class="">
                             <div v-else>
-                            <p class="ant-upload-drag-icon">
-                                <a-icon type="inbox"/>
-                            </p>
-                            <p class="ant-upload-text">
-                                Click or drag file to this area to upload
-                            </p>
+                                <p class="ant-upload-drag-icon">
+                                    <a-icon type="inbox"/>
+                                </p>
+                                <p class="ant-upload-text">
+                                    Click or drag file to this area to upload
+                                </p>
                             </div>
                         </a-upload-dragger>
                     </a-col>
