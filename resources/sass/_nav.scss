@@ -3,6 +3,7 @@ body {
   nav.navbar.navbar-expand-md.navbar-light {
     //background-color: $main;
     text-align: center;
+    background-color: $testy3;
 
 
     a.navbar-brand {
@@ -27,7 +28,7 @@ body {
 
           a {
             text-decoration: none;
-            color: $test1;
+            color: $test5;
             height: 100%;
             width: 100%;
 
@@ -44,12 +45,14 @@ body {
           float: left;
           padding: 5px;
           //background-color: #00a676;
-          background-color: #3BCF93;
+          background-color: #fff;
+          //#3BCF93
           border-radius: 4px 4px 15px 4px;
           height: 30px;
 
           a {
-            color: #ffffff;
+            //color: #ffffff;
+            color: $test1;
             position: relative;
             bottom: 10px;
 
@@ -63,8 +66,10 @@ body {
         text-align: right;
         width: 100px;
 
-        li {
-
+        div.dropdown-menu.dropdown-menu-right.show {
+          a {
+            color: #000;
+          }
         }
       }
     }

@@ -1,7 +1,8 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit" enctype="multipart/form-data" id="post-form">
+            <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit"
+                    enctype="multipart/form-data" id="post-form">
                 <!--        class="justify-content-center"        -->
                 <a-progress type="circle" :percent="this.secondary.percent" :width="80"/>
 
@@ -9,19 +10,17 @@
                     <div class="card hvr-underline-from-left md-4">
                         <div class="card-header row">
                             <div class="col">
-                                <!--                                    <a-form-item>-->
                                 <!--                                        <h5>Odabir kampanje</h5>-->
                                 <a-select
                                         v-decorator="['campaign', { rules: [{ required: true, message: 'Biranje kampanje kojoj post pripada je obavezno.' }] },]"
                                         placeholder="Odabir kampanje"
                                         v-model="post.campaign_id"
-                                        @change="react">
+                                        @change="react()">
                                     <a-select-option v-for="(campaign, index) in organization.campaigns"
                                                      :value="campaign.id" v-bind:key="index">
                                         {{campaign.title}}
                                     </a-select-option>
                                 </a-select>
-                                <!--                                    </a-form-item>-->
                                 <h6><strong>{{this.secondary.time_left}}</strong></h6>
                             </div>
 
@@ -41,7 +40,7 @@
                                     <p class="ant-upload-drag-icon">
                                         <a-icon type="inbox"/>
                                     </p>
-                                <p class="ant-upload-text">
+                                    <p class="ant-upload-text">
                                         Click or drag file to this area to upload
                                     </p>
                                 </div>
@@ -50,7 +49,6 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6 text-left">
-                                    <!--                                    <a-form-item>-->
                                     <!--                                    <h5>Naziv posta</h5>-->
                                     <a-input placeholder="Dragi donatori.." v-model="post.title"/>
                                     <!--                                    </a-form-item>-->
@@ -58,23 +56,22 @@
                                 <div class="col-6 text-right">{{post.timestamp}}</div>
                             </div>
                             <div class="card-text">
-                                <!--                                <a-form-item>-->
                                 <!--                                <h5>Opis kampanje</h5>-->
                                 <a-textarea placeholder="O čemu želite da obavestite donatore?" :rows="4"
                                             v-model="post.body"
                                             v-decorator="['time', { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
-                                <!--                                </a-form-item>-->
+
                             </div>
                         </div>
                     </div>
                 </div>
-<!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }" class="justify-content-center">-->
+                <!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }" class="justify-content-center">-->
                 <div class="row justify-content-end submit">
                     <a-button type="primary" html-type="submit">
                         Pošalji
                     </a-button>
                 </div>
-<!--                </a-form-item>-->
+                <!--                </a-form-item>-->
 
             </a-form>
         </div>

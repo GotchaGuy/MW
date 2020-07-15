@@ -22,7 +22,7 @@
                         <el-button type="success" plain @click="toPickAmount(50)">€50</el-button>
                         <el-button type="success" plain @click="toPickAmount(100)">€100</el-button>
                         <el-button type="success" plain @click="toPickAmount(500)">€500</el-button>
-                        <a-input-number size="large" :min="1" :max="100000" @change="toPickAmount"/>
+                        <a-input-number size="large" :min="1" :max="100000" prefix="€" placeholder="€" @change="toPickAmount"/>
                         <h6 class="error">{{this.error.euro_amount}}</h6>
                     </div>
                     <div class="col-12 donate-radio">

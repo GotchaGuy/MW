@@ -7,6 +7,8 @@ body {
       max-height: 230px;
       //border-radius: 4px 4px 25px 4px;
       transition: 0.4s;
+      box-sizing: border-box;
+      //background-color: $test5;
 
       button {
         height: 100%;
@@ -26,7 +28,7 @@ body {
     //}
 
     div.card {
-      color: $test1;
+      color: $test5;
       max-width: 340px;
       height: 230px;
       max-height: 230px;
@@ -36,7 +38,7 @@ body {
 
       a {
         text-decoration: none;
-        color: $test1;
+        color: $test5;
         display: inline-block;
         height: 100%;
         width: 100%;
@@ -52,6 +54,7 @@ body {
 
             div.el-progress-bar__inner {
               position: relative;
+
               div.el-progress-bar__innerText {
                 position: absolute;
                 right: 3px;

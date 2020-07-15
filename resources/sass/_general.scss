@@ -2,11 +2,19 @@ body {
   margin: 0;
   padding: 0;
 
+
   a {
     text-decoration: none;
   }
 
    main {
      padding-top: 0;
+     background-color: $testy2;
+     //   background: linear-gradient(45deg, $testy2, $testy3);
+     //background-color: #006a6a;
+      //background-color: rgba(225, 96, 61, 0.92);
+     //background: linear-gradient(-45deg, #e1603d, rgba(244, 129, 81, 0.75));
+     //, rgba(78, 185, 69, 0.93)
+     // background-color: rgba(235, 148, 134, 0.93)
    }
 }

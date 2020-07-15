@@ -29,6 +29,7 @@
         "moment": "^2.26.0",
         "source-map": "^0.7.3",
         "swiper": "^5.4.2",
+        "vue-advanced-cropper": "^0.16.8",
         "vue-awesome-swiper": "^4.1.1"
     }
 }

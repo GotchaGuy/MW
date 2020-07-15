@@ -11,6 +11,7 @@ body a {
 
 body main {
   padding-top: 0;
+  background-color: #f3f5f4;
 }
 
 /*!
@@ -10948,6 +10949,7 @@ a.text-dark:focus {
 
 body nav.navbar.navbar-expand-md.navbar-light {
   text-align: center;
+  background-color: #5AAA95;
 }
 
 body nav.navbar.navbar-expand-md.navbar-light a.navbar-brand {
@@ -10973,7 +10975,7 @@ body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li
 
 body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li a {
   text-decoration: none;
-  color: #01090A;
+  color: #f5f5f5;
   height: 100%;
   width: 100%;
 }
@@ -10987,13 +10989,13 @@ body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li
   display: inline;
   float: left;
   padding: 5px;
-  background-color: #3BCF93;
+  background-color: #fff;
   border-radius: 4px 4px 15px 4px;
   height: 30px;
 }
 
 body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li.green a {
-  color: #ffffff;
+  color: #01090A;
   position: relative;
   bottom: 10px;
 }
@@ -11003,6 +11005,10 @@ body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul.ri
   right: 0;
   text-align: right;
   width: 100px;
+}
+
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul.right div.dropdown-menu.dropdown-menu-right.show a {
+  color: #000;
 }
 
 body div.container.register form#register-form div.row.register-main div.sec {
@@ -11031,6 +11037,7 @@ body div.campaign div.card {
   height: 230px;
   max-height: 230px;
   transition: 0.4s;
+  box-sizing: border-box;
 }
 
 body div.campaign div.card button {
@@ -11040,7 +11047,7 @@ body div.campaign div.card button {
 }
 
 body div.campaign div.card {
-  color: #01090A;
+  color: #f5f5f5;
   max-width: 340px;
   height: 230px;
   max-height: 230px;
@@ -11050,7 +11057,7 @@ body div.campaign div.card {
 
 body div.campaign div.card a {
   text-decoration: none;
-  color: #01090A;
+  color: #f5f5f5;
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -11138,7 +11145,7 @@ body div.uno div.camp-right div.camp-button {
 body div.following {
   width: 100%;
   height: 150px;
-  border-bottom: 2px solid #F2F4F3;
+  border-bottom: 2px solid #f5f5f5;
   margin: 0;
 }
 
@@ -11232,6 +11239,8 @@ body form#donation-form div.ant-input-number.ant-input-number-lg {
   margin-left: 10px;
   margin-top: 5px;
   height: 40px;
+  position: relative;
+  top: 2px;
 }
 
 body form#donation-form div.donate-radio {
@@ -11246,7 +11255,7 @@ body form#donation-form div.donate-radio p {
 body form#donation-form div.if {
   width: 100%;
   height: 400px;
-  border-bottom: 2px solid #F2F4F3;
+  border-bottom: 2px solid #f5f5f5;
   margin: 0;
 }
 
@@ -11282,6 +11291,38 @@ body form#donation-form div.if div.swiper-container div.campaign:hover {
 
 body div.row form#campaign-form.ant-form.ant-form-horizontal {
   width: 100%;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal .upload-example-cropper {
+  border: solid 1px #EEE;
+  height: 500px;
+  width: 100%;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal .avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal .avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal .avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 178px;
+  line-height: 178px;
+  text-align: center;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal .avatar {
+  width: 178px;
+  display: block;
 }
 
 body form#post-form {

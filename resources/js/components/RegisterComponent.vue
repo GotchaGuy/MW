@@ -2,7 +2,7 @@
     <!--    <div class="back">-->
     <div class="container register">
         <!--        <div class="row">-->
-        <form method="POST" action="/register" id="register-form" enctype="multipart/form-data">
+        <form id="register-form" enctype="multipart/form-data">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active">
                     <input type="radio" @click="chooseRole(1)" name="options" id="option1"
@@ -56,7 +56,7 @@
                                         action="/api/image/upload/logo"
                                         @change="handleChange"
                                         id="logo">
-                                    <img v-if="organization.org_logo" :src="organization.org_logo" class="">
+                                    <img v-if="user.org_logo" :src="user.org_logo" class="">
                                     <div v-else>
                                         <p class="ant-upload-drag-icon">
                                             <a-icon type="inbox"/>
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <button type="submit" class="btn btn-success sharp-left">Pošalji</button>
+                <button type="button" class="btn btn-success sharp-left" @click="submitForm()">Pošalji</button>
             </div>
         </form>
         <!--    </div>-->
@@ -96,8 +96,7 @@
                     email: "",
                     password: "",
                     role_id: 1,
-                },
-                organization: {
+                    //
                     title: "",
                     location: "",
                     field_of_work: "",
@@ -119,12 +118,18 @@
                     console.log(info.file, info.fileList);
                 }
                 if (status === 'done') {
-                    this.organization.org_logo = "/storage/" + info.file.name;
+                    this.user.org_logo = "/storage/" + info.file.name;
                     this.$message.success(`${info.file.name} file uploaded successfully.`);
                 } else if (status === 'error') {
                     this.$message.error(`${info.file.name} file upload failed.`);
                 }
             },
+            submitForm() {
+                axios.post('api/register', this.user)
+                    .then((response)=> {
+                        window.location.href = '/home';
+                    })
+            }
         }
 
     }

@@ -29,8 +29,9 @@ class DoPlanB implements ShouldQueue
      *
      * @return void
      */
-    public function handle($specificDonations)
+    public function handle()
     {
+        $specificDonations = $this->specificDonations;
         foreach ($specificDonations as $key => $specificDonation) {
             if ($specificDonation->plan_b === 2) {
                 Donation::create([
