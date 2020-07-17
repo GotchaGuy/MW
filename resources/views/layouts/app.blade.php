@@ -24,6 +24,8 @@
             {{--            shadow-sm bg-white--}}
             <div class="container position-relative">
                 <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="/images/ajdoniraj-logo-w.png" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">
+
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"

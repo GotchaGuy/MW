@@ -13,8 +13,16 @@
             <div class="col camp-right">
                 <h6 class="card-title">{{campaign.category.title}}</h6>
                 <h1 class="card-title">{{campaign.title}}</h1>
+                <div class="row">
+                    <div class="col">
                 <h6 class="text-muted">Up until:</h6>
                 <h3 class="card-title">{{campaign.time_left}}</h3>
+                    </div>
+                    <div class="col">
+                <h6 class="text-muted">Overhead:</h6>
+                <h3 class="card-title">{{campaign.overhead}}%</h3>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col">
                         <h6 class="text-muted">Raised:</h6>

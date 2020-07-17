@@ -9,6 +9,11 @@ body {
     a.navbar-brand {
       position: absolute;
       left: 0;
+      line-height: 50px;
+      color: #fff;
+      img {
+        margin-top: 5px;
+      }
     }
 
     div.collapse.navbar-collapse {

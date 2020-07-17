@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label for="name">Ime</label>
                         <input type="text" id="name" name="name" class="form-control"
-                               placeholder="Vaše puno ime i prezime">
+                               placeholder="Vaše puno ime i prezime" v-model="user.name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email addresa</label>
@@ -125,7 +125,7 @@
                 }
             },
             submitForm() {
-                axios.post('api/register', this.user)
+            axios.post('/api/register', this.user)
                     .then((response)=> {
                         window.location.href = '/home';
                     })

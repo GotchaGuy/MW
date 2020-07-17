@@ -10955,6 +10955,12 @@ body nav.navbar.navbar-expand-md.navbar-light {
 body nav.navbar.navbar-expand-md.navbar-light a.navbar-brand {
   position: absolute;
   left: 0;
+  line-height: 50px;
+  color: #fff;
+}
+
+body nav.navbar.navbar-expand-md.navbar-light a.navbar-brand img {
+  margin-top: 5px;
 }
 
 body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse {

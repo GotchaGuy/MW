@@ -5,7 +5,7 @@
                 <!--                :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }"-->
                 <a-row :gutter="10">
                     <a-col :span="4">
-                        <a-form-item>
+<!--                        <a-form-item>-->
                             <!--                            label="Naziv kampanje"-->
                             <h5>Naziv kampanje</h5>
                             <a-input
@@ -14,11 +14,11 @@
                                     placeholder="Naziv kampanje"
                                     v-model="campaign.title"
                             />
-                        </a-form-item>
+<!--                        </a-form-item>-->
                     </a-col>
 
                     <a-col :span="5">
-                        <a-form-item>
+<!--                        <a-form-item>-->
                             <!--                            label="Kategorija kampanje"-->
                             <h5>Kategorija kampanje</h5>
                             <a-select v-decorator="['category',
@@ -30,22 +30,22 @@
                                     {{category.title}}
                                 </a-select-option>
                             </a-select>
-                        </a-form-item>
+<!--                        </a-form-item>-->
                     </a-col>
                 </a-row>
                 <a-row :gutter="10">
                     <a-col :span="7">
-                        <a-form-item>
+<!--                        <a-form-item>-->
                             <!--                            label="Trajanje kampanje"-->
                             <h5>Trajanje kampanje</h5>
                             <a-range-picker @change="onDateChange"
                                             v-decorator="['time',
                                  { rules: [{ required: true, message: 'Određivanje trajanja kampanje je obavezno.' }] }]"
                                             format="YYYY MMM Do"/>
-                        </a-form-item>
+<!--                        </a-form-item>-->
                     </a-col>
                     <a-col :span="4">
-                        <a-form-item>
+<!--                        <a-form-item>-->
                             <!--                            label="Cilj"-->
                             <h5>Cilj</h5>
                             <a-input-number
@@ -60,12 +60,12 @@
 
                             <!--                        :formatter="value => `${value}€`"-->
                             <!--                        :parser="value => value.replace('€', '')"-->
-                        </a-form-item>
+<!--                        </a-form-item>-->
                     </a-col>
                 </a-row>
                 <a-row :gutter="10">
                     <a-col :span="5">
-                        <a-form-item>
+<!--                        <a-form-item>-->
                             <!--                    label="Overhead troškovi kampanje"-->
                             <h5>Troškovi organizacije</h5>
                             <a-input-number
@@ -80,7 +80,7 @@
                                  { rules: [{ required: true, message: 'Vaši procenjeni troškovi su obavezni.' }] }]"
                             />
                             <small id="overhead" class="form-text text-muted">Overhead</small>
-                        </a-form-item>
+<!--                        </a-form-item>-->
                     </a-col>
                     <a-col :span="5">
                         <h5>Slika</h5>
@@ -119,11 +119,7 @@
                                     classname="upload-example-cropper"
                                     :src="imageUrl"
                                     @change="onChange"
-                                    :stencil-props="{
-        movable: true,
-        scalable: true,
-        aspectRatio: 1,
-      }"
+                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 1,}"
                             />
                             <el-button type="primary" @click="applyChanges">Apply</el-button>
                         </el-dialog>
@@ -131,20 +127,20 @@
                 </a-row>
                 <a-row :gutter="10">
                     <a-col :span="9">
-                        <a-form-item>
+<!--                        <a-form-item>-->
                             <!--                    label="Opis kampanje"-->
                             <h5>Opis kampanje</h5>
                             <a-textarea placeholder="Opis kampanje" :rows="8" v-model="campaign.description"
                                         v-decorator="['desc',
                                  { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
-                        </a-form-item>
+<!--                        </a-form-item>-->
                     </a-col>
                 </a-row>
-                <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
+<!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }">-->
                     <a-button type="primary" html-type="submit">
                         Pošalji
                     </a-button>
-                </a-form-item>
+<!--                </a-form-item>-->
             </a-form>
         </div>
     </div>
@@ -241,9 +237,10 @@
                 const config = {
                     headers: {'Content-Type': 'multipart/form-data'}
                 }
-                axios.post('/api/image/upload.camp', data, config).then(response => {
+                axios.post('/api/image/upload/camp', data, config).then(response => {
                     this.loading = false;
                     this.thumbnail = '/storage/' + response.data.name;
+                    this.campaign.image = this.thumbnail;
                     this.$emit('input', response.data.name)
                 })
             },
@@ -297,6 +294,7 @@
                 const isJPG = file.type === 'image/jpeg';
                 const isPNG = file.type === 'image/png';
                 const isLt2M = file.size / 1024 / 1024 < 8;
+                // const isLt2M = file.size / 610 / 1024 < 8;
                 if (!isJPG && !isPNG) {
                     this.$message.error(this.__('Picture must be JPG or PNG format!'));
                 }
