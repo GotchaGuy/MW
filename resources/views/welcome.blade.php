@@ -80,6 +80,7 @@
             @endif
 
             <div class="content">
+                <img src="/images/ajdoniraj-logo-b.png" width="100" height="100" class="d-inline-block align-top" alt="" loading="lazy">
                 <div class="title m-b-md">
                     Aj Doniraj
                 </div>

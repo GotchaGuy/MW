@@ -11335,6 +11335,12 @@ body form#post-form {
   width: 100%;
 }
 
+body form#post-form div.ant-progress.ant-progress-line {
+  width: 540px;
+  margin-left: 300px;
+  transition: 0.4s;
+}
+
 body form#post-form div.post div.card {
   margin-top: 15px;
   border-radius: 10px;

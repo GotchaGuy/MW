@@ -7,7 +7,8 @@
                         <img :src="campaign.organization.org_logo" alt="">
                     </a>
                 </div>
-                <img class="big" src="https://source.unsplash.com/random/" alt="">
+                <img class="big" :src="campaign.image" alt="">
+<!--                https://source.unsplash.com/random/-->
             </div>
 
             <div class="col camp-right">

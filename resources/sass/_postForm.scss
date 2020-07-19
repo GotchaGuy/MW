@@ -3,6 +3,16 @@ body {
     //width: 700px;
     width: 100%;
 
+
+    div.ant-progress.ant-progress-line {
+      width: 540px;
+      margin-left: 300px;
+      transition: 0.4s;
+
+      div.ant-progress-outer {
+      }
+    }
+
     div.post {
 
       div.card {

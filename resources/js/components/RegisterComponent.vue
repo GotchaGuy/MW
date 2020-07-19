@@ -23,14 +23,14 @@
                     <div class="form-group">
                         <label for="email">Email addresa</label>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                               placeholder="Enter email">
+                               placeholder="Enter email" v-model="user.email">
                         <!--                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone-->
                         <!--                            else.-->
                         <!--                        </small>-->
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" placeholder="Password" v-model="user.password">
                     </div>
                 </div>
                 <div class="col-6 sec">
@@ -40,12 +40,12 @@
                                 <div class="form-group">
                                     <label for="title">Naziv Organizacije</label>
                                     <input type="text" id="title" name="title" class="form-control"
-                                           placeholder="Pun naziv organizacije">
+                                           placeholder="Pun naziv organizacije" v-model="user.title">
                                 </div>
                                 <div class="form-group">
                                     <label for="location">Lokacija</label>
                                     <input type="text" id="location" name="location" class="form-control"
-                                           placeholder="Mesto rada">
+                                           placeholder="Mesto rada" v-model="user.location">
                                 </div>
                             </div>
                             <div class="col-6">
@@ -70,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <label for="field_of_work">Čime se organizacija bavi u jednoj rečenici:</label>
-                            <textarea type="text" id="field_of_work" name="field_of_work" class="form-control"
+                            <textarea type="text" id="field_of_work" name="field_of_work" class="form-control" v-model="user.field_of_work"
                                       placeholder="Mi se bavimo time i time.."></textarea>
                         </div>
 
@@ -101,7 +101,7 @@
                     location: "",
                     field_of_work: "",
                     org_logo: "",
-                    user_id: ""
+                    // user_id: ""
                 },
             }
         },

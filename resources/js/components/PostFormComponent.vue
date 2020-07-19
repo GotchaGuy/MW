@@ -4,8 +4,13 @@
             <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit"
                     enctype="multipart/form-data" id="post-form">
                 <!--        class="justify-content-center"        -->
-                <a-progress type="circle" :percent="this.secondary.percent" :width="80"/>
-
+                <!--                <a-progress type="circle" :percent="this.secondary.percent" :width="80"/>-->
+                <div class="row justify-content-center">
+                    <h5>€{{this.secondary.raised}} / €{{this.secondary.euro_goal}}</h5>
+                    <div class="col-12">
+                    <a-progress :percent="this.secondary.percent"/>
+                    </div>
+                </div>
                 <div class="col-md-6 mb-3 post mx-auto">
                     <div class="card hvr-underline-from-left md-4">
                         <div class="card-header row">

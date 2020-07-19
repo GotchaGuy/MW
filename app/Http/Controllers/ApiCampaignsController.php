@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Campaign;
 use App\Donation;
+use App\Organization;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,9 @@ class ApiCampaignsController extends Controller
 
     public function store(Request $request)
     {
+
+        $org = Organization::where('user_id', \Auth::user()->id)->first();
+
         return $campaign = Campaign::create([
             'title' => $request->input('title'),
             'euro_goal' => $request->input('euro_goal'),
@@ -31,6 +35,7 @@ class ApiCampaignsController extends Controller
             'description' => $request->input('description'),
             'image' => $request->input('image'),
             'user_id' => \Auth::user()->id,
+            'organization_id' => $org->id,
             'category_id' => $request->input('category_id'),
         ]);
 
