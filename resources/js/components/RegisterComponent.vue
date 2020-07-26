@@ -6,50 +6,64 @@
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active">
                     <input type="radio" @click="chooseRole(1)" name="options" id="option1"
-                           autocomplete="off" checked> Donator
+                           autocomplete="off" checked> Donor
                 </label>
                 <label class="btn btn-secondary">
                     <input type="radio" @click="chooseRole(2)" name="options" id="option2"
-                           autocomplete="off"> Organizacija
+                           autocomplete="off"> Organization
                 </label>
             </div>
             <div class="row justify-content-around register-main">
                 <div class="col-6 sec">
                     <div class="form-group">
-                        <label for="name">Ime</label>
+                        <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-control"
-                               placeholder="Vaše puno ime i prezime" v-model="user.name">
+                               placeholder="Your full name and last name" v-model="user.name">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email addresa</label>
+                        <label for="email">Email address</label>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                placeholder="Enter email" v-model="user.email">
                         <!--                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone-->
                         <!--                            else.-->
                         <!--                        </small>-->
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" v-model="user.password">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter Password"
+                                       v-model="user.password">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="password_confirmation">Password Confirm</label>
+                                <input type="password_confirmation" class="form-control" id="password_confirmation"
+                                       placeholder="Enter Password Again" v-model="user.password_confirmation">
+                            </div>
+                        </div>
                     </div>
+
                 </div>
                 <div class="col-6 sec">
                     <div v-if="user.role_id === 2" class="if">
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="title">Naziv Organizacije</label>
+                                    <label for="title">Organization Title</label>
                                     <input type="text" id="title" name="title" class="form-control"
-                                           placeholder="Pun naziv organizacije" v-model="user.title">
+                                           placeholder="Enter Full Title" v-model="user.title">
                                 </div>
                                 <div class="form-group">
-                                    <label for="location">Lokacija</label>
+                                    <label for="location">Location</label>
                                     <input type="text" id="location" name="location" class="form-control"
-                                           placeholder="Mesto rada" v-model="user.location">
+                                           placeholder="Enter place of work" v-model="user.location">
                                 </div>
                             </div>
                             <div class="col-6">
-                                <label for="logo">Logo organizacije</label>
+                                <label for="logo">Org Logo</label>
                                 <a-upload-dragger
                                         name="file"
                                         :multiple="false"
@@ -69,16 +83,18 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="field_of_work">Čime se organizacija bavi u jednoj rečenici:</label>
-                            <textarea type="text" id="field_of_work" name="field_of_work" class="form-control" v-model="user.field_of_work"
-                                      placeholder="Mi se bavimo time i time.."></textarea>
+                            <!--                            <label for="field_of_work">Čime se organizacija bavi u jednoj rečenici:</label>-->
+                            <label for="field_of_work">What does the organization do in one sentence:</label>
+                            <textarea type="text" id="field_of_work" name="field_of_work" class="form-control"
+                                      v-model="user.field_of_work"
+                                      placeholder="We do this n that.."></textarea>
                         </div>
 
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <button type="button" class="btn btn-success sharp-left" @click="submitForm()">Pošalji</button>
+                <button type="button" class="btn btn-success sharp-left" @click="submitForm()">Submit</button>
             </div>
         </form>
         <!--    </div>-->
@@ -95,6 +111,7 @@
                     name: "",
                     email: "",
                     password: "",
+                    password_confirmation: "",
                     role_id: 1,
                     //
                     title: "",
@@ -125,8 +142,8 @@
                 }
             },
             submitForm() {
-            axios.post('/api/register', this.user)
-                    .then((response)=> {
+                axios.post('/register', this.user)
+                    .then((response) => {
                         window.location.href = '/home';
                     })
             }

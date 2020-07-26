@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <img :src="campaign.image" class="card-img" alt="...">
+                                <img :src="campaign.image + '?w=1'" class="card-img" alt="...">
                             </div>
                         </div>
                     </a>

@@ -7,11 +7,10 @@
                     <a-col :span="4">
                         <!--                        <a-form-item>-->
                         <!--                            label="Naziv kampanje"-->
-                        <h5>Naziv kampanje</h5>
+                        <h5>Campaign Name</h5>
                         <a-input
                                 v-decorator="['title',
-                                 { rules: [{ required: true, message: 'Naziv kampanje je obavezan.' }] }]"
-                                placeholder="Naziv kampanje"
+                                 { rules: [{ required: true, message: 'The campaign name is mandatory.' }] }]"
                                 v-model="campaign.title"
                         />
                         <!--                        </a-form-item>-->
@@ -20,10 +19,9 @@
                     <a-col :span="5">
                         <!--                        <a-form-item>-->
                         <!--                            label="Kategorija kampanje"-->
-                        <h5>Kategorija kampanje</h5>
+                        <h5>Campaign Category</h5>
                         <a-select v-decorator="['category',
-          { rules: [{ required: true, message: 'Biranje kategorije kojoj kampanja pripada je obavezno.' }] },]"
-                                  placeholder="Kategorija kampanje"
+          { rules: [{ required: true, message: 'Picking a category the campaign belongs to is mandatory.' }] },]"
                                   v-model="campaign.category_id">
                             <a-select-option v-for="(category, index) in categories" :value="category.id"
                                              v-bind:key="index">
@@ -37,10 +35,10 @@
                     <a-col :span="7">
                         <!--                        <a-form-item>-->
                         <!--                            label="Trajanje kampanje"-->
-                        <h5>Trajanje kampanje</h5>
+                        <h5>Campaign duration</h5>
                         <a-range-picker @change="onDateChange"
                                         v-decorator="['time',
-                                 { rules: [{ required: true, message: 'Određivanje trajanja kampanje je obavezno.' }] }]" />
+                                 { rules: [{ required: true, message: 'Picking the campaign duration is mandatory.' }] }]" />
 <!--                                        format="YYYY MMM Do"-->
 
                         <!--                        </a-form-item>-->
@@ -48,7 +46,7 @@
                     <a-col :span="4">
                         <!--                        <a-form-item>-->
                         <!--                            label="Cilj"-->
-                        <h5>Cilj</h5>
+                        <h5>Goal</h5>
                         <a-input-number
                                 :min="1000" :max="1000001"
                                 prefix="€"
@@ -56,19 +54,15 @@
                                 :default-value="1000"
                                 v-model="campaign.euro_goal"
                                 v-decorator="['goal',
-                                 { rules: [{ required: true, message: 'Cilj kampanje je obavezan.' }] }]"
+                                 { rules: [{ required: true, message: 'The campaign goal is mandatory.' }] }]"
                         />
 
-                        <!--                        :formatter="value => `${value}€`"-->
-                        <!--                        :parser="value => value.replace('€', '')"-->
-                        <!--                        </a-form-item>-->
                     </a-col>
                 </a-row>
                 <a-row :gutter="10">
                     <a-col :span="5">
-                        <!--                        <a-form-item>-->
-                        <!--                    label="Overhead troškovi kampanje"-->
-                        <h5>Troškovi organizacije</h5>
+
+                        <h5>Overhead costs</h5>
                         <a-input-number
                                 aria-describedby="overhead"
                                 :default-value="0"
@@ -77,13 +71,13 @@
                                 placeholder="%"
                                 v-model="campaign.overhead"
                                 v-decorator="['overhead',
-                                 { rules: [{ required: true, message: 'Vaši procenjeni troškovi su obavezni.' }] }]"
+                                 { rules: [{ required: true, message: 'Choosing the overhead percent is mandatory.' }] }]"
                         />
-                        <small id="overhead" class="form-text text-muted">Overhead</small>
+<!--                        <small id="overhead" class="form-text text-muted">Overhead</small>-->
                         <!--                        </a-form-item>-->
                     </a-col>
                     <a-col :span="5">
-                        <h5>Slika</h5>
+                        <h5>Thumbnail Upload</h5>
                         <!--                        <a-upload-dragger-->
                         <!--                                name="file"-->
                         <!--                                :multiple="false"-->
@@ -119,7 +113,7 @@
                                     classname="upload-example-cropper"
                                     :src="imageUrl"
                                     @change="onChange"
-                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 1,}"
+                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 0.6,}"
                             />
                             <el-button type="primary" @click="applyChanges">Apply</el-button>
                         </el-dialog>
@@ -127,20 +121,16 @@
                 </a-row>
                 <a-row :gutter="10">
                     <a-col :span="9">
-                        <!--                        <a-form-item>-->
-                        <!--                    label="Opis kampanje"-->
-                        <h5>Opis kampanje</h5>
+                        <h5>Campaign Description</h5>
                         <a-textarea placeholder="Opis kampanje" :rows="8" v-model="campaign.description"
                                     v-decorator="['desc',
                                  { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
-                        <!--                        </a-form-item>-->
                     </a-col>
                 </a-row>
                 <!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }">-->
                 <a-button type="primary" html-type="submit">
-                    Pošalji
+                    Submit
                 </a-button>
-                <!--                </a-form-item>-->
             </a-form>
         </div>
     </div>

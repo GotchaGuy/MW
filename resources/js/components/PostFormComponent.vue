@@ -15,10 +15,8 @@
                     <div class="card hvr-underline-from-left md-4">
                         <div class="card-header row">
                             <div class="col">
-                                <!--                                        <h5>Odabir kampanje</h5>-->
                                 <a-select
-                                        v-decorator="['campaign', { rules: [{ required: true, message: 'Biranje kampanje kojoj post pripada je obavezno.' }] },]"
-                                        placeholder="Odabir kampanje"
+                                        v-decorator="['campaign', { rules: [{ required: true, message: 'Choosing the campaign the post belongs to is mandatory.' }] },]"
                                         v-model="post.campaign_id"
                                         @change="react()">
                                     <a-select-option v-for="(campaign, index) in organization.campaigns"
@@ -55,16 +53,16 @@
                             <div class="row">
                                 <div class="col-6 text-left">
                                     <!--                                    <h5>Naziv posta</h5>-->
-                                    <a-input placeholder="Dragi donatori.." v-model="post.title"/>
+                                    <a-input placeholder="Dear donors.." v-model="post.title"/>
                                     <!--                                    </a-form-item>-->
                                 </div>
                                 <div class="col-6 text-right">{{post.timestamp}}</div>
                             </div>
                             <div class="card-text">
                                 <!--                                <h5>Opis kampanje</h5>-->
-                                <a-textarea placeholder="O čemu želite da obavestite donatore?" :rows="4"
+                                <a-textarea placeholder="What do you want to update the donors about?" :rows="4"
                                             v-model="post.body"
-                                            v-decorator="['time', { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
+                                            v-decorator="['time', { rules: [{ required: true, message: 'Writing a description is mandatory.' }] }]"/>
 
                             </div>
                         </div>
@@ -73,7 +71,7 @@
                 <!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }" class="justify-content-center">-->
                 <div class="row justify-content-end submit">
                     <a-button type="primary" html-type="submit">
-                        Pošalji
+                        Send
                     </a-button>
                 </div>
                 <!--                </a-form-item>-->
