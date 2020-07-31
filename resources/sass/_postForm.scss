@@ -3,10 +3,13 @@ body {
     //width: 700px;
     width: 100%;
 
+    div.row {
+      width: 100%;
+    }
 
     div.ant-progress.ant-progress-line {
       width: 540px;
-      margin-left: 300px;
+      //margin-left: 300px;
       transition: 0.4s;
 
       div.ant-progress-outer {
@@ -21,15 +24,47 @@ body {
         overflow: hidden;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-        //img {
-        //  width: 100%;
-        //  height: auto;
-        //}
+        div.card-header.row {
+          //width: 538px;
+          position:relative;
+          left: 15px;
+        }
+
+
+        div.avatar-uploader {
+          width: 100%;
+          min-height: 100px;
+          border: 1px dashed $testb;
+          div.el-upload.el-upload--text {
+            width: 100%;
+            min-height: 100px;
+            div {
+              min-height: 100px;
+              i {
+                margin-top: 45px;
+                height: 20px;
+                width: auto;
+              }
+            }
+          }
+        }
+       div.card-body {
+         input {
+           border: none;
+         }
+         textarea {
+           margin-top: 3px;
+           border: none;
+           min-height: 100px;
+           height: 100px;
+           max-height: 200px;
+         }
+       }
       }
     }
 
     div.submit {
-      width: 900px;
+      //width: 900px;
     }
   }
 }

@@ -65,6 +65,7 @@ Vue.component('post-form', require('./components/PostFormComponent.vue').default
 Vue.component('organization', require('./components/OrganizationComponent.vue').default);
 
 Vue.component('account', require('./components/AccountComponent.vue').default);
+Vue.component('donor-account', require('./components/partials/DonorAccountComponent.vue').default);
 
 Vue.component('register', require('./components/RegisterComponent.vue').default);
 

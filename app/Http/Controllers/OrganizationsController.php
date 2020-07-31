@@ -24,4 +24,7 @@ class OrganizationsController extends Controller
 
         return view("organization", compact("organization"));
     }
+
+
+
 }

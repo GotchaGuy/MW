@@ -40,7 +40,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="password_confirmation">Password Confirm</label>
-                                <input type="password_confirmation" class="form-control" id="password_confirmation"
+                                <input type="password" class="form-control" id="password_confirmation"
                                        placeholder="Enter Password Again" v-model="user.password_confirmation">
                             </div>
                         </div>
@@ -50,37 +50,42 @@
                 <div class="col-6 sec">
                     <div v-if="user.role_id === 2" class="if">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col">
                                 <div class="form-group">
                                     <label for="title">Organization Title</label>
                                     <input type="text" id="title" name="title" class="form-control"
                                            placeholder="Enter Full Title" v-model="user.title">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
                                 <div class="form-group">
                                     <label for="location">Location</label>
                                     <input type="text" id="location" name="location" class="form-control"
                                            placeholder="Enter place of work" v-model="user.location">
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <label for="logo">Org Logo</label>
-                                <a-upload-dragger
-                                        name="file"
-                                        :multiple="false"
-                                        action="/api/image/upload/logo"
-                                        @change="handleChange"
-                                        id="logo">
-                                    <img v-if="user.org_logo" :src="user.org_logo" class="">
-                                    <div v-else>
-                                        <p class="ant-upload-drag-icon">
-                                            <a-icon type="inbox"/>
-                                        </p>
-                                        <p class="ant-upload-text">
-                                            Click or drag file to this area to upload
-                                        </p>
-                                    </div>
-                                </a-upload-dragger>
-                            </div>
+
+<!--                            <div class="col-6">-->
+<!--                                <label for="logo">Org Logo</label>-->
+<!--                                <a-upload-dragger-->
+<!--                                        name="file"-->
+<!--                                        :multiple="false"-->
+<!--                                        action="/api/image/upload/logo"-->
+<!--                                        @change="handleChange"-->
+<!--                                        id="logo">-->
+<!--                                    <img v-if="user.org_logo" :src="user.org_logo" class="">-->
+<!--                                    <div v-else>-->
+<!--                                        <p class="ant-upload-drag-icon">-->
+<!--                                            <a-icon type="inbox"/>-->
+<!--                                        </p>-->
+<!--                                        <p class="ant-upload-text">-->
+<!--                                            Click or drag file to this area to upload-->
+<!--                                        </p>-->
+<!--                                    </div>-->
+<!--                                </a-upload-dragger>-->
+<!--                            </div>-->
                         </div>
                         <div class="form-group">
                             <!--                            <label for="field_of_work">Čime se organizacija bavi u jednoj rečenici:</label>-->
@@ -117,8 +122,7 @@
                     title: "",
                     location: "",
                     field_of_work: "",
-                    org_logo: "",
-                    // user_id: ""
+                    org_logo: "/images/ajdoniraj-logo-b.png",
                 },
             }
         },
@@ -129,18 +133,18 @@
             chooseRole(num) {
                 this.user.role_id = num;
             },
-            handleChange(info) {
-                const status = info.file.status;
-                if (status !== 'uploading') {
-                    console.log(info.file, info.fileList);
-                }
-                if (status === 'done') {
-                    this.user.org_logo = "/storage/" + info.file.name;
-                    this.$message.success(`${info.file.name} file uploaded successfully.`);
-                } else if (status === 'error') {
-                    this.$message.error(`${info.file.name} file upload failed.`);
-                }
-            },
+            // handleChange(info) {
+            //     const status = info.file.status;
+            //     if (status !== 'uploading') {
+            //         console.log(info.file, info.fileList);
+            //     }
+            //     if (status === 'done') {
+            //         this.user.org_logo = "/storage/" + info.file.name;
+            //         this.$message.success(`${info.file.name} file uploaded successfully.`);
+            //     } else if (status === 'error') {
+            //         this.$message.error(`${info.file.name} file upload failed.`);
+            //     }
+            // },
             submitForm() {
                 axios.post('/register', this.user)
                     .then((response) => {

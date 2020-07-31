@@ -3,97 +3,88 @@
         <div class="row">
             <a-form :form="form" @submit="handleSubmit" id="campaign-form" enctype="multipart/form-data">
                 <!--                :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }"-->
-                <a-row :gutter="10">
-                    <a-col :span="4">
-                        <!--                        <a-form-item>-->
-                        <!--                            label="Naziv kampanje"-->
-                        <h5>Campaign Name</h5>
-                        <a-input
-                                v-decorator="['title',
+                <!--                <a-row :gutter="24">-->
+                <div class="row">
+                    <!--                    <a-col :span="10">-->
+                    <div class="col-3">
+                        <!--                        <a-row :gutter="10">-->
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Campaign Name</h5>
+                                <a-input
+                                        v-decorator="['title',
                                  { rules: [{ required: true, message: 'The campaign name is mandatory.' }] }]"
-                                v-model="campaign.title"
-                        />
-                        <!--                        </a-form-item>-->
-                    </a-col>
-
-                    <a-col :span="5">
-                        <!--                        <a-form-item>-->
-                        <!--                            label="Kategorija kampanje"-->
-                        <h5>Campaign Category</h5>
-                        <a-select v-decorator="['category',
+                                        v-model="campaign.title"
+                                />
+                            </div>
+                        </div>
+                        <!--                        -->
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Campaign Category</h5>
+                                <a-select v-decorator="['category',
           { rules: [{ required: true, message: 'Picking a category the campaign belongs to is mandatory.' }] },]"
-                                  v-model="campaign.category_id">
-                            <a-select-option v-for="(category, index) in categories" :value="category.id"
-                                             v-bind:key="index">
-                                {{category.title}}
-                            </a-select-option>
-                        </a-select>
-                        <!--                        </a-form-item>-->
-                    </a-col>
-                </a-row>
-                <a-row :gutter="10">
-                    <a-col :span="7">
-                        <!--                        <a-form-item>-->
-                        <!--                            label="Trajanje kampanje"-->
-                        <h5>Campaign duration</h5>
-                        <a-range-picker @change="onDateChange"
-                                        v-decorator="['time',
-                                 { rules: [{ required: true, message: 'Picking the campaign duration is mandatory.' }] }]" />
-<!--                                        format="YYYY MMM Do"-->
+                                          v-model="campaign.category_id">
+                                    <a-select-option v-for="(category, index) in categories" :value="category.id"
+                                                     v-bind:key="index">
+                                        {{category.title}}
+                                    </a-select-option>
+                                </a-select>
+                            </div>
+                        </div>
 
-                        <!--                        </a-form-item>-->
-                    </a-col>
-                    <a-col :span="4">
-                        <!--                        <a-form-item>-->
-                        <!--                            label="Cilj"-->
-                        <h5>Goal</h5>
-                        <a-input-number
-                                :min="1000" :max="1000001"
-                                prefix="€"
-                                placeholder="€"
-                                :default-value="1000"
-                                v-model="campaign.euro_goal"
-                                v-decorator="['goal',
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Campaign duration</h5>
+                                <a-range-picker @change="onDateChange"
+                                                v-decorator="['time',
+                                 { rules: [{ required: true, message: 'Picking the campaign duration is mandatory.' }] }]"/>
+                            </div>
+                        </div>
+                        <!--                    -->
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Goal</h5>
+                                <a-input-number
+                                        :min="1000" :max="1000001"
+                                        prefix="€"
+                                        placeholder="€"
+                                        :default-value="1000"
+                                        v-model="campaign.euro_goal"
+                                        v-decorator="['goal',
                                  { rules: [{ required: true, message: 'The campaign goal is mandatory.' }] }]"
-                        />
-
-                    </a-col>
-                </a-row>
-                <a-row :gutter="10">
-                    <a-col :span="5">
-
-                        <h5>Overhead costs</h5>
-                        <a-input-number
-                                aria-describedby="overhead"
-                                :default-value="0"
-                                :min="0"
-                                :max="100"
-                                placeholder="%"
-                                v-model="campaign.overhead"
-                                v-decorator="['overhead',
+                                />
+                            </div>
+                            <div class="col">
+                                <h5 class="card-title">Overhead</h5>
+                                <a-input-number
+                                        aria-describedby="overhead"
+                                        :default-value="0"
+                                        :min="0"
+                                        :max="100"
+                                        placeholder="%"
+                                        v-model="campaign.overhead"
+                                        v-decorator="['overhead',
                                  { rules: [{ required: true, message: 'Choosing the overhead percent is mandatory.' }] }]"
-                        />
-<!--                        <small id="overhead" class="form-text text-muted">Overhead</small>-->
-                        <!--                        </a-form-item>-->
-                    </a-col>
-                    <a-col :span="5">
-                        <h5>Thumbnail Upload</h5>
-                        <!--                        <a-upload-dragger-->
-                        <!--                                name="file"-->
-                        <!--                                :multiple="false"-->
-                        <!--                                action="/api/image/upload/camp"-->
-                        <!--                                @change="handleChange">-->
-                        <!--                            <img v-if="campaign.image" :src="campaign.image" class="">-->
-                        <!--                            <div v-else>-->
-                        <!--                                <p class="ant-upload-drag-icon">-->
-                        <!--                                    <a-icon type="inbox"/>-->
-                        <!--                                </p>-->
-                        <!--                                <p class="ant-upload-text">-->
-                        <!--                                    Click or drag file to this area to upload-->
-                        <!--                                </p>-->
-                        <!--                            </div>-->
-                        <!--                        </a-upload-dragger>-->
+                                />
+                            </div>
+                        </div>
 
+                    </div>
+
+
+                    <div class="col-5">
+                        <!--                        <div class="col">-->
+                        <h5 class="card-title">Campaign Description</h5>
+                        <a-textarea placeholder="Opis kampanje" :rows="8" v-model="campaign.description"
+                                    v-decorator="['desc',
+                                 { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
+                        <!--                        </div>-->
+                    </div>
+
+
+                    <div class="col-3">
+                        <h5 class="card-title">Thumbnail Upload</h5>
                         <el-upload
                                 class="avatar-uploader"
                                 ref="upload"
@@ -105,7 +96,7 @@
                                 :before-upload="beforeAvatarUpload">
                             <div v-loading="loading">
                                 <img v-if="thumbnail" :src="thumbnail" class="avatar">
-                                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                                <i v-else class="el-icon-receiving avatar-uploader-icon"></i>
                             </div>
                         </el-upload>
                         <el-dialog :visible.sync="dialogVisible">
@@ -113,24 +104,23 @@
                                     classname="upload-example-cropper"
                                     :src="imageUrl"
                                     @change="onChange"
-                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 0.6,}"
+                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 1.5,}"
                             />
                             <el-button type="primary" @click="applyChanges">Apply</el-button>
                         </el-dialog>
-                    </a-col>
-                </a-row>
-                <a-row :gutter="10">
-                    <a-col :span="9">
-                        <h5>Campaign Description</h5>
-                        <a-textarea placeholder="Opis kampanje" :rows="8" v-model="campaign.description"
-                                    v-decorator="['desc',
-                                 { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
-                    </a-col>
-                </a-row>
+                    </div>
+
+                </div>
+
                 <!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }">-->
-                <a-button type="primary" html-type="submit">
-                    Submit
-                </a-button>
+                <div class="row">
+                    <div class="col-1 offset-11">
+                        <a-button type="success" html-type="submit" class="submit">
+                           <i class="el-icon-check"></i>
+                        </a-button>
+                    </div>
+                </div>
+
             </a-form>
         </div>
     </div>
@@ -180,11 +170,8 @@
         ,
         methods: {
             onDateChange(date, dateString) {
-                // console.log(date, dateString);
-                // console.log(dateString[0]);
                 this.campaign.start = dateString[0];
                 this.campaign.end = dateString[1];
-                // 'range-picker': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
             },
             handleSubmit(e) {
                 e.preventDefault();
@@ -200,18 +187,6 @@
                     }
                 });
             },
-            // handleChange(info) {
-            //     const status = info.file.status;
-            //     if (status !== 'uploading') {
-            //         console.log(info.file, info.fileList);
-            //     }
-            //     if (status === 'done') {
-            //         this.campaign.image = "/storage/" + info.file.name;
-            //         this.$message.success(`${info.file.name} file uploaded successfully.`);
-            //     } else if (status === 'error') {
-            //         this.$message.error(`${info.file.name} file upload failed.`);
-            //     }
-            // },
             submitCampaign() {
 
             },
@@ -220,13 +195,13 @@
                 this.dialogVisible = false;
                 this.imageUrl = this.modifiedImageUrl;
                 // generate file from base64 string
-                const file = this.dataURLtoFile(this.imageUrl)
+                const file = this.dataURLtoFile(this.imageUrl);
                 // put file into form data
-                const data = new FormData()
-                data.append('file', file, this.imageName)
+                const data = new FormData();
+                data.append('file', file, this.imageName);
                 const config = {
                     headers: {'Content-Type': 'multipart/form-data'}
-                }
+                };
                 axios.post('/api/image/upload/camp', data, config).then(response => {
                     this.loading = false;
                     this.thumbnail = '/storage/' + response.data.name;
@@ -235,10 +210,10 @@
                 })
             },
             onChange({coordinates, canvas}) {
-                this.coordinates = coordinates
+                this.coordinates = coordinates;
                 // You able to do different manipulations at a canvas
                 // but there we just get a cropped image
-                this.modifiedImageUrl = canvas.toDataURL()
+                this.modifiedImageUrl = canvas.toDataURL();
             },
             handleAvatarChange(file) {
                 this.imageUrl = URL.createObjectURL(file.raw);

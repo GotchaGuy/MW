@@ -10,8 +10,10 @@ body a {
 }
 
 body main {
-  padding-top: 0;
+  padding-top: 20px;
+  padding-bottom: 0;
   background-color: #f3f5f4;
+  min-height: 100%;
 }
 
 /*!
@@ -10949,7 +10951,8 @@ a.text-dark:focus {
 
 body nav.navbar.navbar-expand-md.navbar-light {
   text-align: center;
-  background-color: #5AAA95;
+  background-color: #1C5F54;
+  height: 63px;
 }
 
 body nav.navbar.navbar-expand-md.navbar-light a.navbar-brand {
@@ -11295,8 +11298,52 @@ body form#donation-form div.if div.swiper-container div.campaign:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+body div.account {
+  background-color: #14453D;
+}
+
+body div.account div.row {
+  width: 100%;
+}
+
+body div.account div.row h4.blue {
+  color: #40A9FF;
+}
+
+body div.account div.row h4.white {
+  color: #fff;
+}
+
+body div.account div.row h4.gray {
+  color: #f3f5f4;
+}
+
+body div.org-account div.img {
+  height: 300px;
+  text-align: center;
+}
+
+body div.org-account div.img img {
+  height: 80%;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body div.org-account div.description {
+  margin-bottom: 30px;
+}
+
 body div.row form#campaign-form.ant-form.ant-form-horizontal {
   width: 100%;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal h5 {
+  margin-top: 16px;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal textarea.ant-input {
+  height: 460px;
 }
 
 body div.row form#campaign-form.ant-form.ant-form-horizontal .upload-example-cropper {
@@ -11311,6 +11358,11 @@ body div.row form#campaign-form.ant-form.ant-form-horizontal .avatar-uploader .e
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+
+body div.row form#campaign-form.ant-form.ant-form-horizontal .avatar-uploader .el-upload img {
+  height: 100%;
+  width: 100%;
 }
 
 body div.row form#campaign-form.ant-form.ant-form-horizontal .avatar-uploader .el-upload:hover {
@@ -11335,9 +11387,12 @@ body form#post-form {
   width: 100%;
 }
 
+body form#post-form div.row {
+  width: 100%;
+}
+
 body form#post-form div.ant-progress.ant-progress-line {
   width: 540px;
-  margin-left: 300px;
   transition: 0.4s;
 }
 
@@ -11348,8 +11403,42 @@ body form#post-form div.post div.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-body form#post-form div.submit {
-  width: 900px;
+body form#post-form div.post div.card div.card-header.row {
+  position: relative;
+  left: 15px;
+}
+
+body form#post-form div.post div.card div.avatar-uploader {
+  width: 100%;
+  min-height: 100px;
+  border: 1px dashed #40A9FF;
+}
+
+body form#post-form div.post div.card div.avatar-uploader div.el-upload.el-upload--text {
+  width: 100%;
+  min-height: 100px;
+}
+
+body form#post-form div.post div.card div.avatar-uploader div.el-upload.el-upload--text div {
+  min-height: 100px;
+}
+
+body form#post-form div.post div.card div.avatar-uploader div.el-upload.el-upload--text div i {
+  margin-top: 45px;
+  height: 20px;
+  width: auto;
+}
+
+body form#post-form div.post div.card div.card-body input {
+  border: none;
+}
+
+body form#post-form div.post div.card div.card-body textarea {
+  margin-top: 3px;
+  border: none;
+  min-height: 100px;
+  height: 100px;
+  max-height: 200px;
 }
 
 body div.container.org div.img {

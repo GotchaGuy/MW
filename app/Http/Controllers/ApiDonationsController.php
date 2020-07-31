@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class ApiDonationsController extends Controller
 {
+    public function index()
+    {
+        $donations = Donation::where('user_id', \Auth::user()->id)->with('user', 'campaign')->orderBy('updated_at', 'desc')->get();
+foreach ($donations as $key => $donation) {
+    $donations[$key]->timestamp =\Carbon\Carbon::parse($donation->updated_at)->format('M d Y');
+}
+
+        return $donations;
+    }
+
      public function store(Request $request)
     {
         //user automatically follows campaign upon donating

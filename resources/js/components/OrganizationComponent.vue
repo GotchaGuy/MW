@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="img mx-auto">
-                    <img src="/images/logo.png" alt="">
+                    <img :src="organization.org_logo" alt="">
 
                 </div>
             </div>
@@ -24,15 +24,6 @@
                 </div>
             </div>
         </div>
-    <!--        <div class="row description">-->
-    <!--            <div class="col-12">-->
-    <!--                <a-collapse accordion>-->
-    <!--                    <a-collapse-panel key="1" header="About Us">-->
-    <!--                        <p>{{organization.description}}</p>-->
-    <!--                    </a-collapse-panel>-->
-    <!--                </a-collapse>-->
-    <!--            </div>-->
-    <!--        </div>-->
 
         <h5>Our Campaigns</h5>
         <div class="row">
@@ -58,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <img :src="campaign.image" class="card-img" alt="...">
+                                <img :src="campaign.image + '?w=140&h=235&fit=crop-center'" class="card-img" alt="...">
                             </div>
                         </div>
                     </a>

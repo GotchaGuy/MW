@@ -4,6 +4,14 @@ body {
     form#campaign-form.ant-form.ant-form-horizontal {
       width: 100%;
 
+      h5 {
+        margin-top: 16px;
+      }
+
+      textarea.ant-input {
+        height: 460px;
+      }
+
 
       .upload-example-cropper {
         border: solid 1px #EEE;
@@ -17,6 +25,11 @@ body {
         cursor: pointer;
         position: relative;
         overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
 
       .avatar-uploader .el-upload:hover {

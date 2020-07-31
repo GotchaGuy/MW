@@ -1,15 +1,6 @@
 <template>
     <div class="container">
         <div class="row">
-            <!--            the + button-->
-            <div class="col-4 campaign">
-                <div class="card mb-3 new mx-auto">
-                    <a href="/new-campaign">
-                        <el-button type="success" icon="el-icon-plus" plain></el-button>
-                    </a>
-                </div>
-            </div>
-
             <div class="col-4 campaign" v-for="campaign in campaigns">
                 <div class="card mb-3 mx-auto">
                     <a :href="'/campaign/' + campaign.id">
@@ -32,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <img :src="campaign.image + '?w=1'" class="card-img" alt="...">
+                                <img :src="campaign.image + '?w=140&h=235&fit=crop-center'" class="card-img" alt="...">
                             </div>
                         </div>
                     </a>
