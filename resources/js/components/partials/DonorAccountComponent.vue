@@ -4,7 +4,7 @@
         <div class="row">
             <!--            justify-content-center-->
             <div class="row mt-4">
-                <h4 class="white">{{donations[0].user.name}}'s donations: </h4>
+                <h4 class="white">{{user.name}}'s donations: </h4>
             </div>
             <div class="row justify-content-center" v-for="donation in donations">
                 <div class="col-3">
@@ -31,6 +31,7 @@
         data() {
             return {
                 donations: "",
+                 user: "",
             }
         },
         mounted() {
@@ -38,6 +39,11 @@
                 .then((response) => {
                     this.donations = response.data;
                     console.log(this.donations);
+                });
+            axios.get('/api/my-acc')
+                .then((response) => {
+                    this.user = response.data;
+                    console.log(this.user);
                 });
         },
         methods: {}

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Organization;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ApiImageController extends Controller
 {
@@ -28,7 +30,15 @@ class ApiImageController extends Controller
         //saving the file
         $path = $file->store('public/camp_images');
 
+//        dd($path);
         $final_path = substr($path, 7);
+//        dd(public_path('storage/' . $final_path));
+        $thumb = Image::make(public_path('storage/' . $final_path));
+
+        $thumb->resize(100, 100);
+        $thumb->save(public_path('storage/small/' . $final_path));
+
+
         return [
             'status' => 200,
             'name' => $final_path
@@ -91,5 +101,12 @@ class ApiImageController extends Controller
             'status' => 200,
             'name' => $final_path
         ];
+    }
+
+    public function updateLogo(Request $request, $id)
+    {
+        return Organization::where('id', $id)->update([
+            'org_logo' => $request->input('org_logo'),
+        ]);
     }
 }

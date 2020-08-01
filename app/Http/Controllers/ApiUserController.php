@@ -9,6 +9,6 @@ class ApiUserController extends Controller
 {
     public function userInfo()
     {
-        return User::where('id',  \Auth::user()->id)->first;
+        return User::where('id',  \Auth::user()->id)->first();
     }
 }

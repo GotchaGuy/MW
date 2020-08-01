@@ -40,5 +40,6 @@ Route::middleware('auth:api')->get('organization', 'ApiPostFormController@orgCam
 Route::middleware('auth:api')->post('/image/upload/camp', 'ApiImageController@uploadCamp');
 Route::middleware('auth:api')->post('/image/upload/post', 'ApiImageController@uploadPost');
 Route::middleware('auth:api')->post('/image/upload/logo', 'ApiImageController@uploadLogo');
+Route::middleware('auth:api')->put('/image/upload/logo/{id}', 'ApiImageController@updateLogo');
 
 Route::middleware('auth:api')->get('my-organization', 'ApiAccountController@myOrg');

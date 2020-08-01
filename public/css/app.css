@@ -11320,17 +11320,40 @@ body div.account div.row h4.gray {
 
 body div.org-account div.img {
   height: 300px;
+  width: 300px;
   text-align: center;
+  border: 1px solid #f3f5f4;
+  border-radius: 5px;
 }
 
-body div.org-account div.img img {
-  height: 80%;
+body div.org-account div.img form {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body div.org-account div.img form div.avatar-uploader div.el-upload.el-upload--text {
+  height: 300px;
+  width: 100%;
+}
+
+body div.org-account div.img form div.avatar-uploader div.el-upload.el-upload--text img.avatar {
+  height: 300px;
   width: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-body div.org-account div.description {
+body div.org-account div.img form button.update {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  padding: 0;
+}
+
+body div.description {
   margin-bottom: 30px;
 }
 

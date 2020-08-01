@@ -117,7 +117,7 @@
                 thumbnail: '',
                 imageName: '',
                 modifiedImageUrl: '',
-                headers: {'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content}
+                headers: {'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content},
             }
         },
         mounted() {
