@@ -1,7 +1,7 @@
 <template>
     <!--    <div>-->
     <div class="container">
-        <div class="org-account">
+        <div class="org-account" v-if="user.role_id === 2">
             <div class="row">
                 <div class="col-4">
                     <div class="img mx-auto">

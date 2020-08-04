@@ -8,6 +8,20 @@ body {
     border-radius: 0 10px 10px 10px;
   }
 
+  div.ant-drawer-header {
+    background-color: $testy4;
+    div.ant-drawer-title {
+      color: #fff;
+    }
+    button.ant-drawer-close {
+      color: #fff;
+    }
+  }
+
+  div.ant-drawer-body {
+    //background-color: $test4;
+  }
+
   form#donation-form {
     max-width: 700px;
     width: 700px;
@@ -61,6 +75,7 @@ body {
 
           div.ant-card {
             width: 250px;
+            height: 400px;
             margin-right: 15px;
 
             div.ant-card-cover {
@@ -68,6 +83,18 @@ body {
                 height: 150px;
                 object-fit: cover;
               }
+            }
+            div.ant-card-body {
+              height: 183px;
+              position: relative;
+              div.info {
+                position: absolute;
+                bottom: 12px;
+                left: 24px;
+              }
+            }
+            ul.ant-card-actions {
+              background-color: $testy4;
             }
           }
         }

@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <div class="row justify-content-center" v-if="posts.length === 0">
+            <p><strong>The Feed</strong> is your hub for any and every update of all the campaigns you have <strong>donate</strong>d to.</p>
+        </div>
         <div class="row justify-content-center" v-for="post in posts">
             <div class="col-md-6 mb-3 post">
                     <div class="card hvr-underline-from-left md-4">

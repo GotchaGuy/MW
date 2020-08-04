@@ -1,5 +1,8 @@
 <template>
     <div class="row following">
+<!--        <div class="row justify-content-center" v-if="posts.length === 0">-->
+<!--            <p>To <strong>add a campaign</strong> to your Feed, find a charity campaign you want to contribute to.</p>-->
+<!--        </div>-->
         <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="(follow, index) in follows" :key="index">
                  <a :href="'/campaign/' + follow.id">

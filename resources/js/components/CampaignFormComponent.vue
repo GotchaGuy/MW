@@ -6,7 +6,7 @@
                 <!--                <a-row :gutter="24">-->
                 <div class="row">
                     <!--                    <a-col :span="10">-->
-                    <div class="col-3">
+                    <div class="col-6">
                         <!--                        <a-row :gutter="10">-->
                         <div class="row">
                             <div class="col">
@@ -34,16 +34,16 @@
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-6">
                                 <h5 class="card-title">Campaign duration</h5>
                                 <a-range-picker @change="onDateChange"
                                                 v-decorator="['time',
                                  { rules: [{ required: true, message: 'Picking the campaign duration is mandatory.' }] }]"/>
                             </div>
-                        </div>
-                        <!--                    -->
-                        <div class="row">
-                            <div class="col">
+                            <!--                        </div>-->
+                            <!--                    -->
+                            <!--                        <div class="row">-->
+                            <div class="col-3">
                                 <h5 class="card-title">Goal</h5>
                                 <a-input-number
                                         :min="1000" :max="1000001"
@@ -55,7 +55,7 @@
                                  { rules: [{ required: true, message: 'The campaign goal is mandatory.' }] }]"
                                 />
                             </div>
-                            <div class="col">
+                            <div class="col-3">
                                 <h5 class="card-title">Overhead</h5>
                                 <a-input-number
                                         aria-describedby="overhead"
@@ -69,11 +69,40 @@
                                 />
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Thumbnail Upload</h5>
+                                <el-upload
+                                        class="avatar-uploader"
+                                        ref="upload"
+                                        action="/api/image/upload/camp"
+                                        :auto-upload="false"
+                                        :show-file-list="false"
+                                        :on-change="handleAvatarChange"
+                                        :headers="headers"
+                                        :before-upload="beforeAvatarUpload">
+                                    <div v-loading="loading">
+                                        <img v-if="thumbnail" :src="thumbnail" class="avatar">
+                                        <i v-else class="el-icon-receiving avatar-uploader-icon"></i>
+                                    </div>
+                                </el-upload>
+                                <el-dialog :visible.sync="dialogVisible">
+                                    <Cropper
+                                            classname="upload-example-cropper"
+                                            :src="imageUrl"
+                                            @change="onChange"
+                                            :stencil-props="{ movable: true, scalable: true, aspectRatio: 1.5,}"
+                                    />
+                                    <el-button type="primary" @click="applyChanges">Apply</el-button>
+                                </el-dialog>
+                            </div>
+                        </div>
+
 
                     </div>
 
 
-                    <div class="col-5">
+                    <div class="col-6">
                         <!--                        <div class="col">-->
                         <h5 class="card-title">Campaign Description</h5>
                         <a-textarea placeholder="Opis kampanje" :rows="8" v-model="campaign.description"
@@ -83,32 +112,32 @@
                     </div>
 
 
-                    <div class="col-3">
-                        <h5 class="card-title">Thumbnail Upload</h5>
-                        <el-upload
-                                class="avatar-uploader"
-                                ref="upload"
-                                action="/api/image/upload/camp"
-                                :auto-upload="false"
-                                :show-file-list="false"
-                                :on-change="handleAvatarChange"
-                                :headers="headers"
-                                :before-upload="beforeAvatarUpload">
-                            <div v-loading="loading">
-                                <img v-if="thumbnail" :src="thumbnail" class="avatar">
-                                <i v-else class="el-icon-receiving avatar-uploader-icon"></i>
-                            </div>
-                        </el-upload>
-                        <el-dialog :visible.sync="dialogVisible">
-                            <Cropper
-                                    classname="upload-example-cropper"
-                                    :src="imageUrl"
-                                    @change="onChange"
-                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 1.5,}"
-                            />
-                            <el-button type="primary" @click="applyChanges">Apply</el-button>
-                        </el-dialog>
-                    </div>
+                    <!--                    <div class="col-3">-->
+                    <!--                        <h5 class="card-title">Thumbnail Upload</h5>-->
+                    <!--                        <el-upload-->
+                    <!--                                class="avatar-uploader"-->
+                    <!--                                ref="upload"-->
+                    <!--                                action="/api/image/upload/camp"-->
+                    <!--                                :auto-upload="false"-->
+                    <!--                                :show-file-list="false"-->
+                    <!--                                :on-change="handleAvatarChange"-->
+                    <!--                                :headers="headers"-->
+                    <!--                                :before-upload="beforeAvatarUpload">-->
+                    <!--                            <div v-loading="loading">-->
+                    <!--                                <img v-if="thumbnail" :src="thumbnail" class="avatar">-->
+                    <!--                                <i v-else class="el-icon-receiving avatar-uploader-icon"></i>-->
+                    <!--                            </div>-->
+                    <!--                        </el-upload>-->
+                    <!--                        <el-dialog :visible.sync="dialogVisible">-->
+                    <!--                            <Cropper-->
+                    <!--                                    classname="upload-example-cropper"-->
+                    <!--                                    :src="imageUrl"-->
+                    <!--                                    @change="onChange"-->
+                    <!--                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 1.5,}"-->
+                    <!--                            />-->
+                    <!--                            <el-button type="primary" @click="applyChanges">Apply</el-button>-->
+                    <!--                        </el-dialog>-->
+                    <!--                    </div>-->
 
                 </div>
 
@@ -116,7 +145,7 @@
                 <div class="row">
                     <div class="col-1 offset-11">
                         <a-button type="success" html-type="submit" class="submit">
-                           <i class="el-icon-check"></i>
+                            <i class="el-icon-check"></i>
                         </a-button>
                     </div>
                 </div>

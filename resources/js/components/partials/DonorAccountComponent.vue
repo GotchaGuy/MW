@@ -1,28 +1,31 @@
 <template>
     <div class="account">
-    <div class="container">
-        <div class="row">
-            <!--            justify-content-center-->
-            <div class="row mt-4">
-                <h4 class="white">{{user.name}}'s donations: </h4>
-            </div>
-            <div class="row justify-content-center" v-for="donation in donations">
-                <div class="col-3">
-                    <h6 class="text-muted gray">Campaign Title:</h6>
-                    <h4 class="card-title white">{{donation.campaign.title}}</h4>
+        <div class="container">
+            <div class="row">
+                <!--            justify-content-center-->
+                <div class="row mt-4">
+                    <h4 class="white">{{user.name}}'s donations: </h4>
                 </div>
-                <div class="col-7">
-                    <h6 class="text-muted gray">Donation Amount:</h6>
-                    <h4 class="card-title blue">€{{donation.euro_amount}}</h4>
+                <div class="empty" v-if="donations.length === 0">
+                    <p class="white">No submitted donations at this time.</p>
                 </div>
-                <div class="col-2">
-                    <h6 class="text-muted gray">Timestamp:</h6>
-                    <h4 class="card-title white">{{donation.timestamp}}</h4>
+                <div class="row justify-content-center" v-for="donation in donations">
+                    <div class="col-3">
+                        <h6 class="text-muted gray">Campaign Title:</h6>
+                        <h4 class="card-title white">{{donation.campaign.title}}</h4>
+                    </div>
+                    <div class="col-7">
+                        <h6 class="text-muted gray">Donation Amount:</h6>
+                        <h4 class="card-title blue">€{{donation.euro_amount}}</h4>
+                    </div>
+                    <div class="col-2">
+                        <h6 class="text-muted gray">Timestamp:</h6>
+                        <h4 class="card-title white">{{donation.timestamp}}</h4>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-        </div>
 </template>
 
 
@@ -31,7 +34,7 @@
         data() {
             return {
                 donations: "",
-                 user: "",
+                user: "",
             }
         },
         mounted() {

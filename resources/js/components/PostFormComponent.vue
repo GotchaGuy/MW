@@ -19,9 +19,9 @@
                             <div class="col-6">
                                 <a-select
                                         v-decorator="['campaign', { rules: [{ required: true, message: 'Choosing the campaign the post belongs to is mandatory.' }] },]"
-                                        v-model="post.campaign_id"
-                                        @change="react()">
+                                        v-model="post.campaign_id">
                                     <a-select-option v-for="(campaign, index) in organization.campaigns"
+                                                     @click="react(campaign.raised, campaign.euro_goal, campaign.percent)"
                                                      :value="campaign.id" v-bind:key="index">
                                         {{campaign.title}}
                                     </a-select-option>
@@ -108,7 +108,10 @@
                     image: "",
                     campaign_id: ""
                 },
-                secondary: {},
+                secondary: {
+                    raised: "",
+                     euro_goal: "",
+                },
                 //
                 dialogVisible: false,
                 disabled: false,
@@ -128,13 +131,11 @@
                 });
         },
         methods: {
-            react() {
-                for (let i = 0; i < this.organization.length; i++) {
-                    if (this.organization.campaigns[i].id === this.post.campaign_id) {
-                        this.secondary = this.organization.campaigns[i];
-                        console.log(this.secondary);
-                    }
-                }
+            react(raised, euro_goal, percent) {
+                this.secondary.raised = raised;
+                this.secondary.euro_goal =  euro_goal;
+                this.secondary.percent =  percent;
+                    console.log(this.secondary);
             },
             handleSubmit(e) {
                 e.preventDefault();

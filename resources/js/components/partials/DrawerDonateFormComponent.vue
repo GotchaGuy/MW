@@ -39,14 +39,14 @@
                                 <p>I want the donation to be forwarded to another campaign of my choosing.</p>
                             </a-radio>
                             <a-radio :style="radioStyle" :value="3">
-<!--                                <p>želim povraćaj novca.</p>-->
+                                <!--                                <p>želim povraćaj novca.</p>-->
                                 <p>I want a full refund.</p>
                             </a-radio>
                         </a-radio-group>
                         <h6 class="error">{{this.error.plan_b}}</h6>
                     </div>
                     <div v-if="donation.plan_b == 2" class="if">
-<!--                        <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>-->
+                        <!--                        <h6>Izaberite kampanju kojoj biste preusmerili donaciju:</h6>-->
                         <h6>Choose a campaign You would like to have the donation forwarded to:</h6>
                         <swiper class="swiper backup" :options="swiperOption">
                             <swiper-slide class="campaign" v-for="(campaign, index) in campaigns" :key="index"
@@ -60,14 +60,17 @@
                                     />
                                     <small class="text-muted">{{campaign.time_left}}</small>
                                     <h3 class="card-title">{{campaign.title}}</h3>
-                                    <small class="text-muted">{{campaign.category.title}}</small>
-                                    <h6 class="card-title">Raised: €{{campaign.raised}} | {{campaign.percent}}%</h6>
+                                    <div class="info">
+                                        <small class="text-muted">{{campaign.category.title}}</small>
+                                        <h6 class="card-title">Raised: €{{campaign.raised}} | {{campaign.percent}}%</h6>
+                                    </div>
                                     <template slot="actions" class="ant-card-actions">
-<!--                                        <button type="button" icon="plus" class="btn btn-outline-success"-->
-<!--                                                @click="toPickBackup(campaign.id)">-->
-<!--                                            -->
-<!--                                        </button>-->
-                                        <el-button type="success" icon="el-icon-check" size="large" @click="toPickBackup(campaign.id)" plain/>
+                                        <!--                                        <button type="button" icon="plus" class="btn btn-outline-success"-->
+                                        <!--                                                @click="toPickBackup(campaign.id)">-->
+                                        <!--                                            -->
+                                        <!--                                        </button>-->
+                                        <el-button type="success" icon="el-icon-check" size="large"
+                                                   @click="toPickBackup(campaign.id)" plain/>
                                     </template>
                                     <a-card-meta>
                                     </a-card-meta>

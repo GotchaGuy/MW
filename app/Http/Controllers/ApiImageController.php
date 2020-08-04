@@ -35,14 +35,16 @@ class ApiImageController extends Controller
 //        dd(public_path('storage/' . $final_path));
         $thumb = Image::make(public_path('storage/' . $final_path));
 
-        $thumb->resize(100, 100);
+        $thumb->resize(140, 235);
         $thumb->save(public_path('storage/small/' . $final_path));
-
+// http://idoniraj.test/storage/small/camp_images/LA4QypfGkgSMTzpfYuCCstQJ7NIEfbGAhQIBOZdb.png
 
         return [
             'status' => 200,
             'name' => $final_path
         ];
+
+// file:///C:/laragon/www/idoniraj/public/storage/camp_images/epTlZV1LQ0BjCRLkSEzMq0nfp7C3QjNdjz3hHrZd.png
     }
 
     public function uploadPost(Request $request)

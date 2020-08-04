@@ -11078,7 +11078,8 @@ body div.campaign div.card a div.no-gutters {
 }
 
 body div.campaign div.card a div.no-gutters div.graph {
-  min-width: 170px;
+  min-width: 160px;
+  min-height: 18px;
   position: absolute;
   bottom: 15px;
 }
@@ -11102,6 +11103,7 @@ body div.uno {
 }
 
 body div.uno div.camp-header {
+  margin-top: -20px;
   max-height: 600px;
   overflow: hidden;
   position: relative;
@@ -11234,6 +11236,18 @@ body button.el-button.sharp-left {
   border-radius: 0 10px 10px 10px;
 }
 
+body div.ant-drawer-header {
+  background-color: #14453D;
+}
+
+body div.ant-drawer-header div.ant-drawer-title {
+  color: #fff;
+}
+
+body div.ant-drawer-header button.ant-drawer-close {
+  color: #fff;
+}
+
 body form#donation-form {
   max-width: 700px;
   width: 700px;
@@ -11285,6 +11299,7 @@ body form#donation-form div.if div.swiper-container div.campaign.swiper-slide {
 
 body form#donation-form div.if div.swiper-container div.campaign.swiper-slide div.ant-card {
   width: 250px;
+  height: 400px;
   margin-right: 15px;
 }
 
@@ -11294,12 +11309,28 @@ body form#donation-form div.if div.swiper-container div.campaign.swiper-slide di
      object-fit: cover;
 }
 
+body form#donation-form div.if div.swiper-container div.campaign.swiper-slide div.ant-card div.ant-card-body {
+  height: 183px;
+  position: relative;
+}
+
+body form#donation-form div.if div.swiper-container div.campaign.swiper-slide div.ant-card div.ant-card-body div.info {
+  position: absolute;
+  bottom: 12px;
+  left: 24px;
+}
+
+body form#donation-form div.if div.swiper-container div.campaign.swiper-slide div.ant-card ul.ant-card-actions {
+  background-color: #14453D;
+}
+
 body form#donation-form div.if div.swiper-container div.campaign:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 body div.account {
   background-color: #14453D;
+  margin-top: -20px;
 }
 
 body div.account div.row {
@@ -11310,12 +11341,17 @@ body div.account div.row h4.blue {
   color: #40A9FF;
 }
 
-body div.account div.row h4.white {
+body div.account div.row h4.white,
+body div.account div.row p.white {
   color: #fff;
 }
 
 body div.account div.row h4.gray {
   color: #f3f5f4;
+}
+
+body div.org-account {
+  margin-bottom: 40px;
 }
 
 body div.org-account div.img {
@@ -11414,9 +11450,21 @@ body form#post-form div.row {
   width: 100%;
 }
 
+body form#post-form div.row h5 {
+  transition: 0.4s;
+}
+
 body form#post-form div.ant-progress.ant-progress-line {
   width: 540px;
   transition: 0.4s;
+}
+
+body form#post-form div.ant-progress.ant-progress-line div.ant-progress-outer {
+  margin-left: 25px;
+}
+
+body form#post-form div.ant-progress.ant-progress-line span.ant-progress-text {
+  margin-left: 20px;
 }
 
 body form#post-form div.post div.card {

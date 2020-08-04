@@ -21,7 +21,7 @@ class CreateCampaignsTable extends Migration
             $table->dateTime('end');
             $table->string('image')->nullable();
             $table->text('description');
-            $table->bigInteger('overhead')->nullable();
+            $table->bigInteger('overhead')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('organization_id')->unsigned();

@@ -1,6 +1,7 @@
 body {
   div.account {
     background-color: $testy4;
+    margin-top: -20px;
 
     div.row {
       width: 100%;
@@ -9,7 +10,8 @@ body {
         color: $testb;
       }
 
-      h4.white {
+      h4.white,
+      p.white {
         color: #fff;
       }
 
@@ -21,6 +23,7 @@ body {
 
   div.org-account {
     //padding-top: 20px;
+    margin-bottom: 40px;
     div.img {
       height: 300px;
       width: 300px;
