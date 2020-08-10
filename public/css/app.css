@@ -1,18 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-body {
-  margin: 0;
-  padding: 0;
+html {
+  height: 100vh;
 }
 
-body a {
+html body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f3f5f4;
+}
+
+html body a {
   text-decoration: none;
 }
 
-body main {
+html body main {
   padding-top: 20px;
   padding-bottom: 0;
-  background-color: #f3f5f4;
   min-height: 100%;
 }
 

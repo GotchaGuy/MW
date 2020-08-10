@@ -18,14 +18,13 @@
                                                 :text-inside="true"
                                                 :stroke-width="20"
                                                 :percentage="campaign.percent"
-                                                status="success"></el-progress>
+                                                status="success">
+                                        </el-progress>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-5">
-<!--                                <img src="storage/small/camp_images/epTlZV1LQ0BjCRLkSEzMq0nfp7C3QjNdjz3hHrZd.png" class="card-img" alt="...">-->
                                 <img :src="campaign.image" class="card-img" alt="...">
-                                storage/camp_images/epTlZV1LQ0BjCRLkSEzMq0nfp7C3QjNdjz3hHrZd.png
                             </div>
                         </div>
                     </a>

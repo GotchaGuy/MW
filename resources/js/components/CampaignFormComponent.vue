@@ -17,6 +17,7 @@
                                         v-model="campaign.title"
                                 />
                             </div>
+                            <!--                                        v-model="campaignTitle"-->
                         </div>
                         <!--                        -->
                         <div class="row">
@@ -30,6 +31,7 @@
                                         {{category.title}}
                                     </a-select-option>
                                 </a-select>
+                                <!--                                          v-model="category_id">-->
                             </div>
                         </div>
 
@@ -40,9 +42,7 @@
                                                 v-decorator="['time',
                                  { rules: [{ required: true, message: 'Picking the campaign duration is mandatory.' }] }]"/>
                             </div>
-                            <!--                        </div>-->
-                            <!--                    -->
-                            <!--                        <div class="row">-->
+
                             <div class="col-3">
                                 <h5 class="card-title">Goal</h5>
                                 <a-input-number
@@ -55,6 +55,7 @@
                                  { rules: [{ required: true, message: 'The campaign goal is mandatory.' }] }]"
                                 />
                             </div>
+                            <!--                                        v-model="euro_goal"-->
                             <div class="col-3">
                                 <h5 class="card-title">Overhead</h5>
                                 <a-input-number
@@ -68,6 +69,7 @@
                                  { rules: [{ required: true, message: 'Choosing the overhead percent is mandatory.' }] }]"
                                 />
                             </div>
+                            <!--                                        v-model="overhead"-->
                         </div>
                         <div class="row">
                             <div class="col">
@@ -111,34 +113,6 @@
                         <!--                        </div>-->
                     </div>
 
-
-                    <!--                    <div class="col-3">-->
-                    <!--                        <h5 class="card-title">Thumbnail Upload</h5>-->
-                    <!--                        <el-upload-->
-                    <!--                                class="avatar-uploader"-->
-                    <!--                                ref="upload"-->
-                    <!--                                action="/api/image/upload/camp"-->
-                    <!--                                :auto-upload="false"-->
-                    <!--                                :show-file-list="false"-->
-                    <!--                                :on-change="handleAvatarChange"-->
-                    <!--                                :headers="headers"-->
-                    <!--                                :before-upload="beforeAvatarUpload">-->
-                    <!--                            <div v-loading="loading">-->
-                    <!--                                <img v-if="thumbnail" :src="thumbnail" class="avatar">-->
-                    <!--                                <i v-else class="el-icon-receiving avatar-uploader-icon"></i>-->
-                    <!--                            </div>-->
-                    <!--                        </el-upload>-->
-                    <!--                        <el-dialog :visible.sync="dialogVisible">-->
-                    <!--                            <Cropper-->
-                    <!--                                    classname="upload-example-cropper"-->
-                    <!--                                    :src="imageUrl"-->
-                    <!--                                    @change="onChange"-->
-                    <!--                                    :stencil-props="{ movable: true, scalable: true, aspectRatio: 1.5,}"-->
-                    <!--                            />-->
-                    <!--                            <el-button type="primary" @click="applyChanges">Apply</el-button>-->
-                    <!--                        </el-dialog>-->
-                    <!--                    </div>-->
-
                 </div>
 
                 <!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }">-->
@@ -157,6 +131,7 @@
 
 
 <script>
+    const Eth = require('ethjs');
     import ACol from "ant-design-vue/es/grid/Col";
     import {Cropper} from 'vue-advanced-cropper'
 
@@ -186,21 +161,339 @@
                 thumbnail: '',
                 imageName: '',
                 modifiedImageUrl: '',
-                headers: {'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content}
+                headers: {'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content},
+                //
+                output: '',
+                campaignCreator: '0xAbdCA3D54acd456eeb506A70f0617e074Ca46Cd4',
+                campaignCreatorId: '', // dodaj ovo na contract, isto za donation transaction
+                campaignTitle: '',
+                category_id: '',
+                euro_goal: '',
+                campaignStartTime: '',
+                campaignDuration: '', // forma gleda end date, ne camp duration
+                overhead: '',
+                // totalDonatedSum: '',
+                // image: '', ?
+                //percent ?
+                //
+                myAccount: '',
+                Contract: '',
             }
         },
         mounted() {
+            const eth = new Eth(new Eth.HttpProvider('http://localhost:7545'));
             axios.get('/api/categories')
                 .then((response) => {
                     this.categories = response.data;
                     console.log(this.categories);
-                })
-        }
-        ,
+                });
+            const abi = [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_campaignId",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_donationId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "closeCampaign",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_campaignId",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_campaignCreatorId",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_campaignTitle",
+                            "type": "string"
+                        },
+                        {
+                            "name": "_campaignDuration",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_campaignStartTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_category_id",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "_euro_goal",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "_overhead",
+                            "type": "uint8"
+                        }
+                    ],
+                    "name": "createCampaign",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_donationId",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_euro_amount",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "_campaignId",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_plan_b",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "_backup_campaign_id",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_totalDonatedSum",
+                            "type": "uint32"
+                        }
+                    ],
+                    "name": "donate",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "name": "campaignId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "campaignCreatorId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "campaignTitle",
+                            "type": "string"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "overhead",
+                            "type": "uint8"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "euro_goal",
+                            "type": "uint32"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "totalDonatedSum",
+                            "type": "uint32"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "category_id",
+                            "type": "uint8"
+                        }
+                    ],
+                    "name": "CampaignResultEvent",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "name": "donationId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "donationCreatorId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "euro_amount",
+                            "type": "uint32"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "campaign_id",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "plan_b",
+                            "type": "uint8"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "backup_campaign_id",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "DonationnResultEvent",
+                    "type": "event"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "campaigns",
+                    "outputs": [
+                        {
+                            "name": "campaignCreator",
+                            "type": "address"
+                        },
+                        {
+                            "name": "campaignCreatorId",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "campaignTitle",
+                            "type": "string"
+                        },
+                        {
+                            "name": "category_id",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "euro_goal",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "campaignStartTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "campaignDuration",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "overhead",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "totalDonatedSum",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "campaignEnded",
+                            "type": "bool"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "donations",
+                    "outputs": [
+                        {
+                            "name": "donationCreator",
+                            "type": "address"
+                        },
+                        {
+                            "name": "donationCreatorId",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "euro_amount",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "campaign_id",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "plan_b",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "backup_campaign_id",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                }
+            ];
+            eth.accounts().then((accounts) => {
+                // eslint-disable-next-line prefer-destructuring
+                this.myAccount = accounts[0];
+            });
+            this.Contract = eth.contract(abi).at('0x86bD4E59f024F38295350948d84e09A89bE692Ac');
+        },
         methods: {
+            onCampaignSubmit() {
+// uint256 _campaignId, string _campaignTitle, uint256 _campaignDuration, uint256 _campaignStartTime, uint8 _category_id, uint32 _euro_goal, uint8 _overhead
+
+                this.Contract.createCampaign(
+                    this.campaignId,
+                    // add campaignCreatorId to contract n here via user cont thang
+                    this.campaignTitle = this.campaign.title,
+                    this.campaignDuration,
+                    this.campaignStartTime,
+                    this.category_id = this.campaign.category_id,
+                    this.euro_goal = this.campaign.euro_goal,
+                    this.overhead = this.campaign.overhead,
+                    {from: this.myAccount, gas: 3000000},
+                ).then(() => {
+                    console.log(campaignId);
+                }).catch((err) => {
+                    console.log(err);
+                });
+            },
+            // sendVote() {
+            //     const vote = (this.voteYesNo === 'Yes');
+            //     this.Contract.vote(vote, this.proposalId, {from: this.myAccount, gas: 3000000});
+            // },
+            //
             onDateChange(date, dateString) {
                 this.campaign.start = dateString[0];
                 this.campaign.end = dateString[1];
+                //
+                this.campaignStartTime = date[0]; // should be human readable or not?
+                this.campaignDuration = date[1] - date[0];
+                console.log(this.campaignDuration);
             },
             handleSubmit(e) {
                 e.preventDefault();
@@ -215,9 +508,6 @@
                             })
                     }
                 });
-            },
-            submitCampaign() {
-
             },
             applyChanges() {
                 this.loading = true;

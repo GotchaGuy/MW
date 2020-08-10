@@ -35,6 +35,16 @@ Vue.use(Antd);
 
 window.EventBus = new Vue();
 
+const Eth = require('ethjs');
+const eth = new Eth(new Eth.HttpProvider('https://ropsten.infura.io'));
+
+// const HttpProvider = require('ethjs-provider-http');
+// const Eth = require('ethjs-query');
+// const eth = new Eth(new HttpProvider('https://ropsten.infura.io'));
+//
+// eth.getBlockByNumber(45039930, cb);
+
+
 // var sourceMap = require("source-map");
 
 /**
@@ -49,6 +59,9 @@ window.EventBus = new Vue();
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+
+Vue.component('landing', require('./components/LandingComponent.vue').default);
 
 Vue.component('el-nav', require('./components/partials/NavigationComponent.vue').default);
 Vue.component('donate', require('./components/partials/DrawerDonateFormComponent.vue').default);
