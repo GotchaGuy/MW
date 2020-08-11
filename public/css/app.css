@@ -10954,6 +10954,70 @@ a.text-dark:focus {
   }
 }
 
+body div.landing {
+  margin-top: -20px;
+  height: 100vh;
+  background-color: #14453D;
+}
+
+body div.landing div.container div.row {
+  width: 100%;
+}
+
+body div.landing div.container div.justify-content-right {
+  height: 63px;
+  position: relative;
+}
+
+body div.landing div.container div.justify-content-right div.top {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 23px;
+}
+
+body div.landing div.container div.justify-content-right div.top a {
+  color: #fff;
+  text-decoration: none;
+  height: 100%;
+  width: 70px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+body div.landing div.container div.mid {
+  text-align: center;
+}
+
+body div.landing div.container div.mid img {
+  height: 300px;
+  width: 300px;
+}
+
+body div.landing div.container div.mid h1 {
+  color: #fff;
+  font-weight: bold;
+}
+
+body div.landing div.container div.columns {
+  color: #fff;
+}
+
+body div.landing div.container div.columns div {
+  max-width: 150px;
+  text-align: center;
+}
+
+body div.landing div.container div.columns div i svg {
+  height: 40px;
+  width: 40px;
+  color: #40A9FF;
+}
+
+body div.landing div.container div.columns div h3 {
+  color: #fff;
+}
+
 body nav.navbar.navbar-expand-md.navbar-light {
   text-align: center;
   background-color: #1C5F54;
@@ -10985,6 +11049,12 @@ body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li
   display: inline;
   float: left;
   padding: 5px;
+}
+
+body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li a.big {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 body nav.navbar.navbar-expand-md.navbar-light div.collapse.navbar-collapse ul li a {
@@ -11069,6 +11139,10 @@ body div.campaign div.card {
   overflow: hidden;
 }
 
+body div.campaign div.card h3.up {
+  text-transform: capitalize;
+}
+
 body div.campaign div.card a {
   text-decoration: none;
   color: #f5f5f5;
@@ -11105,6 +11179,10 @@ body div.campaign div.card:hover {
 
 body div.uno {
   position: relative;
+}
+
+body div.uno h1.up {
+  text-transform: capitalize;
 }
 
 body div.uno div.camp-header {
@@ -11365,6 +11443,15 @@ body div.org-account div.img {
   text-align: center;
   border: 1px solid #f3f5f4;
   border-radius: 5px;
+}
+
+body div.org-account div.img div.new a button.el-button.el-button--success.is-plain {
+  border: 10px solid #67C23A;
+}
+
+body div.org-account div.img div.new a button.el-button.el-button--success.is-plain i svg {
+  height: 40px;
+  width: 40px;
 }
 
 body div.org-account div.img form {

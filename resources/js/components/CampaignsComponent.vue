@@ -9,7 +9,7 @@
                                 <div class="card-body">
                                     <h6 class="çard-text">{{campaign.time_left}}</h6>
                                     <h6 class="card-title">{{campaign.category.title}}</h6>
-                                    <h3 class="card-title">{{campaign.title}}</h3>
+                                    <h3 class="card-title up">{{campaign.title}}</h3>
                                     <div class="graph">
                                         <p class="card-text">
                                             <small class="text-muted">Raised: €{{campaign.raised}}</small>

@@ -20,6 +20,7 @@
 </head>
 <body>
 <div id="app">
+    <?php if($_SERVER['REQUEST_URI'] !== '/'){  ?>
     <nav class="navbar navbar-expand-md navbar-light  ">
         {{--            shadow-sm bg-white--}}
         <div class="container position-relative">
@@ -80,9 +81,9 @@
             </div>
         </div>
     </nav>
-
+    <?php } ?>
     <main>
-{{--        class="py-4"--}}
+        {{--        class="py-4"--}}
         @yield('content')
     </main>
 </div>

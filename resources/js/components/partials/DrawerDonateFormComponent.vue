@@ -52,7 +52,6 @@
                             <swiper-slide class="campaign" v-for="(campaign, index) in campaigns" :key="index"
                                           v-if="campaign.id != donation.campaign_id">
                                 <a-card hoverable>
-                                    <!--                                    style="width: 300px"-->
                                     <img
                                             slot="cover"
                                             alt="Card image cap"
@@ -96,7 +95,7 @@
                     Cancel
                 </a-button>
 
-                <a-button type="primary" @click="toDonate">
+                <a-button type="primary" @click="toDonate(); onDonationSubmitBlk();">
                     Donate {{this.button}}
                 </a-button>
             </div>
@@ -106,6 +105,7 @@
 
 
 <script>
+    const Eth = require('ethjs');
     import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
 
@@ -144,19 +144,31 @@
                 campaigns: {},
                 //
                 donationId: '',
-                donationCreator: '',
+                donationCreator: '0xAbdCA3D54acd456eeb506A70f0617e074Ca46Cd4',
+                donationCreatorId: '',
                 campaignId: '',
                 euro_amount: '',
                 plan_b: 1,
-                backup_campaign_id: '',
+                backup_campaign_id: 0,
+                totalDonatedSum: '',
+                //
+                myAccount: '0x24FdeF78E8129d96775d30B517F245FD9b110D4B',
+                Contract: '',
             };
         },
         mounted() {
+            const eth = new Eth(new Eth.HttpProvider('http://localhost:7545'));
             this.donation.campaign_id = this.campaignid;
             axios.get('/api/campaigns')
                 .then((response) => {
                     this.campaigns = response.data;
                     console.log(this.campaigns);
+                });
+            axios.get('/api/my-acc')
+                .then((response) => {
+                    this.user = response.data;
+                    this.donationCreatorId = this.user.id;
+                    console.log(this.donationCreatorId);
                 });
             const abi = [
                 {
@@ -227,6 +239,10 @@
                             "type": "uint256"
                         },
                         {
+                            "name": "_donationCreatorId",
+                            "type": "uint256"
+                        },
+                        {
                             "name": "_euro_amount",
                             "type": "uint32"
                         },
@@ -241,10 +257,6 @@
                         {
                             "name": "_backup_campaign_id",
                             "type": "uint256"
-                        },
-                        {
-                            "name": "_totalDonatedSum",
-                            "type": "uint32"
                         }
                     ],
                     "name": "donate",
@@ -427,10 +439,32 @@
                     "type": "function"
                 }
             ];
+            //  eth.accounts().then((accounts) => {
+            //     // eslint-disable-next-line prefer-destructuring
+            //     this.myAccount = accounts[0];
+            // });
+            this.Contract = eth.contract(abi).at('0xf14967f4352835F55786c27f6A3e20a330DA2b24');
 
         },
         methods:
             {
+                onDonationSubmitBlk() {
+// uint256 _donationId, uint32 _euro_amount, uint256 _campaignId, uint8 _plan_b, uint256 _backup_campaign_id, uint32 _totalDonatedSum
+                    this.Contract.donate(
+                        this.donationId = Date.now(),
+                        this.donationCreatorId,
+                        this.donation.euro_amount,
+                        this.donation.campaign_id,
+                        this.donation.plan_b,
+                        this.backup_campaign_id,
+                        {from: this.myAccount, gas: 3000000},
+                    ).then(() => {
+                        console.log(this.campaignId);
+                    }).catch((err) => {
+                        console.log(err);
+                        console.log(this.backup_campaign_id);
+                    });
+                },
                 showDrawer() {
                     this.visible = true;
                 }
@@ -448,6 +482,7 @@
                 toPickBackup(id) {
                     this.donation.backup_campaign_id = id;
                     this.error.plan_b = "";
+                    this.backup_campaign_id = id;
                 }
                 ,
                 onChange(e) {
@@ -479,8 +514,8 @@
                         this.visible = false;
                         axios.post('/api/donations', this.donation)
                             .then((response) => {
-                                document.getElementById("donation-form").reset();
-                                window.location.reload();
+                                // document.getElementById("donation-form").reset();
+                                // window.location.reload();
                             })
                     }
 

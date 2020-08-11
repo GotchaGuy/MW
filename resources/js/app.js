@@ -38,12 +38,9 @@ window.EventBus = new Vue();
 const Eth = require('ethjs');
 const eth = new Eth(new Eth.HttpProvider('https://ropsten.infura.io'));
 
-// const HttpProvider = require('ethjs-provider-http');
-// const Eth = require('ethjs-query');
-// const eth = new Eth(new HttpProvider('https://ropsten.infura.io'));
-//
-// eth.getBlockByNumber(45039930, cb);
+import VueRouter from 'vue-router';
 
+Vue.use(VueRouter);
 
 // var sourceMap = require("source-map");
 

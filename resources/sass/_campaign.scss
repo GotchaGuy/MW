@@ -2,33 +2,41 @@ body {
   div.uno {
     position: relative;
 
+    h1.up {
+      text-transform: capitalize;
+    }
+
     div.camp-header {
       margin-top: -20px;
       max-height: 600px;
       overflow: hidden;
       //padding: 5px;
-      position:relative;
+      position: relative;
+
       img.big {
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 0 10px 10px 10px;
       }
+
       div.org-image {
         height: 75px;
         width: 75px;
         position: absolute;
         top: 10px;
         left: 10px;
+
         a {
           height: 100%;
           width: 100%;
           text-decoration: none;
-        img {
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
-        }
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
@@ -36,9 +44,9 @@ body {
     div.camp-right {
       box-sizing: border-box;
       padding: 10px;
-        //position: sticky;
-        //top: 0;
-        //right: 0;
+      //position: sticky;
+      //top: 0;
+      //right: 0;
       div.row {
         h2.blue {
           color: $testb;

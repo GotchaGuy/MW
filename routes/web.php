@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Imgfly::routes();
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//
+//Route::get('/', function () {
+//    return view('landing');
+//});
 
 Auth::routes();
+
+Route::get('/', 'LandingController@index')->name('landing');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

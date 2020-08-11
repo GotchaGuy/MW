@@ -24,12 +24,29 @@ body {
   div.org-account {
     //padding-top: 20px;
     margin-bottom: 40px;
+
     div.img {
       height: 300px;
       width: 300px;
       text-align: center;
       border: 1px solid $testy2;
       border-radius: 5px;
+
+      div.new {
+        a {
+          button.el-button.el-button--success.is-plain {
+            border: 10px solid #67C23A;
+
+            i {
+              svg {
+                height: 40px;
+                width: 40px;
+              }
+            }
+          }
+        }
+      }
+
 
       //opacity: 1;
       //display: block;

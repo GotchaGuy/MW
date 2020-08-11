@@ -19,7 +19,6 @@
                             </div>
                             <!--                                        v-model="campaignTitle"-->
                         </div>
-                        <!--                        -->
                         <div class="row">
                             <div class="col">
                                 <h5 class="card-title">Campaign Category</h5>
@@ -59,11 +58,9 @@
                             <div class="col-3">
                                 <h5 class="card-title">Overhead</h5>
                                 <a-input-number
-                                        aria-describedby="overhead"
-                                        :default-value="0"
-                                        :min="0"
-                                        :max="100"
+                                        :min="0" :max="100"
                                         placeholder="%"
+                                        :default-value="0"
                                         v-model="campaign.overhead"
                                         v-decorator="['overhead',
                                  { rules: [{ required: true, message: 'Choosing the overhead percent is mandatory.' }] }]"
@@ -99,31 +96,23 @@
                                 </el-dialog>
                             </div>
                         </div>
-
-
                     </div>
-
-
                     <div class="col-6">
-                        <!--                        <div class="col">-->
                         <h5 class="card-title">Campaign Description</h5>
-                        <a-textarea placeholder="Opis kampanje" :rows="8" v-model="campaign.description"
+                        <a-textarea placeholder="Opis kampanje"
+                                    :rows="8"
+                                    v-model="campaign.description"
                                     v-decorator="['desc',
                                  { rules: [{ required: true, message: 'Molimo Vas temeljno opišite Vašu kampanju.' }] }]"/>
-                        <!--                        </div>-->
                     </div>
-
                 </div>
-
-                <!--                <a-form-item :wrapper-col="{ span: 12, offset: 5 }">-->
                 <div class="row">
                     <div class="col-1 offset-11">
-                        <a-button type="success" html-type="submit" class="submit">
+                        <a-button type="success" html-type="submit" class="submit" @click="onCampaignSubmitBlk">
                             <i class="el-icon-check"></i>
                         </a-button>
                     </div>
                 </div>
-
             </a-form>
         </div>
     </div>
@@ -139,6 +128,7 @@
         components: {ACol, Cropper},
         data() {
             return {
+                user: "",
                 formLayout: 'horizontal',
                 form: this.$form.createForm(this, {name: 'coordinated'}),
                 categories: {},
@@ -149,7 +139,6 @@
                     end: "",
                     overhead: "",
                     image: "",
-                    // image: "https://source.unsplash.com/random/400x400",
                     description: "",
                     user_id: "",
                     category_id: ""
@@ -165,18 +154,17 @@
                 //
                 output: '',
                 campaignCreator: '0xAbdCA3D54acd456eeb506A70f0617e074Ca46Cd4',
-                campaignCreatorId: '', // dodaj ovo na contract, isto za donation transaction
+                campaignCreatorId: '',
                 campaignTitle: '',
                 category_id: '',
                 euro_goal: '',
                 campaignStartTime: '',
-                campaignDuration: '', // forma gleda end date, ne camp duration
+                campaignDuration: '',
                 overhead: '',
                 // totalDonatedSum: '',
-                // image: '', ?
                 //percent ?
                 //
-                myAccount: '',
+                myAccount: '0x24FdeF78E8129d96775d30B517F245FD9b110D4B',
                 Contract: '',
             }
         },
@@ -187,7 +175,12 @@
                     this.categories = response.data;
                     console.log(this.categories);
                 });
-            const abi = [
+            axios.get('/api/my-acc')
+                .then((response) => {
+                    this.user = response.data;
+                    this.campaignCreatorId = this.user.id;
+                });
+           const abi = [
                 {
                     "constant": false,
                     "inputs": [
@@ -256,6 +249,10 @@
                             "type": "uint256"
                         },
                         {
+                            "name": "_donationCreatorId",
+                            "type": "uint256"
+                        },
+                        {
                             "name": "_euro_amount",
                             "type": "uint32"
                         },
@@ -270,10 +267,6 @@
                         {
                             "name": "_backup_campaign_id",
                             "type": "uint256"
-                        },
-                        {
-                            "name": "_totalDonatedSum",
-                            "type": "uint32"
                         }
                     ],
                     "name": "donate",
@@ -456,44 +449,41 @@
                     "type": "function"
                 }
             ];
-            eth.accounts().then((accounts) => {
-                // eslint-disable-next-line prefer-destructuring
-                this.myAccount = accounts[0];
-            });
-            this.Contract = eth.contract(abi).at('0x86bD4E59f024F38295350948d84e09A89bE692Ac');
+            // eth.accounts().then((accounts) => {
+            //     // eslint-disable-next-line prefer-destructuring
+            //     this.myAccount = accounts[0];
+            // });
+            this.Contract = eth.contract(abi).at('0xf14967f4352835F55786c27f6A3e20a330DA2b24');
         },
         methods: {
-            onCampaignSubmit() {
-// uint256 _campaignId, string _campaignTitle, uint256 _campaignDuration, uint256 _campaignStartTime, uint8 _category_id, uint32 _euro_goal, uint8 _overhead
-
+            onCampaignSubmitBlk() {
+// uint256 _campaignId, _campaignCreatorId, string _campaignTitle, uint256 _campaignDuration, uint256 _campaignStartTime, uint8 _category_id, uint32 _euro_goal, uint8 _overhead
                 this.Contract.createCampaign(
-                    this.campaignId,
-                    // add campaignCreatorId to contract n here via user cont thang
+                    this.campaignId = Date.now(),
+                    this.campaignCreatorId,
                     this.campaignTitle = this.campaign.title,
                     this.campaignDuration,
-                    this.campaignStartTime,
+                    this.campaignStartTime = moment(this.campaignStartTime).valueOf(),
                     this.category_id = this.campaign.category_id,
                     this.euro_goal = this.campaign.euro_goal,
                     this.overhead = this.campaign.overhead,
                     {from: this.myAccount, gas: 3000000},
                 ).then(() => {
-                    console.log(campaignId);
+                    console.log(this.campaignId);
                 }).catch((err) => {
                     console.log(err);
                 });
             },
-            // sendVote() {
-            //     const vote = (this.voteYesNo === 'Yes');
-            //     this.Contract.vote(vote, this.proposalId, {from: this.myAccount, gas: 3000000});
-            // },
-            //
             onDateChange(date, dateString) {
                 this.campaign.start = dateString[0];
                 this.campaign.end = dateString[1];
                 //
-                this.campaignStartTime = date[0]; // should be human readable or not?
+                this.campaignStartTime = date[0];
+                // console.log(this.campaignStartTime);
                 this.campaignDuration = date[1] - date[0];
-                console.log(this.campaignDuration);
+                // console.log(this.campaignDuration);
+                // this.campaignStartTime = moment(this.campaignStartTime).valueOf();
+                // console.log(this.campaignStartTime);
             },
             handleSubmit(e) {
                 e.preventDefault();

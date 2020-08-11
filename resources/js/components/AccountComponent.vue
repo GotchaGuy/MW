@@ -18,8 +18,8 @@
                                     :before-upload="beforeAvatarUpload">
                                 <div v-loading="loading">
                                     <img :src="thumbnail" class="avatar">
-<!--                                    v-if="thumbnail"-->
-<!--                                    <i v-else class="el-icon-receiving avatar-uploader-icon"></i>-->
+                                    <!--                                    v-if="thumbnail"-->
+                                    <!--                                    <i v-else class="el-icon-receiving avatar-uploader-icon"></i>-->
                                 </div>
                             </el-upload>
                             <el-dialog :visible.sync="dialogVisible">
@@ -61,7 +61,9 @@
                 <div class="col-4 campaign">
                     <div class="card mb-3 new mx-auto">
                         <a href="/new-campaign">
-                            <el-button type="success" icon="el-icon-plus" plain></el-button>
+                            <el-button type="success" icon="el-icon-plus">
+                                <!--                               <a-icon type="plus-circle" />-->
+                            </el-button>
                         </a>
                     </div>
                 </div>
@@ -158,11 +160,11 @@
             // },
             updateImage($id) {
                 axios.put('/api/image/upload/logo/' + $id, this.new, $id)
-                            .then((response) => {
-                                // document.getElementById("post-form").reset();
-                                window.location.href = '/me';
-                            })
-                    },
+                    .then((response) => {
+                        // document.getElementById("post-form").reset();
+                        window.location.href = '/me';
+                    })
+            },
             //
             applyChanges() {
                 this.loading = true;

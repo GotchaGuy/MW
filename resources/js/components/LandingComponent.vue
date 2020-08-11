@@ -1,20 +1,39 @@
 <template>
-    <div class="content">
-        <img src="/images/ajdoniraj-logo-b.png" width="100" height="100" class="d-inline-block align-top" alt=""
-             loading="lazy">
-        <div class="title m-b-md">
-            Aj Doniraj
-        </div>
+    <div class="landing">
+        <div class="container">
+            <div class="row d-flex justify-content-right">
+                <div class="top">
+                    <a href="/home">HOME</a>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="mid col-12">
+                    <img src="/images/ajdoniraj-logo-w.png" class="d-inline-block align-top" alt=""
+                         loading="lazy">
+                    <div class="title m-b-md">
+                        <h1>Aj Doniraj</h1>
+                    </div>
+                </div>
 
-        <div class="links">
-            <a href="https://laravel.com/docs">Docs</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://blog.laravel.com">Blog</a>
-            <a href="https://nova.laravel.com">Nova</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://vapor.laravel.com">Vapor</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="row columns d-flex justify-content-around">
+                    <div>
+                        <!--                class="col"-->
+                       <a-icon type="safety-certificate" />
+                        <h3>Security</h3>
+                        <p>Tamper-proof smart contract transactions.</p>
+                    </div>
+                    <div>
+                       <a-icon type="eye" />
+                        <h3>Transparency</h3>
+                        <p>Check any and all transactions via blockchain framework.</p>
+                    </div>
+                    <div>
+                       <a-icon type="interaction" />
+                        <h3>Community</h3>
+                        <p>Direct communication with campaign organizers.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>

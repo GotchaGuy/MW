@@ -2,21 +2,21 @@
     <div>
         <ul class="d-flex justify-content-center">
             <li class="green">
-                <a href="/home" class="nav-item nav-link text-center">Campaigns</a>
+                <a href="/home" class="nav-item nav-link text-center big">Campaigns</a>
             </li>
             <!--                <a-icon type="home" />-->
             <!--                theme="filled"-->
             <li>
-                <a href="/feed" class="nav-item nav-link text-center">Feed</a>
+                <a href="/feed" class="nav-item nav-link text-center big">Feed</a>
             </li>
             <!--                <a-icon type="database" />-->
 
             <li v-if="user.role_id === 2">
-                <a href="/new-post" class="nav-item nav-link text-center">New Post</a>
+                <a href="/new-post" class="nav-item nav-link text-center big">New Post</a>
             </li>
             <!--            <a-icon type="plus-square"  />-->
             <li>
-                <a href="/me" class="nav-item nav-link text-center">My Account</a>
+                <a href="/me" class="nav-item nav-link text-center big">My Account</a>
             </li>
             <!--                <a-icon type="smile"  />-->
         </ul>
