@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
-    protected $fillable = ['title', 'euro_goal', 'start', 'end', 'image', 'description', 'user_id', 'category_id', 'organization_id', 'following'];
+    protected $fillable = ['title', 'euro_goal', 'start', 'end', 'image', 'description', 'user_id', 'category_id', 'organization_id', 'following', 'overhead'];
 
     protected $casts = ['end' => 'date', 'start' => 'date'];
 

@@ -493,8 +493,9 @@
                         console.log(this.campaign);
                         axios.post('/api/new-campaign', this.campaign)
                             .then((response) => {
+                                 console.log(this.campaign);
                                 document.getElementById("campaign-form").reset();
-                                window.location.href = '/home';
+                                // window.location.href = '/home';
                             })
                     }
                 });
