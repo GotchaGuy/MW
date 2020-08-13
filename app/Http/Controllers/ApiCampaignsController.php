@@ -17,7 +17,7 @@ class ApiCampaignsController extends Controller
             $campaigns[$key]->time_left = $campaign->end->diffForHumans();
             $campaigns[$key]->raised = Donation::where('campaign_id', $campaign->id)->sum('euro_amount');
             $campaigns[$key]->percent = floor($campaign->raised / $campaign->euro_goal * 100);
-            if ( $campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000') {
+            if ( $campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000/?charity') {
             $campaigns[$key]->image = substr_replace($campaign->image, 'small/', 9, 0);
             }
         }

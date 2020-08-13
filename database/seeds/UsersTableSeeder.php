@@ -18,6 +18,12 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('admin123'),
                 'role_id' => '2'
             ]);
+        User::create(
+            [   'name' => 'Tom',
+                'email' => 'adminn@admin.com',
+                'password' => bcrypt('admin123'),
+                'role_id' => '1'
+            ]);
 //        factory(User::class, 20)->create();
 
         // Create 10 Donators

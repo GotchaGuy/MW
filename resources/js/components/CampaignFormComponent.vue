@@ -170,6 +170,12 @@
         },
         mounted() {
             const eth = new Eth(new Eth.HttpProvider('http://localhost:7545'));
+            // if (typeof window.web3 !== 'undefined'
+            // && typeof window.web3.currentProvider !== 'undefined') {
+            //   eth.setProvider(window.web3.currentProvider);
+            // } else {
+            //   eth.setProvider(new Eth.HttpProvider('http://localhost:8545')); // set to TestRPC if not available
+            // }
             axios.get('/api/categories')
                 .then((response) => {
                     this.categories = response.data;
@@ -180,7 +186,7 @@
                     this.user = response.data;
                     this.campaignCreatorId = this.user.id;
                 });
-           const abi = [
+            const abi = [
                 {
                     "constant": false,
                     "inputs": [
@@ -493,7 +499,7 @@
                         console.log(this.campaign);
                         axios.post('/api/new-campaign', this.campaign)
                             .then((response) => {
-                                 console.log(this.campaign);
+                                console.log(this.campaign);
                                 document.getElementById("campaign-form").reset();
                                 // window.location.href = '/home';
                             })
