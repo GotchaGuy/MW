@@ -5,19 +5,10 @@ body {
     //background-color: $testy4;
     background: linear-gradient(45deg, $testy4, #163e33);
 
-    div.container {
-      div.row {
-        width: 100%;
-      }
-
-      div.justify-content-right {
-        height: 63px;
-        position: relative;
-
-        div.top {
+    div.top {
           display: inline-block;
           position: absolute;
-          right: 0;
+          right: 33px;
           top: 23px;
 
           a {
@@ -29,6 +20,16 @@ body {
             font-weight: bold;
           }
         }
+
+    div.container {
+      div.row {
+        width: 100%;
+      }
+
+      div.justify-content-right {
+        height: 63px;
+        position: relative;
+
       }
 
       div.mid {

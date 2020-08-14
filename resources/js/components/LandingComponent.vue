@@ -1,10 +1,10 @@
 <template>
     <div class="landing">
+        <div class="top">
+            <a href="/home">HOME</a>
+        </div>
         <div class="container">
             <div class="row d-flex justify-content-right">
-                <div class="top">
-                    <a href="/home">HOME</a>
-                </div>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="mid col-12">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
 
-                <div class="row columns d-flex justify-content-around">
+                <div class="row columns d-flex justify-content-between">
                     <div>
                         <!--                class="col"-->
                        <a-icon type="safety-certificate" />

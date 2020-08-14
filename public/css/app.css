@@ -10960,6 +10960,22 @@ body div.landing {
   background: linear-gradient(45deg, #14453D, #163e33);
 }
 
+body div.landing div.top {
+  display: inline-block;
+  position: absolute;
+  right: 33px;
+  top: 23px;
+}
+
+body div.landing div.top a {
+  color: #fff;
+  text-decoration: none;
+  height: 100%;
+  width: 70px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 body div.landing div.container div.row {
   width: 100%;
 }
@@ -10967,22 +10983,6 @@ body div.landing div.container div.row {
 body div.landing div.container div.justify-content-right {
   height: 63px;
   position: relative;
-}
-
-body div.landing div.container div.justify-content-right div.top {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  top: 23px;
-}
-
-body div.landing div.container div.justify-content-right div.top a {
-  color: #fff;
-  text-decoration: none;
-  height: 100%;
-  width: 70px;
-  font-size: 12px;
-  font-weight: bold;
 }
 
 body div.landing div.container div.mid {
