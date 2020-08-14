@@ -10990,8 +10990,8 @@ body div.landing div.container div.mid {
 }
 
 body div.landing div.container div.mid img {
-  height: 300px;
-  width: 300px;
+  height: 230px;
+  width: 230px;
 }
 
 body div.landing div.container div.mid h1 {
@@ -11001,6 +11001,7 @@ body div.landing div.container div.mid h1 {
 
 body div.landing div.container div.columns {
   color: #fff;
+  margin-top: 15vh;
 }
 
 body div.landing div.container div.columns div {
