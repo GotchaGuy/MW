@@ -36,7 +36,8 @@ Vue.use(Antd);
 window.EventBus = new Vue();
 
 const Eth = require('ethjs');
-const eth = new Eth(new Eth.HttpProvider('https://ropsten.infura.io'));
+// const eth = new Eth(new Eth.HttpProvider('https://ropsten.infura.io'));
+const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
 
 import VueRouter from 'vue-router';
 

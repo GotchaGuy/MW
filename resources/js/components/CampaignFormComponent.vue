@@ -153,7 +153,7 @@
                 headers: {'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content},
                 //
                 output: '',
-                campaignCreator: '0xAbdCA3D54acd456eeb506A70f0617e074Ca46Cd4',
+                campaignCreator: '0x80ca7985360c43545C8E1e1a1a4dcEe9641Ecd7b',
                 campaignCreatorId: '',
                 campaignTitle: '',
                 category_id: '',
@@ -164,18 +164,18 @@
                 // totalDonatedSum: '',
                 //percent ?
                 //
-                myAccount: '0x24FdeF78E8129d96775d30B517F245FD9b110D4B',
+                myAccount: '0xdbC4D7B4Ac635845ca1D4C0E779150E4b494A413',
                 Contract: '',
             }
         },
         mounted() {
-            const eth = new Eth(new Eth.HttpProvider('http://localhost:7545'));
-            // if (typeof window.web3 !== 'undefined'
-            // && typeof window.web3.currentProvider !== 'undefined') {
-            //   eth.setProvider(window.web3.currentProvider);
-            // } else {
-            //   eth.setProvider(new Eth.HttpProvider('http://localhost:8545')); // set to TestRPC if not available
-            // }
+            // const eth = new Eth(new Eth.HttpProvider('http://localhost:7545'));
+            if (typeof window.web3 !== 'undefined'
+            && typeof window.web3.currentProvider !== 'undefined') {
+              eth.setProvider(window.web3.currentProvider);
+            } else {
+              eth.setProvider(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e')); // set to TestRPC if not available
+            }
             axios.get('/api/categories')
                 .then((response) => {
                     this.categories = response.data;
@@ -459,7 +459,7 @@
             //     // eslint-disable-next-line prefer-destructuring
             //     this.myAccount = accounts[0];
             // });
-            this.Contract = eth.contract(abi).at('0xf14967f4352835F55786c27f6A3e20a330DA2b24');
+            this.Contract = eth.contract(abi).at('0xDFD5d5E1D674cE896d8e0d4B7F84246fCF0186C3');
         },
         methods: {
             onCampaignSubmitBlk() {
