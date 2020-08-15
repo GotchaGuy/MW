@@ -152,8 +152,10 @@
                 backup_campaign_id: 0,
                 totalDonatedSum: '',
                 //
-                myAccount: '0xdbC4D7B4Ac635845ca1D4C0E779150E4b494A413',
+                // myAccount: '0xdbC4D7B4Ac635845ca1D4C0E779150E4b494A413',
+                myAccount: '0xdbc4d7b4ac635845ca1d4c0e779150e4b494a413',
                 Contract: '',
+
             };
         },
         mounted() {
@@ -456,6 +458,7 @@
         methods:
             {
                 onDonationSubmitBlk() {
+                    console.log(this.myAccount);
 // uint256 _donationId, uint32 _euro_amount, uint256 _campaignId, uint8 _plan_b, uint256 _backup_campaign_id, uint32 _totalDonatedSum
                     this.Contract.donate(
                         this.donationId = Date.now(),
@@ -468,6 +471,7 @@
                     ).then(() => {
                         console.log(this.campaignId);
                     }).catch((err) => {
+
                         console.log(err);
                         console.log(this.backup_campaign_id);
                     });
