@@ -10986,6 +10986,7 @@ body div.landing div.container div.justify-content-right {
 }
 
 body div.landing div.container div.mid {
+  margin-top: 5vh;
   text-align: center;
 }
 
@@ -10996,12 +10997,13 @@ body div.landing div.container div.mid img {
 
 body div.landing div.container div.mid h1 {
   color: #fff;
+  font-size: 30px;
   font-weight: bold;
 }
 
 body div.landing div.container div.columns {
   color: #fff;
-  margin-top: 15vh;
+  margin-top: 8vh;
 }
 
 body div.landing div.container div.columns div {
