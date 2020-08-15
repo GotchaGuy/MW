@@ -43,9 +43,11 @@ class ApiImageController extends Controller
 //        $thumb->save('storage/small/' . $final_path);
 // http://idoniraj.test/storage/small/camp_images/LA4QypfGkgSMTzpfYuCCstQJ7NIEfbGAhQIBOZdb.png
 
-        if (!file_exists($final_path)) {
-            mkdir($final_path, 666, true);
-        }
+        dd($final_path);
+
+//        if (!file_exists($final_path)) {
+//            mkdir($final_path, 666, true);
+//        }
 
         return [
             'status' => 200,
