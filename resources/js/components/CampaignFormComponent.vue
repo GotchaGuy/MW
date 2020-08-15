@@ -170,12 +170,12 @@
         mounted() {
             // const eth = new Eth(new Eth.HttpProvider('http://localhost:7545'));
              const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
-            if (typeof window.web3 !== 'undefined'
-            && typeof window.web3.currentProvider !== 'undefined') {
-              eth.setProvider(window.web3.currentProvider);
-            } else {
-              eth.setProvider(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e')); // set to TestRPC if not available
-            }
+            // if (typeof window.web3 !== 'undefined'
+            // && typeof window.web3.currentProvider !== 'undefined') {
+            //   eth.setProvider(window.web3.currentProvider);
+            // } else {
+            //   eth.setProvider(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e')); // set to TestRPC if not available
+            // }
             axios.get('/api/categories')
                 .then((response) => {
                     this.categories = response.data;

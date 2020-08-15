@@ -8,28 +8,28 @@
                     </a>
                 </div>
                 <img class="big" :src="campaign.image" alt="">
-<!--                https://source.unsplash.com/random/-->
+                <!--                https://source.unsplash.com/random/-->
             </div>
 
-            <div class="col camp-right">
+            <div class="col-4 camp-right">
                 <h6 class="card-title">{{campaign.category.title}}</h6>
                 <h1 class="card-title">{{campaign.title}}</h1>
                 <div class="row">
-                    <div class="col">
-                <h6 class="text-muted">Up until:</h6>
-                <h3 class="card-title">{{campaign.time_left}}</h3>
+                    <div class="col-6">
+                        <h6 class="text-muted">Up until:</h6>
+                        <h3 class="card-title">{{campaign.time_left}}</h3>
                     </div>
-                    <div class="col">
-                <h6 class="text-muted">Overhead:</h6>
-                <h3 class="card-title">{{campaign.overhead}}%</h3>
+                    <div class="col-6">
+                        <h6 class="text-muted">Overhead:</h6>
+                        <h3 class="card-title">{{campaign.overhead}}%</h3>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-6">
                         <h6 class="text-muted">Raised:</h6>
                         <h2>€{{campaign.raised}}</h2>
                     </div>
-                    <div class="col">
+                    <div class="col-6">
                         <h6 class="text-muted">Goal:</h6>
                         <h2 class="blue">€{{campaign.euro_goal}}</h2>
                     </div>

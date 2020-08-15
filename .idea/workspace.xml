@@ -68,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignFormComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            <state relative-caret-position="391">
+              <caret line="177" column="16" selection-start-line="172" selection-start-column="8" selection-end-line="177" selection-end-column="16" />
               <folding>
                 <element signature="e#9110#18949#0" />
               </folding>
@@ -86,15 +86,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/partials/DrawerDonateFormComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="126" column="31" lean-forward="true" selection-end-line="541" selection-end-column="9" />
+            <state relative-caret-position="3264">
+              <caret line="460" selection-start-line="460" selection-end-line="460" />
               <folding>
                 <element signature="e#5951#6005#0" expanded="true" />
                 <element signature="e#8780#18619#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/sass/_campaign.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignComponent.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -127,27 +145,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiFollowsController.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiImageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" column="9" selection-start-line="15" selection-end-line="19" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2aa45fb0-36b4-44b2-b766-fdad8ffe7812/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://e0adf9ca-96b0-41c5-8d16-a8ca741f3621/schema/mw/table/categories">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="7f3e8860-1850-42ec-b19e-e9c02eba89d1">
-              <filtering>
-                <filter text="" />
-              </filtering>
+            <state relative-caret-position="323">
+              <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -177,7 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/RegisterComponent.vue" />
         <option value="$PROJECT_DIR$/resources/sass/_register.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/OrganizationComponent.vue" />
         <option value="$PROJECT_DIR$/routes/api.php" />
@@ -187,7 +188,6 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/config/croppa.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiImageController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/partials/DonorAccountComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/PostsComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/FollowingComponent.vue" />
@@ -204,7 +204,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/LandingController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/CampaignsComponent.vue" />
         <option value="$PROJECT_DIR$/resources/sass/_campaigns.scss" />
-        <option value="$PROJECT_DIR$/resources/sass/_campaign.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/partials/NavigationComponent.vue" />
         <option value="$PROJECT_DIR$/resources/sass/_acc.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/AccountComponent.vue" />
@@ -223,11 +222,14 @@
         <option value="$PROJECT_DIR$/resources/js/components/LandingComponent.vue" />
         <option value="$PROJECT_DIR$/resources/sass/_landing.scss" />
         <option value="$PROJECT_DIR$/database/factories/OrganizationFactory.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/CampaignFormComponent.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiFollowsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiDonationsController.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/partials/DrawerDonateFormComponent.vue" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/partials/DrawerDonateFormComponent.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/CampaignFormComponent.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/CampaignComponent.vue" />
+        <option value="$PROJECT_DIR$/resources/sass/_campaign.scss" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiImageController.php" />
       </list>
     </option>
   </component>
@@ -531,18 +533,18 @@
       <workItem from="1591954220204" duration="106508000" />
       <workItem from="1592952033645" duration="214842000" />
       <workItem from="1596753318383" duration="1915000" />
-      <workItem from="1596779242016" duration="73645000" />
+      <workItem from="1596779242016" duration="77979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="484078000" />
+    <option name="totallyTimeSpent" value="488412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2702498" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2702498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -570,9 +572,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/solidity/migrations/1_initial_migration.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/solidity/migrations/1596783306_donations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -652,20 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_campaign.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -865,16 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignFormComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="e#9110#18949#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiFollowsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -909,14 +884,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignFormComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="177" column="16" selection-start-line="172" selection-start-column="8" selection-end-line="177" selection-end-column="16" />
+          <folding>
+            <element signature="e#9110#18949#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/partials/DrawerDonateFormComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="126" column="31" lean-forward="true" selection-end-line="541" selection-end-column="9" />
+        <state relative-caret-position="3264">
+          <caret line="460" selection-start-line="460" selection-end-line="460" />
           <folding>
             <element signature="e#5951#6005#0" expanded="true" />
             <element signature="e#8780#18619#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_campaign.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiImageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
         </state>
       </provider>
     </entry>

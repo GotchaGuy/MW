@@ -30,14 +30,22 @@ class ApiImageController extends Controller
         //saving the file
         $path = $file->store('public/camp_images');
 
+
+
 //        dd($path);
         $final_path = substr($path, 7);
 //        dd(public_path('storage/' . $final_path));
         $thumb = Image::make(public_path('storage/' . $final_path));
 
         $thumb->resize(140, 235);
-        $thumb->save(public_path('storage/small/' . $final_path));
+
+//        $thumb->save(public_path('storage/small/' . $final_path));
+        $thumb->save('storage/small/' . $final_path);
 // http://idoniraj.test/storage/small/camp_images/LA4QypfGkgSMTzpfYuCCstQJ7NIEfbGAhQIBOZdb.png
+
+//        if (!file_exists($final_path)) {
+//            mkdir($final_path, 666, true);
+//        }
 
         return [
             'status' => 200,

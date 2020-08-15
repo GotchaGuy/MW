@@ -11189,52 +11189,63 @@ body div.uno h1.up {
   text-transform: capitalize;
 }
 
-body div.uno div.camp-header {
+body div.uno div.row {
+  width: 100%;
+}
+
+body div.uno div.row div.camp-header {
+  width: 100%;
   margin-top: -20px;
   max-height: 600px;
   overflow: hidden;
+  padding: 0;
   position: relative;
 }
 
-body div.uno div.camp-header img.big {
+body div.uno div.row div.camp-header img.big {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0 10px 10px 10px;
+  padding: 0;
 }
 
-body div.uno div.camp-header div.org-image {
+body div.uno div.row div.camp-header div.org-image {
   height: 75px;
   width: 75px;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 20px;
 }
 
-body div.uno div.camp-header div.org-image a {
+body div.uno div.row div.camp-header div.org-image a {
   height: 100%;
   width: 100%;
   text-decoration: none;
 }
 
-body div.uno div.camp-header div.org-image a img {
+body div.uno div.row div.camp-header div.org-image a img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-body div.uno div.camp-right {
+body div.uno div.row div.col-4.camp-right {
   box-sizing: border-box;
   padding: 10px;
 }
 
-body div.uno div.camp-right div.row h2.blue {
+body div.uno div.row div.col-4.camp-right div.row {
+  width: 100%;
+}
+
+body div.uno div.row div.col-4.camp-right div.row h2.blue {
   color: #40A9FF;
 }
 
-body div.uno div.camp-right div.camp-button {
+body div.uno div.row div.col-4.camp-right div.camp-button {
   width: 100%;
   text-align: center;
   padding-top: 30px;
