@@ -7,7 +7,6 @@
                 <div class="row">
                     <!--                    <a-col :span="10">-->
                     <div class="col-6">
-                        <!--                        <a-row :gutter="10">-->
                         <div class="row">
                             <div class="col">
                                 <h5 class="card-title">Campaign Name</h5>

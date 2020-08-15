@@ -17,6 +17,6 @@ $factory->define(Organization::class, function (Faker $faker) {
         'field_of_work' => 'We work to better understand and leverage domestic philantropy for the social transformation of the countries of the Western Balkans',
 //        $faker->sentence(15, true),
 //        'description' => $faker->paragraph(7, true),
-        'org_logo' => '/images/ajdoniraj-logo-w.png'
+        'org_logo' => '/images/ajdoniraj-logo-b.png'
     ];
 });

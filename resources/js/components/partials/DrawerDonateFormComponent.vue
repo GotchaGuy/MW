@@ -144,7 +144,8 @@
                 campaigns: {},
                 //
                 donationId: '',
-                donationCreator: '0x80ca7985360c43545C8E1e1a1a4dcEe9641Ecd7b',
+                donationCreator: '0xdbC4D7B4Ac635845ca1D4C0E779150E4b494A413',
+                // donationCreator: '0x80ca7985360c43545C8E1e1a1a4dcEe9641Ecd7b',
                 donationCreatorId: '',
                 campaignId: '',
                 euro_amount: '',
@@ -153,7 +154,7 @@
                 totalDonatedSum: '',
                 //
                 // myAccount: '0xdbC4D7B4Ac635845ca1D4C0E779150E4b494A413',
-                myAccount: '0xdbc4d7b4ac635845ca1d4c0e779150e4b494a413',
+                myAccount: '0x80ca7985360c43545C8E1e1a1a4dcEe9641Ecd7b',
                 Contract: '',
 
             };
@@ -161,11 +162,11 @@
         mounted() {
             // const eth = new Eth(new Eth.HttpProvider('http://localhost:7545'));
             const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
-             if (typeof window.web3 !== 'undefined'
-            && typeof window.web3.currentProvider !== 'undefined') {
-              eth.setProvider(window.web3.currentProvider);
+            if (typeof window.web3 !== 'undefined'
+                && typeof window.web3.currentProvider !== 'undefined') {
+                eth.setProvider(window.web3.currentProvider);
             } else {
-              eth.setProvider(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e')); // set to TestRPC if not available
+                eth.setProvider(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e')); // set to TestRPC if not available
             }
             this.donation.campaign_id = this.campaignid;
             axios.get('/api/campaigns')
@@ -454,6 +455,10 @@
             // });
             this.Contract = eth.contract(abi).at('0xDFD5d5E1D674cE896d8e0d4B7F84246fCF0186C3');
 
+            // web3.eth.defaultAccount = web3.eth.myAccount;
+            // personal.unlockAccount(web3.eth.defaultAccount);
+
+
         },
         methods:
             {
@@ -468,10 +473,10 @@
                         this.donation.plan_b,
                         this.backup_campaign_id,
                         {from: this.myAccount, gas: 3000000},
+                        // {from: "0xdbc4d7b4ac635845ca1d4c0e779150e4b494a413", gas: 3000000},
                     ).then(() => {
                         console.log(this.campaignId);
                     }).catch((err) => {
-
                         console.log(err);
                         console.log(this.backup_campaign_id);
                     });
