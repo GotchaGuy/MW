@@ -12,7 +12,7 @@ class ApiImageController extends Controller
     {
         $this->validate($request, [
 
-            'file' => 'image|mimes:jpeg,png,jpg|max:3072',
+            'file' => 'image|mimes:jpeg,png,jpg|max:5072',
         ]);
         if (!$request->hasFile('file')) {
             return response()->json([
@@ -61,7 +61,7 @@ class ApiImageController extends Controller
     {
         $this->validate($request, [
 
-            'file' => 'image|mimes:jpeg,png,jpg|max:3072',
+            'file' => 'image|mimes:jpeg,png,jpg|max:5072',
         ]);
         if (!$request->hasFile('file')) {
             return response()->json([
@@ -90,7 +90,7 @@ class ApiImageController extends Controller
     {
         $this->validate($request, [
 
-            'file' => 'image|mimes:jpeg,png,jpg|max:3072',
+            'file' => 'image|mimes:jpeg,png,jpg|max:5072',
         ]);
         if (!$request->hasFile('file')) {
             return response()->json([

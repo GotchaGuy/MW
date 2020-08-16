@@ -37,12 +37,13 @@ window.EventBus = new Vue();
 
 const Eth = require('ethjs');
 // const eth = new Eth(new Eth.HttpProvider('https://ropsten.infura.io'));
-const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
+// const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
 
 import VueRouter from 'vue-router';
 
-Vue.use(VueRouter);
-
+// Vue.use(VueRouter);
+const Web3 = require('web3');
+let web3 = new Web3(Web3.givenProvider || "https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e");
 // var sourceMap = require("source-map");
 
 /**
