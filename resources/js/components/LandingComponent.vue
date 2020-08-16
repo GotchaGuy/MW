@@ -18,23 +18,39 @@
                 <div class="row columns d-flex justify-content-between">
                     <div>
                         <!--                class="col"-->
-                       <a-icon type="safety-certificate" />
+                        <a-icon type="safety-certificate"/>
                         <h3>Security</h3>
                         <p>Tamper-proof smart contract transactions.</p>
                     </div>
                     <div>
-                       <a-icon type="eye" />
+                        <a-icon type="eye"/>
                         <h3>Transparency</h3>
                         <p>Check any and all transactions via blockchain framework.</p>
                     </div>
                     <div>
-                       <a-icon type="interaction" />
+                        <a-icon type="interaction"/>
                         <h3>Community</h3>
                         <p>Direct communication with campaign organizers.</p>
                     </div>
                 </div>
             </div>
         </div>
+        //
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgTop">
+                <div class="wave waveTop"
+                     style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+                <div class="wave waveMiddle"
+                     style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+                <div class="wave waveBottom"
+                     style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+            </div>
+        </div>
+        //
     </div>
 </template>
 

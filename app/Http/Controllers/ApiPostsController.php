@@ -14,8 +14,21 @@ class ApiPostsController extends Controller
         $follows = $user->follows;
         $ids = [];
         foreach ($follows as $follow) {
+
             array_push($ids, $follow->id);
         }
+
+//        $user = \Auth::user();
+//        $follows = $user->follows;
+//        $ids = [];
+//        foreach ($follows as $follow) {
+//            for ($i = 0; $i <= sizeof($ids); $i++) {
+//                if ($follow->id !== $ids[$i]) {
+//                    array_push($ids, $follow->id);
+//                }
+//            }
+//        }
+
 //        dd($ids);
 
         $posts = Post::whereIn('campaign_id', $ids)->with('campaign')->orderBy('updated_at', 'desc')->get();

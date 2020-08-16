@@ -10957,18 +10957,56 @@ a.text-dark:focus {
 body div.landing {
   margin-top: -20px;
   height: 100vh;
-  background: linear-gradient(45deg, #14453D, #163e33);
+  background: linear-gradient(-45deg, #14453D, #15673a, #14453D);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 25s ease infinite;
+          animation: gradient 25s ease infinite;
 }
 
-body div.landing div.top {
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body div.top {
   display: inline-block;
   position: absolute;
   right: 33px;
   top: 23px;
+  background-color: #fff;
+  border-radius: 4px 4px 15px 4px;
+  height: 30px;
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  transition: 0.4s;
 }
 
-body div.landing div.top a {
-  color: #fff;
+body div.top a {
+  color: #01090A;
   text-decoration: none;
   height: 100%;
   width: 70px;
@@ -10976,48 +11014,52 @@ body div.landing div.top a {
   font-weight: bold;
 }
 
-body div.landing div.container div.row {
+body div.top:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body div.container div.row {
   width: 100%;
 }
 
-body div.landing div.container div.justify-content-right {
+body div.container div.justify-content-right {
   height: 63px;
   position: relative;
 }
 
-body div.landing div.container div.mid {
+body div.container div.mid {
   margin-top: 5vh;
   text-align: center;
 }
 
-body div.landing div.container div.mid img {
+body div.container div.mid img {
   height: 230px;
   width: 230px;
 }
 
-body div.landing div.container div.mid h1 {
+body div.container div.mid h1 {
   color: #fff;
   font-size: 30px;
   font-weight: bold;
 }
 
-body div.landing div.container div.columns {
+body div.container div.columns {
   color: #fff;
   margin-top: 8vh;
 }
 
-body div.landing div.container div.columns div {
+body div.container div.columns div {
   max-width: 150px;
   text-align: center;
 }
 
-body div.landing div.container div.columns div i svg {
+body div.container div.columns div i svg {
   height: 40px;
   width: 40px;
   color: #40A9FF;
 }
 
-body div.landing div.container div.columns div h3 {
+body div.container div.columns div h3 {
   color: #fff;
 }
 
@@ -11429,6 +11471,7 @@ body form#donation-form div.if div.swiper-container div.campaign:hover {
 body div.account {
   background-color: #14453D;
   margin-top: -20px;
+  height: 100%;
 }
 
 body div.account div.row {
@@ -11440,12 +11483,44 @@ body div.account div.row h4.blue {
 }
 
 body div.account div.row h4.white,
+body div.account div.row h5.white,
 body div.account div.row p.white {
   color: #fff;
 }
 
 body div.account div.row h4.gray {
   color: #f3f5f4;
+}
+
+body div.account div.row div.other {
+  position: relative;
+}
+
+body div.account div.row div.other h5 {
+  display: inline-block;
+  width: 345px;
+}
+
+body div.account div.row div.other div.here {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  background-color: #fff;
+  border-radius: 4px 4px 15px 4px;
+  height: 30px;
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+body div.account div.row div.other div.here a {
+  color: #01090A;
+  text-decoration: none;
+  height: 100%;
+  width: 70px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 body div.org-account {
@@ -11555,6 +11630,13 @@ body form#post-form {
 
 body form#post-form div.row {
   width: 100%;
+}
+
+body form#post-form div.row img {
+  transition: 0.4s;
+  height: 72px;
+  width: auto;
+  margin: 0 auto;
 }
 
 body form#post-form div.row h5 {

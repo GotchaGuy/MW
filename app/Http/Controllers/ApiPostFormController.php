@@ -18,6 +18,9 @@ class ApiPostFormController extends Controller
             $campaign->time_left = $campaign->end->diffForHumans();
             $campaign->raised = Donation::where('campaign_id', $campaign->id)->sum('euro_amount');
             $campaign->percent = floor($campaign->raised / $campaign->euro_goal * 100);
+            if($campaign->percent > 100) {
+                $campaign->percent = 100;
+            }
         }
 
         return $organization;

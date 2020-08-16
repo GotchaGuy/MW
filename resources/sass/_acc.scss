@@ -2,6 +2,7 @@ body {
   div.account {
     background-color: $testy4;
     margin-top: -20px;
+    height: 100%;
 
     div.row {
       width: 100%;
@@ -11,12 +12,44 @@ body {
       }
 
       h4.white,
+      h5.white,
       p.white {
         color: #fff;
       }
 
       h4.gray {
         color: $testy2;
+      }
+
+      div.other {
+        position: relative;
+        h5 {
+          display: inline-block;
+          width: 345px;
+        }
+
+        div.here {
+          position: absolute;
+          right: 20px;
+          top: 0;
+          background-color: #fff;
+          border-radius: 4px 4px 15px 4px;
+          height: 30px;
+          width: 60px;
+          padding: 5px;
+          text-align: center;
+          transition: 0.4s;
+
+
+          a {
+            color: $test1;
+            text-decoration: none;
+            height: 100%;
+            width: 70px;
+            font-size: 12px;
+            font-weight: bold;
+          }
+        }
       }
     }
   }

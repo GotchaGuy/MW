@@ -5,7 +5,13 @@
                     enctype="multipart/form-data" id="post-form">
                 <!--        class="justify-content-center"        -->
                 <!--                <a-progress type="circle" :percent="this.secondary.percent" :width="80"/>-->
-                <div class="row justify-content-center">
+
+                 <div class="row justify-content-center" v-if="post.campaign_id === ''">
+                    <div class="row">
+                        <img :src="organization.org_logo" alt="">
+                    </div>
+                </div>
+                <div class="row justify-content-center" v-else>
                     <h5>€{{this.secondary.raised}} / €{{this.secondary.euro_goal}}</h5>
                     <div class="row">
                         <div class="col-6 offset-3">

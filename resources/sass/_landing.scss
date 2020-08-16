@@ -3,77 +3,114 @@ body {
     margin-top: -20px;
     height: 100vh;
     //background-color: $testy4;
-    background: linear-gradient(45deg, $testy4, #163e33);
+    //background: linear-gradient(45deg, $testy4, #163e33);
+    //, #23d5ab
 
-    div.top {
-          display: inline-block;
-          position: absolute;
-          right: 33px;
-          top: 23px;
+    //#1a8149
+    background: linear-gradient(-45deg, $testy4, #15673a, $testy4);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+  }
 
-          a {
-            color: #fff;
-            text-decoration: none;
-            height: 100%;
-            width: 70px;
-            font-size: 12px;
-            font-weight: bold;
-          }
-        }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
-    div.container {
-      div.row {
-        width: 100%;
+  div.top {
+    display: inline-block;
+    position: absolute;
+    right: 33px;
+    top: 23px;
+
+    background-color: #fff;
+    border-radius: 4px 4px 15px 4px;
+    height: 30px;
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    transition: 0.4s;
+
+    a {
+      //color: #fff;
+      color: $test1;
+      text-decoration: none;
+      height: 100%;
+      width: 70px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+  }
+
+  div.top:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+  div.container {
+    div.row {
+      width: 100%;
+    }
+
+    div.justify-content-right {
+      height: 63px;
+      position: relative;
+
+    }
+
+    div.mid {
+      margin-top: 5vh;
+      text-align: center;
+
+      img {
+        height: 230px;
+        width: 230px;
       }
 
-      div.justify-content-right {
-        height: 63px;
-        position: relative;
-
+      h1 {
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
       }
+    }
 
-      div.mid {
-         margin-top: 5vh;
+    div.columns {
+      color: #fff;
+      margin-top: 8vh;
+
+      div {
+        max-width: 150px;
         text-align: center;
 
-        img {
-          height: 230px;
-          width: 230px;
+        i {
+          svg {
+            height: 40px;
+            width: 40px;
+            color: $testb;
+
+          }
         }
 
-        h1 {
+        h3 {
           color: #fff;
-          font-size: 30px;
-          font-weight: bold;
+          //box-shadow: 0 8px 6px -6px black;
         }
-      }
 
-      div.columns {
-        color: #fff;
-        margin-top: 8vh;
+        p {
 
-        div {
-          max-width: 150px;
-          text-align: center;
-
-          i {
-            svg {
-              height: 40px;
-              width: 40px;
-              color: $testb;
-
-            }
-          }
-
-          h3 {
-            color: #fff;
-            //box-shadow: 0 8px 6px -6px black;
-          }
-          p {
-
-          }
         }
       }
     }
   }
+
 }
+
+//}

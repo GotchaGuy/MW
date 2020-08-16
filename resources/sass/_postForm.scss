@@ -6,6 +6,13 @@ body {
     div.row {
       width: 100%;
 
+      img {
+         transition: 0.4s;
+        height: 72px;
+        width: auto;
+        margin: 0 auto;
+      }
+
       h5 {
         transition: 0.4s;
       }

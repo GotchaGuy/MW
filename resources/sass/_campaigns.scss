@@ -5,10 +5,8 @@ body {
       max-width: 340px;
       height: 230px;
       max-height: 230px;
-      //border-radius: 4px 4px 25px 4px;
       transition: 0.4s;
       box-sizing: border-box;
-      //background-color: $test5;
 
       button {
         height: 100%;
@@ -21,11 +19,6 @@ body {
 
       }
     }
-
-    //div.card.new:hover {
-    //  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    //  background: linear-gradient(to top right, #67C23A, #408538);
-    //}
 
     div.card {
       color: $test5;

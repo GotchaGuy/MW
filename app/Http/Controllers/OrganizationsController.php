@@ -20,6 +20,9 @@ class OrganizationsController extends Controller
             $organization->campaigns[$key]->time_left = $campaign->end->diffForHumans();
             $organization->campaigns[$key]->raised = Donation::where('campaign_id', $campaign->id)->sum('euro_amount');
             $organization->campaigns[$key]->percent = floor($campaign->raised / $campaign->euro_goal * 100);
+            if($organization->campaigns[$key]->percent > 100) {
+                $organization->campaigns[$key]->percent = 100;
+            }
             if ($organization->campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000/?charity') {
                 $organization->campaigns[$key]->image = substr_replace($campaign->image, 'small/', 9, 0);
             }

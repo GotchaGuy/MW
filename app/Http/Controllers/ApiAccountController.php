@@ -17,6 +17,9 @@ class ApiAccountController extends Controller
             $my_org->campaigns[$key]->time_left = $campaign->end->diffForHumans();
             $my_org->campaigns[$key]->raised = Donation::where('campaign_id', $campaign->id)->sum('euro_amount');
             $my_org->campaigns[$key]->percent = floor($campaign->raised / $campaign->euro_goal * 100);
+            if($my_org->campaigns[$key]->percent > 100) {
+                $my_org->campaigns[$key]->percent = 100;
+            }
              if ($my_org->campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000/?charity') {
                 $my_org->campaigns[$key]->image = substr_replace($campaign->image, 'small/', 9, 0);
             }

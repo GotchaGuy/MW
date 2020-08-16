@@ -66,62 +66,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignFormComponent.vue">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiCampaignsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="177" column="16" selection-start-line="172" selection-start-column="8" selection-end-line="177" selection-end-column="16" />
+            <state relative-caret-position="357">
+              <caret line="21" column="13" selection-start-line="19" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
               <folding>
-                <element signature="e#9110#18949#0" />
+                <element signature="e#40#57#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiDonationsController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrganizationsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
+            <state relative-caret-position="374">
+              <caret line="24" column="13" selection-start-line="22" selection-start-column="12" selection-end-line="24" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/partials/DrawerDonateFormComponent.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3264">
-              <caret line="460" selection-start-line="460" selection-end-line="460" />
-              <folding>
-                <element signature="e#5951#6005#0" expanded="true" />
-                <element signature="e#8780#18619#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sass/_campaign.scss">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiPostFormController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/CampaignComponent.vue">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/PostFormComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+            <state relative-caret-position="153">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sass/_postForm.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiAccountController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+            <state relative-caret-position="357">
+              <caret line="21" column="13" selection-start-line="19" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
+              <folding>
+                <element signature="e#40#57#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/partials/DonorAccountComponent.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1003">
+              <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -129,27 +137,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/LandingComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+            <state relative-caret-position="782">
+              <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/PostsComponent.vue">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/resources/sass/_acc.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/FollowingComponent.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiImageController.php">
+        <entry file="file://$PROJECT_DIR$/resources/sass/_landing.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+            <state relative-caret-position="493">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -171,6 +183,7 @@
       <find>import</find>
       <find>import</find>
       <find>euro_goal</find>
+      <find>solidi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,8 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/sass/_register.scss" />
-        <option value="$PROJECT_DIR$/resources/js/components/OrganizationComponent.vue" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/resources/sass/_variables.scss" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_25_203498_create_organizations_table.php" />
@@ -188,12 +199,9 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/config/croppa.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/resources/js/components/partials/DonorAccountComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/PostsComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/FollowingComponent.vue" />
         <option value="$PROJECT_DIR$/resources/sass/_drawerDonateForm.scss" />
-        <option value="$PROJECT_DIR$/resources/js/components/PostFormComponent.vue" />
-        <option value="$PROJECT_DIR$/resources/sass/_postForm.scss" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_25_203500_create_campaigns_table.php" />
         <option value="$PROJECT_DIR$/solidity/truffle-config.js" />
         <option value="$PROJECT_DIR$/solidity/migrations/1596783306_donations.js" />
@@ -203,24 +211,16 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LandingController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/CampaignsComponent.vue" />
-        <option value="$PROJECT_DIR$/resources/sass/_campaigns.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/partials/NavigationComponent.vue" />
-        <option value="$PROJECT_DIR$/resources/sass/_acc.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/AccountComponent.vue" />
         <option value="$PROJECT_DIR$/resources/sass/_general.scss" />
-        <option value="$PROJECT_DIR$/resources/sass/_nav.scss" />
         <option value="$PROJECT_DIR$/app/Campaign.php" />
         <option value="$PROJECT_DIR$/solidity/contracts/DonationsAbi.js" />
         <option value="$PROJECT_DIR$/solidity/contracts/Donations.sol" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/OrganizationsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiCampaignsController.php" />
         <option value="$PROJECT_DIR$/database/factories/CampaignFactory.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiAccountController.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/resources/js/components/LandingComponent.vue" />
-        <option value="$PROJECT_DIR$/resources/sass/_landing.scss" />
         <option value="$PROJECT_DIR$/database/factories/OrganizationFactory.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiFollowsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiDonationsController.php" />
@@ -230,6 +230,19 @@
         <option value="$PROJECT_DIR$/resources/js/components/CampaignComponent.vue" />
         <option value="$PROJECT_DIR$/resources/sass/_campaign.scss" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiImageController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/LandingComponent.vue" />
+        <option value="$PROJECT_DIR$/resources/sass/_nav.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/_campaigns.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/_landing.scss" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiPostsController.php" />
+        <option value="$PROJECT_DIR$/resources/sass/_acc.scss" />
+        <option value="$PROJECT_DIR$/resources/js/components/partials/DonorAccountComponent.vue" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiCampaignsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiAccountController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/OrganizationsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiPostFormController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/PostFormComponent.vue" />
+        <option value="$PROJECT_DIR$/resources/sass/_postForm.scss" />
       </list>
     </option>
   </component>
@@ -464,6 +477,17 @@
             <path>
               <item name="idoniraj" type="b2602c69:ProjectViewProjectNode" />
               <item name="idoniraj" type="462c0819:PsiDirectoryNode" />
+              <item name="solidity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="idoniraj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="idoniraj" type="462c0819:PsiDirectoryNode" />
+              <item name="solidity" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="idoniraj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="idoniraj" type="462c0819:PsiDirectoryNode" />
               <item name="storage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -533,18 +557,18 @@
       <workItem from="1591954220204" duration="106508000" />
       <workItem from="1592952033645" duration="214842000" />
       <workItem from="1596753318383" duration="1915000" />
-      <workItem from="1596779242016" duration="78905000" />
+      <workItem from="1596779242016" duration="86581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="489338000" />
+    <option name="totallyTimeSpent" value="497014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2702498" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2702498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -572,57 +596,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/solidity/migrations/1596783306_donations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/solidity/build/contracts/Donations.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/organization.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/landing.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -647,59 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_campaigns.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/partials/NavigationComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/PostFormComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="80" column="63" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_acc.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/AccountComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="63" column="74" selection-start-line="63" selection-start-column="74" selection-end-line="63" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_nav.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_general.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="79" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -727,44 +655,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/solidity/contracts/Donations.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrganizationsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="104" selection-start-line="22" selection-start-column="104" selection-end-line="22" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiCampaignsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="19" column="98" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/CampaignFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiAccountController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="106" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,13 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_landing.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -850,32 +737,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiFollowsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="9" selection-start-line="15" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/PostsComponent.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/FollowingComponent.vue">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiDonationsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/LandingComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -923,6 +789,263 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_general.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="79" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/partials/NavigationComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_nav.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_campaigns.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="67" column="83" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiFollowsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiFeedController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiDonationsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="13" selection-start-line="27" selection-start-column="8" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiPostsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/solidity/contracts/Donations.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="21" selection-end-line="93" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/e0adf9ca-96b0-41c5-8d16-a8ca741f3621">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>e0adf9ca-96b0-41c5-8d16-a8ca741f3621</OriginalElement>
+          <nodes>
+            <node x="367.2916666666667" y="1049.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.posts</node>
+            <node x="1320.2916666666667" y="0.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.jobs</node>
+            <node x="238.54166666666666" y="144.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.users</node>
+            <node x="223.3595238095238" y="420.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.organizations</node>
+            <node x="930.0" y="1287.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.migrations</node>
+            <node x="420.0" y="1287.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.oauth_personal_access_clients</node>
+            <node x="135.25" y="1038.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.donations</node>
+            <node x="592.2916666666667" y="1082.5">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.follows</node>
+            <node x="263.54166666666663" y="0.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.roles</node>
+            <node x="419.3595238095238" y="486.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.categories</node>
+            <node x="1092.2916666666667" y="0.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.oauth_access_tokens</node>
+            <node x="842.2916666666667" y="0.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.oauth_clients</node>
+            <node x="359.2916666666667" y="674.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.campaigns</node>
+            <node x="1128.0" y="1287.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.password_resets</node>
+            <node x="228.0" y="1287.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.failed_jobs</node>
+            <node x="0.0" y="453.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.wallets</node>
+            <node x="698.0" y="1287.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.oauth_refresh_tokens</node>
+            <node x="0.0" y="1287.0">e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.oauth_auth_codes</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.users" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.roles">
+              <point x="0.0" y="-113.0" />
+              <point x="0.0" y="47.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.campaigns" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.users">
+              <point x="73.66666666666663" y="-157.0" />
+              <point x="543.4583333333333" y="649.0" />
+              <point x="612.8297619047619" y="649.0" />
+              <point x="612.8297619047619" y="400.0" />
+              <point x="376.4416666666667" y="400.0" />
+              <point x="39.400000000000034" y="113.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.donations" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.campaigns">
+              <point x="51.25" y="-102.0" />
+              <point x="289.0" y="1013.0" />
+              <point x="396.125" y="1013.0" />
+              <point x="-73.66666666666669" y="157.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.wallets" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.users">
+              <point x="0.0" y="-69.0" />
+              <point x="88.0" y="390.0" />
+              <point x="258.2416666666667" y="390.0" />
+              <point x="-78.80000000000001" y="113.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.follows" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.users">
+              <point x="51.25" y="-57.5" />
+              <point x="746.0416666666667" y="390.0" />
+              <point x="415.8416666666667" y="390.0" />
+              <point x="78.80000000000007" y="113.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.donations" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.users">
+              <point x="-51.25" y="-102.0" />
+              <point x="186.5" y="400.0" />
+              <point x="297.64166666666665" y="400.0" />
+              <point x="-39.39999999999998" y="113.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.campaigns" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.organizations">
+              <point x="-73.66666666666669" y="-157.0" />
+              <point x="396.125" y="649.0" />
+              <point x="311.3595238095238" y="649.0" />
+              <point x="0.0" y="102.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.campaigns" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.categories">
+              <point x="0.0" y="-157.0" />
+              <point x="469.7916666666667" y="649.0" />
+              <point x="492.8595238095238" y="649.0" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.follows" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.campaigns">
+              <point x="-51.25" y="-57.5" />
+              <point x="643.5416666666667" y="1013.0" />
+              <point x="543.4583333333333" y="1013.0" />
+              <point x="73.66666666666663" y="157.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.organizations" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.users">
+              <point x="0.0" y="-102.0" />
+              <point x="311.3595238095238" y="400.0" />
+              <point x="337.04166666666663" y="400.0" />
+              <point x="0.0" y="113.0" />
+            </edge>
+            <edge source="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.posts" target="e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.campaigns">
+              <point x="0.0" y="-91.0" />
+              <point x="0.0" y="157.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.4164962508520791" x="503.79787234042556" y="556.2356792144026" />
+          <SelectedNodes>
+            <node>e0adf9ca-96b0-41c5-8d16-a8ca741f3621.TABLE:mw.wallets</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/landing.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/LandingComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_landing.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_acc.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/partials/DonorAccountComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiCampaignsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="13" selection-start-line="19" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiAccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="13" selection-start-line="19" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrganizationsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="13" selection-start-line="22" selection-start-column="12" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiPostFormController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/PostFormComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_postForm.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
