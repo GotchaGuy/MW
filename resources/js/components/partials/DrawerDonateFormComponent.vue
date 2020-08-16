@@ -462,21 +462,21 @@
         },
         methods:
             {
-                // onDonationSubmitBlk() {
-                //     this.Contract.donate(
-                //         this.donationId = Date.now(),
-                //         this.donationCreatorId,
-                //         this.donation.euro_amount,
-                //         this.donation.campaign_id,
-                //         this.donation.plan_b,
-                //         this.backup_campaign_id,
-                //         {from: this.myAccount, gas: 3000000},
-                //     ).then(() => {
-                //         console.log(this.campaignId);
-                //     }).catch((err) => {
-                //         console.log(err);
-                //         console.log(this.backup_campaign_id);
-                //     });
+                onDonationSubmitBlk() {
+                    // this.Contract.donate(
+                    //     this.donationId = Date.now(),
+                    //     this.donationCreatorId,
+                    //     this.donation.euro_amount,
+                    //     this.donation.campaign_id,
+                    //     this.donation.plan_b,
+                    //     this.backup_campaign_id,
+                    //     {from: this.myAccount, gas: 3000000},
+                    // ).then(() => {
+                    //     console.log(this.campaignId);
+                    // }).catch((err) => {
+                    //     console.log(err);
+                    //     console.log(this.backup_campaign_id);
+                    // });
 
                     //
                     // eth.getTransactionCount(this.myAccount).then((nonce) => {
@@ -492,9 +492,9 @@
                     //     });
                     // });
                     //
-                    // var web3 = new Web3(new Web3.providers.HttpProvider(
-                    //     "https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e"));
-                    const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
+                    var web3 = new Web3(new Web3.providers.HttpProvider(
+                        "https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e"));
+                    // const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
                     this.Contract = eth.contract(abi).at('0xDFD5d5E1D674cE896d8e0d4B7F84246fCF0186C3');
                     const EthereumTx = require('ethereumjs-tx').Transaction;
                     const privateKey = Buffer.from(
