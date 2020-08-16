@@ -20,7 +20,7 @@ class ApiAccountController extends Controller
             if($my_org->campaigns[$key]->percent > 100) {
                 $my_org->campaigns[$key]->percent = 100;
             }
-             if ($my_org->campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000/?charity') {
+             if ($my_org->campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000/?green') {
                 $my_org->campaigns[$key]->image = substr_replace($campaign->image, 'small/', 9, 0);
             }
         }

@@ -20,7 +20,7 @@ class ApiCampaignsController extends Controller
             if($campaigns[$key]->percent > 100) {
                 $campaigns[$key]->percent = 100;
             }
-            if ( $campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000/?charity') {
+            if ( $campaigns[$key]->image !== 'https://source.unsplash.com/random/600x1000/?green') {
             $campaigns[$key]->image = substr_replace($campaign->image, 'small/', 9, 0);
             }
         }
