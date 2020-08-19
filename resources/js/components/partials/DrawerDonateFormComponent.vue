@@ -95,7 +95,8 @@
                     Cancel
                 </a-button>
 
-                <a-button type="primary" @click="toDonate(); onDonationSubmitBlk();">
+                <a-button type="primary"
+                          @click="toDonate(); onDonationSubmitBlk(donationId, donationCreatorId, donation.euro_amount, donation.campaign_id, donation.plan_b, backup_campaign_id);">
                     Donate {{this.button}}
                 </a-button>
             </div>
@@ -105,13 +106,16 @@
 
 
 <script>
-    const Eth = require('ethjs');
+    // const Eth = require('ethjs');
 
     // const Web3 = require('web3');
     // let web3 = new Web3(Web3.givenProvider || "https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e");
     // const EthereumTx = require('ethereumjs-tx').Transaction;
     import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+
+    const Web3 = require("web3");
+    const {randomHex} = require("web3-utils");
 
     export default {
         props: ['campaignid'],
@@ -156,9 +160,8 @@
                 plan_b: 1,
                 backup_campaign_id: 0,
                 totalDonatedSum: '',
-                //
-                // myAccount: '0xdbC4D7B4Ac635845ca1D4C0E779150E4b494A413',
-                myAccount: '0x80ca7985360c43545C8E1e1a1a4dcEe9641Ecd7b',
+                //// myAccount: '0xdbC4D7B4Ac635845ca1D4C0E779150E4b494A413',
+                // myAccount: '0x80ca7985360c43545C8E1e1a1a4dcEe9641Ecd7b',
                 Contract: '',
                 eth: "",
 
@@ -187,356 +190,346 @@
             // }
 
 
-            this.eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
-            const abi = [
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_campaignId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_donationId",
-                            "type": "uint256"
-                        }
-                    ],
-                    "name": "closeCampaign",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_campaignId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_campaignCreatorId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_campaignTitle",
-                            "type": "string"
-                        },
-                        {
-                            "name": "_campaignDuration",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_campaignStartTime",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_category_id",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "_euro_goal",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "_overhead",
-                            "type": "uint8"
-                        }
-                    ],
-                    "name": "createCampaign",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_donationId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_donationCreatorId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_euro_amount",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "_campaignId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "_plan_b",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "_backup_campaign_id",
-                            "type": "uint256"
-                        }
-                    ],
-                    "name": "donate",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "anonymous": false,
-                    "inputs": [
-                        {
-                            "indexed": false,
-                            "name": "campaignId",
-                            "type": "uint256"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "campaignCreatorId",
-                            "type": "uint256"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "campaignTitle",
-                            "type": "string"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "overhead",
-                            "type": "uint8"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "euro_goal",
-                            "type": "uint32"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "totalDonatedSum",
-                            "type": "uint32"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "category_id",
-                            "type": "uint8"
-                        }
-                    ],
-                    "name": "CampaignResultEvent",
-                    "type": "event"
-                },
-                {
-                    "anonymous": false,
-                    "inputs": [
-                        {
-                            "indexed": false,
-                            "name": "donationId",
-                            "type": "uint256"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "donationCreatorId",
-                            "type": "uint256"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "euro_amount",
-                            "type": "uint32"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "campaign_id",
-                            "type": "uint256"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "plan_b",
-                            "type": "uint8"
-                        },
-                        {
-                            "indexed": false,
-                            "name": "backup_campaign_id",
-                            "type": "uint256"
-                        }
-                    ],
-                    "name": "DonationnResultEvent",
-                    "type": "event"
-                },
-                {
-                    "constant": true,
-                    "inputs": [
-                        {
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ],
-                    "name": "campaigns",
-                    "outputs": [
-                        {
-                            "name": "campaignCreator",
-                            "type": "address"
-                        },
-                        {
-                            "name": "campaignCreatorId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "campaignTitle",
-                            "type": "string"
-                        },
-                        {
-                            "name": "category_id",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "euro_goal",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "campaignStartTime",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "campaignDuration",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "overhead",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "totalDonatedSum",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "campaignEnded",
-                            "type": "bool"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [
-                        {
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ],
-                    "name": "donations",
-                    "outputs": [
-                        {
-                            "name": "donationCreator",
-                            "type": "address"
-                        },
-                        {
-                            "name": "donationCreatorId",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "euro_amount",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "campaign_id",
-                            "type": "uint256"
-                        },
-                        {
-                            "name": "plan_b",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "backup_campaign_id",
-                            "type": "uint256"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                }
-            ];
-            this.Contract = this.eth.contract(abi).at('0xDFD5d5E1D674cE896d8e0d4B7F84246fCF0186C3');
+            // this.eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
 
+            // this.Contract = this.eth.contract(abi).at('0xDFD5d5E1D674cE896d8e0d4B7F84246fCF0186C3');
+// this.donationId, this.donationCreatorId, this.donation.euro_amount, this.donation.campaign_id, this.donation.plan_b, this.backup_campaign_id
 
         },
         methods:
             {
-                onDonationSubmitBlk() {
-                    this.Contract.donate(
-                        this.donationId = Date.now(),
-                        this.donationCreatorId,
-                        this.donation.euro_amount,
-                        this.donation.campaign_id,
-                        this.donation.plan_b,
-                        this.backup_campaign_id,
-                        {from: this.myAccount, gas: 3000000},
-                    ).then(() => {
-                        console.log(this.campaignId);
-                    }).catch((err) => {
-                        console.log(err);
-                        console.log(this.backup_campaign_id);
-                    });
-
-                    //
-                    // eth.getTransactionCount(this.myAccount).then((nonce) => {
-                    //     eth.sendRawTransaction(sign({
-                    //         to: '0xce31a19193d4b23f4e9d6163d7247243bAF801c3',
-                    //         value: 300000,
-                    //         gas: new BN('43092000'),
-                    //         // when sending a raw transactions it's necessary to set the gas price, currently 0.00000002 ETH
-                    //         gasPrice: new BN('20000000000'),
-                    //         nonce: nonce,
-                    //     }, privateKey)).then((txHash) => {
-                    //         console.log('Transaction Hash', txHash);
-                    //     });
+                onDonationSubmitBlk(donationId, donationCreatorId, euro_amount, campaign_id, plan_b, backup_campaign_id) {
+                    // this.Contract.donate(
+                    //     this.donationId = Date.now(),
+                    //     this.donationCreatorId,
+                    //     this.donation.euro_amount,
+                    //     this.donation.campaign_id,
+                    //     this.donation.plan_b,
+                    //     this.backup_campaign_id,
+                    //     {from: this.myAccount, gas: 3000000},
+                    // ).then(() => {
+                    //     console.log(this.campaignId);
+                    // }).catch((err) => {
+                    //     console.log(err);
+                    //     console.log(this.backup_campaign_id);
                     // });
-                    //
-                    // var web3 = new Web3(new Web3.providers.HttpProvider(
-                    //     "https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e"));
-                    // const eth = new Eth(new Eth.HttpProvider('https://rinkeby.infura.io/v3/87502bcbdab4494289d7f0cc3d62329e'));
-                    // this.Contract = eth.contract(abi).at('0xDFD5d5E1D674cE896d8e0d4B7F84246fCF0186C3');
-
-                    // const privateKey = Buffer.from(
-                    //     'e77116facd6eb001b07655cb4cd2e6c13699788679faa4231a6b12da4724f741',
-                    //     'hex',
-                    // );
-                    //
-                    // // web3.eth.defaultAccount = '0x80ca7985360c43545C8E1e1a1a4dcEe9641Ecd7b';
-                    //
-                    // web3.eth.getTransactionCount(this.myAccount, function (err, nonce) {
-                    //     var data = this.Contract.donate.increment.getData(
-                    //         this.donationId = Date.now(),
-                    //         this.donationCreatorId,
-                    //         this.donation.euro_amount,
-                    //         this.donation.campaign_id,
-                    //         this.donation.plan_b,
-                    //         this.backup_campaign_id,
-                    //         {from: this.myAccount, gas: 3000000},
-                    //     ).then(() => {
-                    //         console.log(this.campaignId);
-                    //
-                    //         var tx = new ethereumjs.Tx({
-                    //             nonce: nonce,
-                    //             gasPrice: web3.toHex(web3.toWei('20', 'gwei')),
-                    //             gasLimit: 100000,
-                    //             to: this.myAccount,
-                    //             value: 0,
-                    //             data: data,
-                    //         });
-                    //         tx.sign(ethereumjs.Buffer.Buffer.from(privateKey, 'hex'));
-                    //
-                    //         var raw = '0x' + tx.serialize().toString('hex');
-                    //         web3.eth.sendRawTransaction(raw, function (err, transactionHash) {
-                    //             console.log(transactionHash);
-                    //         });
-                    //     }).catch((err) => {
-                    //         console.log(err);
-                    //     });
 
 
-                    // });
+                    const address = "0xDFD5d5E1D674cE896d8e0d4B7F84246fCF0186C3";
+                    const abi = [
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_campaignId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_donationId",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "closeCampaign",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_campaignId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_campaignCreatorId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_campaignTitle",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "_campaignDuration",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_campaignStartTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_category_id",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "_euro_goal",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "_overhead",
+                                    "type": "uint8"
+                                }
+                            ],
+                            "name": "createCampaign",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_donationId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_donationCreatorId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_euro_amount",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "_campaignId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "_plan_b",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "_backup_campaign_id",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "donate",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "anonymous": false,
+                            "inputs": [
+                                {
+                                    "indexed": false,
+                                    "name": "campaignId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "campaignCreatorId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "campaignTitle",
+                                    "type": "string"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "overhead",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "euro_goal",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "totalDonatedSum",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "category_id",
+                                    "type": "uint8"
+                                }
+                            ],
+                            "name": "CampaignResultEvent",
+                            "type": "event"
+                        },
+                        {
+                            "anonymous": false,
+                            "inputs": [
+                                {
+                                    "indexed": false,
+                                    "name": "donationId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "donationCreatorId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "euro_amount",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "campaign_id",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "plan_b",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "indexed": false,
+                                    "name": "backup_campaign_id",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "DonationnResultEvent",
+                            "type": "event"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "campaigns",
+                            "outputs": [
+                                {
+                                    "name": "campaignCreator",
+                                    "type": "address"
+                                },
+                                {
+                                    "name": "campaignCreatorId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "campaignTitle",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "category_id",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "euro_goal",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "campaignStartTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "campaignDuration",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "overhead",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "totalDonatedSum",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "campaignEnded",
+                                    "type": "bool"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "donations",
+                            "outputs": [
+                                {
+                                    "name": "donationCreator",
+                                    "type": "address"
+                                },
+                                {
+                                    "name": "donationCreatorId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "euro_amount",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "campaign_id",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "name": "plan_b",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "backup_campaign_id",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        }
+                    ];
+                    const infuraKey = "87502bcbdab4494289d7f0cc3d62329e";
+
+// Create infuara provider
+                    const provider = new Web3.providers.WebsocketProvider(
+                        `wss://rinkeby.infura.io/ws/v3/${infuraKey}`
+                    );
+                    const web3 = new Web3(provider);
+
+// Add account from private key
+                    web3.eth.accounts.wallet.create(0, randomHex(32));
+
+                    const pk = "e77116facd6eb001b07655cb4cd2e6c13699788679faa4231a6b12da4724f741";
+                    const account = web3.eth.accounts.privateKeyToAccount(pk);
+                    web3.eth.accounts.wallet.add(account);
+
+// Setup contract
+                    const contract = new web3.eth.Contract(abi, address);
+
+                    async function run(self) {
+                        console.log(self);
+                        const from = web3.eth.accounts.wallet[0].address;
+
+                        const nonce = await web3.eth.getTransactionCount(from, "pending");
+                        console.log(Date.now(), self.donationCreatorId, self.donation.euro_amount, self.donation.campaign_id, self.donation.plan_b, self.backup_campaign_id);
+                        // let gas = await contract.methods
+                        //     .donate(Date.now(), self.donationCreatorId, self.donation.euro_amount, self.donation.campaign_id, self.donation.plan_b, self.backup_campaign_id)
+                        //     .estimateGas({from, gas: "3000000", value: "100000000000000000"});
+                        //
+                        // gas = Math.round(gas * 1.5);
+
+                        try {
+                            const result = await contract.methods.donate(Date.now(), self.donationCreatorId, self.donation.euro_amount, self.donation.campaign_id, self.donation.plan_b, self.backup_campaign_id).send({
+                                gas: 3000000,
+                                from,
+                                nonce,
+                                // value: "100000000000000000"
+                            });
+
+                            console.log("success", result);
+                        } catch (e) {
+                            console.log("error", e);
+                        }
+                    }
+
+                    run(this);
 
                 },
                 showDrawer() {
