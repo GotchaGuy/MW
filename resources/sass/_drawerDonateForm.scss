@@ -10,9 +10,11 @@ body {
 
   div.ant-drawer-header {
     background-color: $testy4;
+
     div.ant-drawer-title {
       color: #fff;
     }
+
     button.ant-drawer-close {
       color: #fff;
     }
@@ -84,15 +86,18 @@ body {
                 object-fit: cover;
               }
             }
+
             div.ant-card-body {
               height: 183px;
               position: relative;
+
               div.info {
                 position: absolute;
                 bottom: 12px;
                 left: 24px;
               }
             }
+
             ul.ant-card-actions {
               background-color: $testy4;
             }

@@ -37,7 +37,7 @@ class ApiImageController extends Controller
         $thumb = Image::make(public_path('storage/' . $final_path));
 //        $thumb = Image::make('storage/' . $final_path);
 
-        $thumb->resize(140, 235);
+        $thumb->crop(140, 235);
 
         $thumb->save(public_path('storage/small/' . $final_path));
 //        $thumb->save('storage/small/' . $final_path);
