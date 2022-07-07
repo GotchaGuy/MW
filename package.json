@@ -33,7 +33,7 @@
         "ethereumjs-tx": "^2.1.2",
         "ethjs": "^0.4.0",
         "ethjs-signer": "^0.1.1",
-        "moment": "^2.26.0",
+        "moment": "^2.29.4",
         "source-map": "^0.7.3",
         "swiper": "^5.4.2",
         "vue-advanced-cropper": "^0.16.8",
